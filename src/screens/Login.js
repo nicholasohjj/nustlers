@@ -1,0 +1,22 @@
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { Text } from "react-native-paper";
+
+const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    flexShrink: 1,
+  },
+});
+
+const Login = () => {
+  return (
+
+    <View style={styles.container}>
+        <Text>Login Text</Text>   
+    </View>
+
+    );
+}
+
+export default Login
