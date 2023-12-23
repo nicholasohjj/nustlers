@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Alert, ScrollView } from 'react-native';
-import { Button, Input } from 'react-native-elements';
+import { View, Text, StyleSheet, Alert, ScrollView, ActivityIndicator, Platform } from 'react-native';
+import { Button, TextInput } from 'react-native-paper'
+import { Input } from 'react-native-elements';
 import { supabase } from './supabase';
 import { useNavigation } from "@react-navigation/native";
 
@@ -35,7 +36,27 @@ const EditProfile = () => {
     fetchProfile();
   }, []);
 
+  const isValidEmail = email => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
+
+  const isValidPhone = phone => {
+    const re = /^\d+$/;
+    return re.test(phone);
+  };
+
   const handleSaveProfile = async () => {
+    if (!isValidEmail(email)) {
+      Alert.alert("Invalid Email", "Please enter a valid email address.");
+      return;
+    }
+
+    if (!isValidPhone(phone)) {
+      Alert.alert("Invalid Phone Number", "Please enter a valid phone number.");
+      return;
+    }
+
     setLoading(true);
     console.log(phone)
     const { data, error } = await supabase.auth.updateUser({password,
@@ -56,58 +77,93 @@ const EditProfile = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Edit Profile</Text>
-      <Input
+      <TextInput
         label="Name"
-        value={name}
+        mode="outlined"
         onChangeText={setName}
-        autoCapitalize="none"
+        value={name}
+        placeholder="John Doe"
+        style={styles.input}
+        left={<TextInput.Icon name="account" />}
       />
-      <Input
+      <TextInput
         label="Email"
-        value={email}
+        mode="outlined"
         onChangeText={setEmail}
+        value={email}
+        placeholder="email@address.com"
         autoCapitalize="none"
+        keyboardType="email-address"
+        style={styles.input}
+        left={<TextInput.Icon name="email" />}
       />
-      <Input
-        label="Password (leave blank to keep current)"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-        autoCapitalize="none"
-      />
-            <Input
-        label="Phone"
-        value={phone}
+      <TextInput
+        label="Phone Number"
+        mode="outlined"
         onChangeText={setPhone}
-        secureTextEntry
+        value={phone}
+        placeholder="87654321"
         autoCapitalize="none"
+        keyboardType="numeric"
+        style={styles.input}
+        left={<TextInput.Icon name="phone" />}
       />
-      <Button 
-        title="Save Profile" 
-        onPress={handleSaveProfile} 
-        loading={loading}
-        containerStyle={styles.button} 
+      <TextInput
+        label="Password (leave blank to keep current)"
+        mode="outlined"
+        onChangeText={setPassword}
+        value={password}
+        secureTextEntry
+        placeholder="Password"
+        autoCapitalize="none"
+        style={styles.input}
+        left={<TextInput.Icon name="lock" />}
       />
+      {loading ? (
+        <ActivityIndicator size="large" color="#0000ff" style={styles.activityIndicator} />
+      ) : (
+        <Button 
+          mode="contained" 
+          onPress={handleSaveProfile} 
+          style={styles.button}
+        >
+          Save Profile
+        </Button>
+      )}
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 20,
+    flexGrow: 1,
+    justifyContent: "center",
+    padding: 12,
+    alignItems: 'center',
   },
   title: {
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: 24,
+    fontWeight: "bold",
     marginBottom: 20,
-    textAlign: 'center',
+    textAlign: "center",
+    color: "#000000",
+  },
+  input: {
+    marginBottom: 15,
+    backgroundColor: "white",
+    width: '100%',
+    maxWidth: 400,
   },
   button: {
-    marginTop: 20,
+    marginTop: 10,
+    paddingVertical: 8,
+    width: Platform.OS === 'web' ? '50%' : '100%',
+    maxWidth: 400,
+  },
+  activityIndicator: {
+    marginVertical: 20,
   },
 });
-
 export default EditProfile;

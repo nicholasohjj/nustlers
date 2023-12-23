@@ -4,19 +4,18 @@ import {
   StyleSheet,
   View,
   ActivityIndicator,
-  TouchableOpacity,
+  Platform,
 } from "react-native";
-import { supabase } from "./supabase";
-
-import { Input } from "react-native-elements";
+import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
 
-const Login = () => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordVisibility, setPasswordVisibility] = useState(true);
+  
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -52,11 +51,16 @@ const Login = () => {
       setLoading(false);
     }
   };
-  const navigateToSignUp = () => navigation.navigate("SignupForm");
+  const navigateToSignUp = () => navigation.navigate("Signup");
+  const navigateToResetPassword = () => {
+    navigation.navigate("ResetPassword");
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login to Your Account</Text>
+      <Text style={styles.title}>Welcome back</Text>
+      <Text> Enter the email associated with your account</Text>
+
       <TextInput
         label="Email"
         mode="outlined"
@@ -65,8 +69,7 @@ const Login = () => {
         placeholder="email@address.com"
         autoCapitalize="none"
         style={styles.input}
-        left={<TextInput.Icon name="email" />}
-        theme={{ colors: { primary: "black", underlineColor: 'transparent', background: "white" } }}
+        left={<TextInput.Icon icon="email" />}
       />
       <TextInput
         label="Password"
@@ -77,10 +80,22 @@ const Login = () => {
         placeholder="Password"
         autoCapitalize="none"
         style={styles.input}
-        left={<TextInput.Icon name="lock" />}
-        right={<TextInput.Icon name={passwordVisibility ? "eye-off" : "eye"} onPress={() => setPasswordVisibility(!passwordVisibility)} />}
-        theme={{ colors: { primary: "black", underlineColor: 'transparent', background: "white" } }}
+        left={<TextInput.Icon icon="lock" />}
+        right={
+          <TextInput.Icon
+            icon={passwordVisibility ? "eye-off" : "eye"}
+            onPress={() => setPasswordVisibility(!passwordVisibility)}
+          />
+        }
       />
+      <Button
+        onPress={navigateToResetPassword}
+        style={styles.resetPasswordPrompt}
+      >
+        <Text style={styles.resetPasswordText}>
+          Forgot password? Reset here
+        </Text>
+      </Button>
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
@@ -100,6 +115,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 12,
+    alignItems: "center", // Center items horizontally
   },
   title: {
     fontSize: 24,
@@ -111,17 +127,32 @@ const styles = StyleSheet.create({
   input: {
     marginBottom: 15,
     backgroundColor: "white",
+    width: "100%", // Ensure full width on mobile
+    maxWidth: 400, // Limit width on larger screens
   },
   button: {
     marginTop: 10,
     paddingVertical: 8,
+    width: Platform.OS === "web" ? "50%" : "100%", // Half width on web, full on mobile
+    maxWidth: 400, // Ensure buttons are not too wide on larger screens
   },
   signUpPrompt: {
     marginTop: 20,
-    textAlign: 'center',
+    textAlign: "center",
+    width: "100%", // Full width to align text properly
+    maxWidth: 400, // Ensure buttons are not too wide on larger screens
   },
   signUpText: {
-    color: "black", // Set color of sign up text to black
-  },  
+    color: "black",
+  },
+  resetPasswordPrompt: {
+    marginTop: 10,
+    textAlign: "center",
+    width: "100%", // Full width to align text properly
+    maxWidth: 400, // Ensure buttons are not too wide on larger screens
+  },
+  resetPasswordText: {
+    color: "blue", // Use a distinctive color for the link
+  },
 });
-export default Login;
+export default LoginForm;

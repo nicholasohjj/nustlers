@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Alert, StyleSheet, View, ActivityIndicator } from "react-native";
+import { View, StyleSheet, Platform, ActivityIndicator } from 'react-native';
 import { supabase } from "../supabase";
-import { Input } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
 
@@ -90,10 +89,9 @@ const SignupForm = () => {
         onChangeText={setDisplayName}
         value={displayName}
         placeholder="John Doe"
-        autoCapitalize="none"
         style={styles.input}
-        left={<TextInput.Icon name="account" />}
-        theme={{ colors: { background: "white", primary: "#6200ee" } }}
+        left={<TextInput.Icon icon="account" />}
+
       />
       <TextInput
         label="Email"
@@ -104,8 +102,8 @@ const SignupForm = () => {
         autoCapitalize="none"
         keyboardType="email-address"
         style={styles.input}
-        left={<TextInput.Icon name="email" />}
-        theme={{ colors: { background: "white", primary: "#6200ee" } }}
+        left={<TextInput.Icon icon="email" />}
+
       />
       <TextInput
         label="Phone Number"
@@ -116,8 +114,8 @@ const SignupForm = () => {
         autoCapitalize="none"
         keyboardType="numeric"
         style={styles.input}
-        left={<TextInput.Icon name="phone" />}
-        theme={{ colors: { background: "white", primary: "#6200ee" } }}
+        left={<TextInput.Icon icon="phone" />}
+
       />
       <TextInput
         label="Password"
@@ -128,14 +126,13 @@ const SignupForm = () => {
         placeholder="Password"
         autoCapitalize="none"
         style={styles.input}
-        left={<TextInput.Icon name="lock" />}
+        left={<TextInput.Icon icon="lock" />}
         right={
           <TextInput.Icon
-            name={passwordVisibility ? "eye-off" : "eye"}
+            icon={passwordVisibility ? "eye-off" : "eye"}
             onPress={() => setPasswordVisibility(!passwordVisibility)}
           />
         }
-        theme={{ colors: { background: "white", primary: "#6200ee" } }}
       />
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
@@ -144,6 +141,9 @@ const SignupForm = () => {
           Sign up
         </Button>
       )}
+              <Button mode="contained" onPress={test} style={styles.button}>
+          Sign up test
+        </Button>
     </View>
   );
 };
@@ -153,6 +153,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 12,
+    alignItems: 'center', // Center items horizontally
   },
   title: {
     fontSize: 24,
@@ -163,11 +164,15 @@ const styles = StyleSheet.create({
   },
   input: {
     marginBottom: 15,
-    backgroundColor: "white", // Ensures the background is white
+    backgroundColor: "white",
+    width: '100%', // Ensure full width on mobile
+    maxWidth: 400, // Limit width on larger screens
   },
   button: {
     marginTop: 10,
     paddingVertical: 8,
+    width: Platform.OS === 'web' ? '50%' : '100%', // Half width on web, full on mobile
+    maxWidth: 400, // Ensure buttons are not too wide on larger screens
   },
 });
 

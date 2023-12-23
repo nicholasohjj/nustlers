@@ -1,42 +1,66 @@
-import React, { useEffect } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, StyleSheet, ActivityIndicator, Platform } from "react-native";
+import { Text, Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
 const EmailVerification = () => {
   const navigation = useNavigation();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Redirect to the welcome screen after 5 seconds
     const timer = setTimeout(() => {
-      navigation.navigate("Welcome");
+      setIsLoading(false);
+      if (navigation.isFocused()) {
+        navigation.navigate("Welcome");
+      }
     }, 5000);
 
     return () => clearTimeout(timer);
   }, [navigation]);
 
+
   return (
-    <View style={styles.centeredContainer}>
-      <Text style={styles.verificationText}>
+    <View style={styles.container}>
+      <Text style={styles.title}>
         Please check your email to verify your account.
       </Text>
-      <Button title="Go to Welcome" onPress={() => navigation.navigate("Welcome")} />
+      {isLoading ? (
+        <ActivityIndicator size="large" color="#0000ff" />
+      ) : (
+        <Button
+          mode="contained"
+          onPress={() => navigation.navigate("Welcome")}
+          style={styles.button}
+        >
+          Go to Welcome
+        </Button>
+      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  centeredContainer: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
+    justifyContent: "center",
+    padding: 12,
+    alignItems: "center",
   },
-  verificationText: {
-    fontSize: 18,
-    textAlign: 'center',
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
     marginBottom: 20,
+    textAlign: "center",
+    color: "#000000",
   },
-  // Add more styles if needed
+  button: {
+    marginTop: 10,
+    paddingVertical: 8,
+    width: Platform.OS === "web" ? "50%" : "100%",
+    maxWidth: 400,
+  },
 });
+
 
 export default EmailVerification;

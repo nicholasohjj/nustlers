@@ -1,9 +1,18 @@
 import Main from "./src/Main";
 import { NavigationContainer } from "@react-navigation/native";
-import { PaperProvider } from "react-native-paper";
 import * as Linking from "expo-linking";
+import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
 
 const prefix = Linking.createURL("/");
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    text: '#000000', // Set the text color to black
+    // You can also define other color properties as needed
+  },
+};
 
 const linking = {
   prefixes: [prefix],
@@ -18,7 +27,7 @@ const linking = {
 
 const App = () => {
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <NavigationContainer linking={linking}>
         <Main />
       </NavigationContainer>
