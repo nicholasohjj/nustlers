@@ -1,41 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text, StyleSheet } from "react-native";
-import Auth from "./Auth";
-import { supabase } from "./supabase";
-import HomeScreen from "./HomeScreen";
-
+import {StyleSheet } from "react-native";
+import Content from "./Content";
+import Welcome from "./Welcome";
+import Login from "./Login";
+import Signup from './signup/Signup'
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
-  const [session, setSession] = useState(null);
-
-  useEffect(() => {
-    const handleSessionStateChange = (_event, session) => {
-      setSession(session);
-    };
-
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-    });
-
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      handleSessionStateChange
-    );
-
-    return () => {
-      authListener.unsubscribe();
-    };
-  }, []);
-
-
-
   return (
-    <Stack.Navigator  initialRouteName="Login">
-      <Stack.Screen name="Home">
-        {(props) => <HomeScreen {...props} session={session} />}
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false, // This hides the header for all screens in this stack
+      }}
+      initialRouteName="Welcome"
+    >      
+    <Stack.Screen name="Welcome" component={Welcome} />
+
+      <Stack.Screen name="Content">
+        {(props) => <Content {...props} />}
       </Stack.Screen>
-      <Stack.Screen name="Login" component={Auth} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Signup" component={Signup} />
+
     </Stack.Navigator>
   );
 };

@@ -1,14 +1,17 @@
 import Main from "./src/Main";
 import { NavigationContainer } from "@react-navigation/native";
 import { PaperProvider } from "react-native-paper";
+import * as Linking from "expo-linking";
 
+const prefix = Linking.createURL("/");
 
 const linking = {
-  prefixes: [], // Add your app's prefix here if necessary
+  prefixes: [prefix],
   config: {
     screens: {
       Home: "home",
       Login: "login",
+      Signup: "signup",
     },
   },
 };
@@ -16,9 +19,9 @@ const linking = {
 const App = () => {
   return (
     <PaperProvider>
-        <NavigationContainer linking={linking}>
-          <Main />
-        </NavigationContainer>
+      <NavigationContainer linking={linking}>
+        <Main />
+      </NavigationContainer>
     </PaperProvider>
   );
 };
