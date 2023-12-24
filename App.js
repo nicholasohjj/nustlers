@@ -22,7 +22,15 @@ const linking = {
       Home: {
         path: 'home',
         screens: {
-          Content: 'content',
+          Content: {
+            path: 'content',
+            screens: {
+              Map: 'map',
+              Display: 'display',
+              Sample: 'sample',
+              Account: 'account',
+            },
+          },
           EditProfile: 'editprofile',
           // Add other nested routes under 'Home' here if any
         },

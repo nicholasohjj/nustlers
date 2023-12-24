@@ -3,7 +3,8 @@ import { StyleSheet } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
-import Map from "./Map";
+import Map from "./map/Map";
+import Display from "./map/Display";
 import Sample from "./Sample";
 import Account from "./Account";
 const RecentsRoute = () => <Text>Recents</Text>;
@@ -39,7 +40,7 @@ const Content = () => {
       case "test":
         return <Sample jumpTo={jumpTo} />;
       case "map":
-        return <Map jumpTo={jumpTo} />;
+        return <Display jumpTo={jumpTo} />;
       case "recents":
         return <RecentsRoute jumpTo={jumpTo} />;
       case "account":

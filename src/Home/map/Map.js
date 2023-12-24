@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { View, StyleSheet, Platform, Alert } from "react-native";
 import { Text, FAB } from "react-native-paper";
 import * as Location from 'expo-location';
+import { useNavigation } from "@react-navigation/native";
+const mapStyle = require("./mapStyle.json");
 
 const Map = () => {
   let MapView, Circle, Marker;
@@ -10,7 +12,7 @@ const Map = () => {
     Circle = require("react-native-maps").Circle;
     Marker = require("react-native-maps").Marker;
   }
-
+  const navigation = useNavigation();
   const mapRef = useRef(null);
   const [locationData, setLocationData] = useState({
     region: {
@@ -56,6 +58,11 @@ const Map = () => {
     }
   };
 
+  const handleMarkerPress = (marker) => {
+    navigation.navigate('Details', { marker });
+  };
+
+
   const renderMarkers = useMemo(() => {
     const markers = require("./markers.json");
     return markers.map((marker, index) => (
@@ -69,6 +76,7 @@ const Map = () => {
         }}
         title={marker.title}
         description={marker.description}
+        onPress={() => handleMarkerPress(marker)}
       />
     ));
   }, []);
@@ -82,6 +90,9 @@ const Map = () => {
         style={styles.map}
         region={locationData.region}
         showsIndoorLevelPicker={true}
+        customMapStyle={mapStyle}
+        showsMyLocationButton={false}
+        loadingEnabled={true}
       >
         {renderMarkers}
         {Circle && (

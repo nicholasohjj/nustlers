@@ -9,7 +9,7 @@ const EditProfile = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [preferredName, setPreferredName] = useState('');
   const [email, setEmail] = useState('');
-  const [mobileNumber, setMobileNumber] = useState('');
+  const [mobileNumber, setMobileNumber] = useState("");
   const [loading, setLoading] = useState(false);
 
   const navigation = useNavigation();
@@ -32,7 +32,7 @@ const EditProfile = () => {
       setCurrentUser(user); // Store the user data in state
       setPreferredName(user.user_metadata.displayName || '');
       setEmail(user.email || '');
-      setMobileNumber(user.user_metadata.phone || ''); // Assuming phone number is stored in user_metadata
+      setMobileNumber(user.user_metadata.phone.toString() || ''); // Convert to string
 
     }
 

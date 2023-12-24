@@ -2,6 +2,7 @@ import { React } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EditProfile from "./EditProfile";
 import Content from "./Content";
+import Feedback from "./feedback";
 const HomeStack = createNativeStackNavigator();
 
 const Home = () => {
@@ -14,6 +15,8 @@ const Home = () => {
     >
       <HomeStack.Screen name="Content" component={Content} />
       <HomeStack.Screen name="EditProfile" component={EditProfile} />
+      <HomeStack.Screen name="Feedback" component={Feedback} />
+
     </HomeStack.Navigator>
   );
 };

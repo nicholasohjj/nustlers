@@ -19,6 +19,10 @@ const Account = () => {
       const handleEditProfile = () => {
         navigation.navigate("EditProfile");
       };
+
+      const handleFeedback = () => {
+        navigation.navigate("Feedback");
+      };
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.container}>
@@ -27,7 +31,7 @@ const Account = () => {
           <ListItem title="Edit Profile" icon="account-edit" onPress={handleEditProfile}/>
           <ListItem title="Transaction History" icon="history"onPress={handleEditProfile} />
           <ListItem title="Settings" icon="cog"onPress={handleEditProfile} />
-          <ListItem title="Feedback" icon="comment-outline"onPress={handleEditProfile} />
+          <ListItem title="Feedback" icon="comment-outline"onPress={handleFeedback} />
           <ListItem title="FAQ/Live Chat" icon="chat" onPress={handleEditProfile}/>
           <ListItem title="About the App" icon="information" onPress={handleEditProfile}/>
           <ListItem title="Terms and Conditions" icon="file-document"onPress={handleEditProfile} />
