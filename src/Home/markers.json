@@ -1,0 +1,100 @@
+[
+  {
+    "coordinate": {
+      "latitude": 1.303925139446274,
+      "longitude": 103.7735818972158
+    },
+    "title": "Fine Food",
+    "description": "Fine Food is a food court located at the second level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.3047128340945509,
+      "longitude": 103.77272560188162
+    },
+    "title": "Flavours@UTown",
+    "description": "Flavours@UTown is a food court located at the second level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.303702928310673,
+      "longitude": 103.7740344972159
+    },
+    "title": "CHOP CHOP by PUTIEN",
+    "description": "CHOP CHOP by PUTIEN is a restaurant located at the second level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.3044684114152856,
+      "longitude": 103.77245653420039
+    },
+    "title": "Bismillah Biryani@NUS",
+    "description": "Bismillah Biryani@NUS is a restaurant located at the first level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.304058528310359,
+      "longitude": 103.77410520887246
+    },
+    "title": "Hwang’s Korean Restaurant",
+    "description": "Hwang’s Korean Restaurant is a restaurant located at the second level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.304297183069065, 
+      "longitude": 103.77391343094708
+    },
+    "title": "Sapore Italian Restaurant",
+    "description": "Sapore Italian Restaurant is a restaurant located at the second level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.305464310457617,
+      "longitude": 103.77310541280833
+    },
+    "title": "Starbucks@ERC",
+    "description": "Starbucks@ERC is a restaurant located at the first level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.304469467694594, 
+      "longitude": 103.77245966828718
+    },
+    "title": "Subway",
+    "description": "Subway is a restaurant located at the first level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.3047811884067155, 
+      "longitude": 103.77268093991431
+    },
+    "title": "Supersnacks",
+    "description": "Supersnacks is a restaurant located at the first level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.303661443025447, 
+      "longitude": 103.77406699176343
+    },
+    "title": "The Royals Bistro",
+    "description": "The Royals Bistro is a restaurant located at the first level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.3038661986891515, 
+      "longitude": 103.77435149721578
+    },
+    "title": "Udon Don Bar",
+    "description": "Udon Don Bar is a restaurant located at the first level."
+  },
+  {
+    "coordinate": {
+      "latitude": 1.3047284337522933, 
+      "longitude": 103.77255425620469
+    },
+    "title": "Waa Cow!",
+    "description": "Waa Cow! is a restaurant located at the first level."
+  }
+]
+
+

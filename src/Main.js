@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Content from "./content/Content";
+import Home from "./Home/Home";
 import { supabase } from "./supabase";
 import { useNavigation, CommonActions } from "@react-navigation/native";
 import Welcome from "./Welcome";
@@ -19,7 +19,7 @@ const Main = () => {
     const checkUserLoggedIn = async () => {
       try {
         const { data: { user } } = await supabase.auth.getUser();
-        setInitialRouteName(user ? 'Content' : 'Welcome'); // Set the initial route based on user status
+        setInitialRouteName(user ? 'Home' : 'Welcome'); // Set the initial route based on user status
       } catch (error) {
         console.error('Error checking user login status', error);
         setInitialRouteName("Welcome");
@@ -33,7 +33,7 @@ const Main = () => {
 
   if (isLoading) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyHome: 'center', alignItems: 'center' }}>
         <ActivityIndicator size="large" />
       </View>
     );
@@ -45,7 +45,7 @@ const Main = () => {
       initialRouteName={initialRouteName} // Use the state to dynamically set the initial route
     >
       <Stack.Screen name="Welcome" component={Welcome} />
-      <Stack.Screen name="Content" component={Content} />
+      <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
     </Stack.Navigator>

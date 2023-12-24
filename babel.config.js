@@ -5,7 +5,15 @@ module.exports = function(api) {
     plugins: [
       [
         'module-resolver', 
+        {
+          root: ['./src'], // Assuming your source files are in the 'src' directory
+          alias: {
+            'react-native-maps': 'react-native-web-maps',
+            // Additional aliases can be added here
+          },
+        }
       ],
+
       // Other plugins can be added here
     ],
     env: {

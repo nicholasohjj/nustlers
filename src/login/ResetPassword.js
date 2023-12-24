@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Alert, Platform } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { Text, TextInput, Button, ActivityIndicator } from 'react-native-paper';  
+import { supabase } from "../supabase";
+
 const isValidEmail = email => {
   // Simple regex for email validation
   const re = /\S+@\S+\.\S+/;
@@ -13,6 +15,15 @@ const ResetPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation();
 
+  useEffect(() => {
+    supabase.auth.onAuthStateChange(async (event, session) => {
+      if (event == "PASSWORD_RECOVERY") {
+        console.log("Redirecting to reset password")
+      }
+    })
+  }, [])
+
+
   const handleResetPassword = async () => {
     if (!isValidEmail(email)) {
       Alert.alert('Invalid Email', 'Please enter a valid email address.');
@@ -21,6 +32,10 @@ const ResetPassword = () => {
 
     setIsLoading(true);
     try {
+      const { data, error } = await supabase.auth
+      .resetPasswordForEmail(email)
+
+
       // Implement your password reset logic here
       // Example: await yourBackendService.resetPassword(email);
       

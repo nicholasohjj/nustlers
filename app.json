@@ -16,16 +16,37 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.supabase.hacknroll",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to...",
+        "NSMicrophoneUsageDescription": "This app uses the microphone to..."
+      }
     },
     "android": {
+      "package": "com.supabase.hacknroll",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": []
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "description": "Description of your app",
+    "privacy": "public",
+    "githubUrl": "https://github.com/yourusername/your-repo",
+    "notification": {
+      "icon": "./assets/icon.png",
+      "color": "#000000",
+      "iosDisplayInForeground": true,
+      "androidMode": "default"
     }
   }
 }

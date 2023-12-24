@@ -1,9 +1,10 @@
 import Main from "./src/Main";
 import { NavigationContainer } from "@react-navigation/native";
 import * as Linking from "expo-linking";
-import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
+import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
+import { UserProvider } from './src/Home/UserProvider'
 
-const prefix = Linking.createURL("/");
+const prefix = Linking.createURL('/');
 
 const theme = {
   ...DefaultTheme,
@@ -18,18 +19,29 @@ const linking = {
   prefixes: [prefix],
   config: {
     screens: {
-      Home: "home",
-      Login: "login",
-      Signup: "signup",
+      Home: {
+        path: 'home',
+        screens: {
+          Content: 'content',
+          EditProfile: 'editprofile',
+          // Add other nested routes under 'Home' here if any
+        },
+      },
+      Login: 'login',
+      Signup: 'signup',
+      // Add other top-level routes here if any
     },
   },
 };
-
 const App = () => {
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer linking={linking}>
+        <UserProvider>
         <Main />
+
+        </UserProvider>
+
       </NavigationContainer>
     </PaperProvider>
   );

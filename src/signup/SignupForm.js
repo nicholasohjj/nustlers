@@ -13,21 +13,8 @@ const SignupForm = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
 
   const navigation = useNavigation();
-
-  useEffect(() => {
-    checkUserLoggedIn();
-  }, []);
-
   const isNumeric = (value) => {
     return /^\d+$/.test(value); // Regular expression to test if string is numeric
-  };
-  const checkUserLoggedIn = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (user) {
-      navigation.navigate("Content");
-    }
   };
 
   const handleSignUp = async () => {

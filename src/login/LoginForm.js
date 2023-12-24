@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Alert,
   StyleSheet,
@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
 
 const LoginForm = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -36,6 +37,16 @@ const LoginForm = () => {
       setLoading(false);
     }
   };
+
+  const checkUserLoggedIn = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (user) {
+      navigation.navigate("Content");
+    }
+  };
+
   const navigateToSignUp = () => navigation.navigate("Signup");
   const navigateToResetPassword = () => {
     navigation.navigate("ResetPassword");

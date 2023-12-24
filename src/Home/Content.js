@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Alert, } from "react-native";
-import { BottomNavigation, Text, Button } from "react-native-paper";
+import { View, StyleSheet, Alert } from "react-native";
+import { BottomNavigation, Text } from "react-native-paper";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
 import Map from "./Map";
 import Sample from "./Sample";
-
+import Account from "./Account";
 const RecentsRoute = () => <Text>Recents</Text>;
 
-const NotificationsRoute = () => <Text>Notifications</Text>;
-
-const DefaultContent = () => {
+const Content = () => {
   const [userData, setUserData] = useState(null);
   const navigation = useNavigation();
   const [routes] = useState([
@@ -20,13 +18,18 @@ const DefaultContent = () => {
       focusedIcon: "heart",
       unfocusedIcon: "heart-outline",
     },
-    { key: "map", title: "Map", focusedIcon: "map" },
+    {
+      key: "map",
+      title: "Map",
+      focusedIcon: "map",
+      unfocusedIcon: "account-outline",
+    },
     { key: "recents", title: "Recents", focusedIcon: "history" },
     {
-      key: "notifications",
-      title: "Notifications",
-      focusedIcon: "bell",
-      unfocusedIcon: "bell-outline",
+      key: "account",
+      title: "Account",
+      focusedIcon: "account",
+      unfocusedIcon: "account-outline",
     },
   ]);
   const [index, setIndex] = useState(0);
@@ -39,8 +42,8 @@ const DefaultContent = () => {
         return <Map jumpTo={jumpTo} />;
       case "recents":
         return <RecentsRoute jumpTo={jumpTo} />;
-      case "notifications":
-        return <NotificationsRoute jumpTo={jumpTo} />;
+      case "account":
+        return <Account jumpTo={jumpTo} />;
     }
   };
 
@@ -76,9 +79,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   map: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
   },
 });
 
-export default DefaultContent;
+export default Content;
