@@ -1,39 +1,55 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import {StyleSheet } from "react-native";
-import Content from "./Content";
+import Content from "./content/Content";
+import { supabase } from "./supabase";
+import { useNavigation, CommonActions } from "@react-navigation/native";
 import Welcome from "./Welcome";
 import Login from "./login/Login";
-import Signup from './signup/Signup'
+import Signup from './signup/Signup';
+import { ActivityIndicator, View } from 'react-native'; // Import ActivityIndicator and View
+
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
+  const navigation = useNavigation();
+  const [isLoading, setIsLoading] = useState(true);
+  const [initialRouteName, setInitialRouteName] = useState('Welcome'); // State for initial route name
+
+  useEffect(() => {
+    const checkUserLoggedIn = async () => {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        setInitialRouteName(user ? 'Content' : 'Welcome'); // Set the initial route based on user status
+      } catch (error) {
+        console.error('Error checking user login status', error);
+        setInitialRouteName("Welcome");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkUserLoggedIn();
+  }, [navigation]);
+
+  if (isLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
+
   return (
     <Stack.Navigator
-      screenOptions={{
-        headerShown: false, // This hides the header for all screens in this stack
-      }}
-      initialRouteName="Welcome"
-    >      
-    <Stack.Screen name="Welcome" component={Welcome} />
-
-      <Stack.Screen name="Content">
-        {(props) => <Content {...props} />}
-      </Stack.Screen>
+      screenOptions={{ headerShown: false }}
+      initialRouteName={initialRouteName} // Use the state to dynamically set the initial route
+    >
+      <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Screen name="Content" component={Content} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
-      
-
     </Stack.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default Main;

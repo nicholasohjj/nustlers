@@ -1,6 +1,6 @@
 import { React } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import EditProfile from "./EditProfile";
+import EditProfile from "../EditProfile";
 import DefaultContent from "./DefaultContent";
 const ContentStack = createNativeStackNavigator();
 

@@ -1,15 +1,29 @@
 import React, { useEffect } from "react";
-import { StyleSheet } from "react-native";
-
-
+import { useNavigation } from "@react-navigation/native";
+import { supabase } from "../supabase";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginForm from "./LoginForm";
 import ResetPassword from "./ResetPassword";
 
 const LoginStack = createNativeStackNavigator();
 
-
 const Login = () => {
+  const navigation = useNavigation();
+
+  const checkUserLoggedIn = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (user) {
+      navigation.navigate("Content");
+    }
+  };
+
+  useEffect(() => {
+    checkUserLoggedIn();
+  }, []);
+
+
   return (
     <LoginStack.Navigator
     screenOptions={{

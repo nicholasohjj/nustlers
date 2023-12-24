@@ -16,21 +16,6 @@ const LoginForm = () => {
   const [loading, setLoading] = useState(false);
   const [passwordVisibility, setPasswordVisibility] = useState(true);
   
-  const navigation = useNavigation();
-
-  useEffect(() => {
-    checkUserLoggedIn();
-  }, []);
-
-  const checkUserLoggedIn = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (user) {
-      navigation.navigate("Content");
-    }
-  };
-
   const handleLogin = async () => {
     if (!email || !password) {
       Alert.alert("Error", "Please enter both email and password.");

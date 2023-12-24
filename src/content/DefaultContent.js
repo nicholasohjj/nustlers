@@ -1,44 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Alert, } from "react-native";
 import { BottomNavigation, Text, Button } from "react-native-paper";
-import { supabase } from "./supabase";
+import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
-
-import Sample from "./content/Sample";
-
-const MusicRoute = ({ userData }) => {
-  const navigation = useNavigation(); // Get the navigation object
-  const isMobile = Platform.OS === 'web' ? false : true;
-
-  const handleLogout = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      Alert.alert("Logout Failed", "An error occurred while logging out.");
-    } else {
-      navigation.navigate("Welcome");
-    }
-  };
-  const handleEditProfile = () => {
-    navigation.navigate("EditProfile");
-  };
-
-  return (
-    <View style={styles.container}>
-      <View style={isMobile ? styles.contentMobile : styles.content}>
-        <Text style={styles.title}>{userData ? `Welcome back, ${userData.user_metadata?.displayName}` : "Welcome to Our App!"}</Text>
-      </View>
-
-      <Button mode="contained" onPress={handleEditProfile} style={styles.button}>
-        Edit Profile
-      </Button>
-      <Button mode="outlined" onPress={handleLogout} style={styles.button}>
-        Logout
-      </Button>
-    </View>
-  );
-};
-
-const AlbumsRoute = () => <Text>Albums</Text>;
+import Map from "./Map";
+import Sample from "./Sample";
 
 const RecentsRoute = () => <Text>Recents</Text>;
 
@@ -54,7 +20,7 @@ const DefaultContent = () => {
       focusedIcon: "heart",
       unfocusedIcon: "heart-outline",
     },
-    { key: "albums", title: "Albums", focusedIcon: "album" },
+    { key: "map", title: "Map", focusedIcon: "map" },
     { key: "recents", title: "Recents", focusedIcon: "history" },
     {
       key: "notifications",
@@ -69,8 +35,8 @@ const DefaultContent = () => {
     switch (route.key) {
       case "test":
         return <Sample jumpTo={jumpTo} userData={userData} />;
-      case "albums":
-        return <AlbumsRoute jumpTo={jumpTo} />;
+      case "map":
+        return <Map jumpTo={jumpTo} />;
       case "recents":
         return <RecentsRoute jumpTo={jumpTo} />;
       case "notifications":
@@ -108,17 +74,10 @@ const DefaultContent = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 20,
   },
-  button: {
-    marginTop: 20,
-    width: "80%", // Example style
-    // Add other styling as needed
-  },
-  logoutButton: {
-    marginTop: 20,
+  map: {
+    width: '100%',
+    height: '100%',
   },
 });
 
