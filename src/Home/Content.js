@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Alert } from "react-native";
+import { StyleSheet } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
@@ -37,7 +37,7 @@ const Content = () => {
   const renderScene = ({ route, jumpTo }) => {
     switch (route.key) {
       case "test":
-        return <Sample jumpTo={jumpTo} userData={userData} />;
+        return <Sample jumpTo={jumpTo} />;
       case "map":
         return <Map jumpTo={jumpTo} />;
       case "recents":

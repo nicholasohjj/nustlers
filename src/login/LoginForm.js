@@ -43,7 +43,7 @@ const LoginForm = () => {
       data: { user },
     } = await supabase.auth.getUser();
     if (user) {
-      navigation.navigate("Content");
+      navigation.navigate("Home");
     }
   };
 
