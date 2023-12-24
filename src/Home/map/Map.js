@@ -1,17 +1,21 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { View, StyleSheet, Platform, Alert } from "react-native";
+import { View, StyleSheet, Platform, Alert, Animated } from "react-native";
 import { Text, FAB } from "react-native-paper";
 import * as Location from 'expo-location';
 import { useNavigation } from "@react-navigation/native";
 const mapStyle = require("./mapStyle.json");
 
 const Map = () => {
+  const pulseAnim = useRef(new Animated.Value(1)).current;
+
   let MapView, Circle, Marker;
   if (Platform.OS !== "web") {
     MapView = require("react-native-maps").default;
     Circle = require("react-native-maps").Circle;
     Marker = require("react-native-maps").Marker;
   }
+  const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+
   const navigation = useNavigation();
   const mapRef = useRef(null);
   const [locationData, setLocationData] = useState({
@@ -47,10 +51,35 @@ const Map = () => {
   };
 
   useEffect(() => {
+    let isMounted = true; // Flag to check if component is mounted
+  
+    const animate = () => {
+      if (!isMounted) return;
+  
+      pulseAnim.setValue(1);
+      Animated.sequence([
+        Animated.timing(pulseAnim, {
+          toValue: 1.2,
+          duration: 1000,
+          useNativeDriver: true
+        }),
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 1000,
+          useNativeDriver: true
+        })
+      ]).start(() => animate());
+    };
+  
     if (isMobile) {
       fetchLocation();
     }
-  }, [isMobile]);
+    animate();
+  
+    return () => {
+      isMounted = false; // Set the flag to false when component unmounts
+    };
+  }, [isMobile, pulseAnim]);
 
   const goToUserLocation = () => {
     if (locationData.userLocation) {
@@ -61,6 +90,16 @@ const Map = () => {
   const handleMarkerPress = (marker) => {
     navigation.navigate('Details', { marker });
   };
+
+  const animatedRadius = pulseAnim.interpolate({
+    inputRange: [1, 1.2],
+    outputRange: [10, 12] // Example values, adjust as needed
+  });
+
+  const animatedFillColor = pulseAnim.interpolate({
+    inputRange: [1, 1.2],
+    outputRange: ['rgba(135, 206, 250, 0.5)', 'rgba(135, 206, 250, 0.7)']
+  });
 
 
   const renderMarkers = useMemo(() => {
@@ -95,15 +134,15 @@ const Map = () => {
         loadingEnabled={true}
       >
         {renderMarkers}
-        {Circle && (
-          <Circle
-            center={locationData.region}
-            radius={10}
-            fillColor="rgba(135, 206, 250, 0.5)"
-            strokeColor="rgba(0, 0, 255, 1)"
-            strokeWidth={2}
-          />
-        )}
+          {Circle && (
+            <AnimatedCircle
+              center={locationData.region}
+              radius={animatedRadius}
+              fillColor={animatedFillColor}
+              strokeColor="rgba(0, 0, 255, 1)"
+              strokeWidth={2}
+            />
+          )}
       </MapView>
       <FAB
         icon="crosshairs-gps"
