@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3001";
+const baseURL = "http://localhost:3000";
 
 export const getMarkers = async () => {
     try {
-    const response = await axios.get(`${baseURL}/query`);
+    const response = await axios.get(`${baseURL}/markers`);
     return response.data;
   } catch (error) {
     console.error("Error fetching markers:", error);

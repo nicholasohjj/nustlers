@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
-import { ActivityIndicator, Text, Card, Paragraph } from 'react-native-paper';
-import { getMarkers } from "../services/markers";
+import { View, StyleSheet, FlatList, Image } from 'react-native';
+import { ActivityIndicator, Text, Card, Paragraph, Button, TextInput, Modal } from 'react-native-paper';
+import { getMarkers, addMarker } from "../services/markers";
 
 const Information = () => {
     const [markers, setMarkers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [addModalVisible, setAddModalVisible] = useState(false);
+    const [newMarker, setNewMarker] = useState({ title: '', description: '', image: '', coordinate: { latitude: 0, longitude: 0 } });
 
     useEffect(() => {
+        fetchMarkers();
+    }, []);
+
+    const fetchMarkers = () => {
         setLoading(true);
         getMarkers()
             .then(data => {
@@ -17,10 +23,22 @@ const Information = () => {
             })
             .catch(err => {
                 console.error(err);
-                setError(err);
+                setError("Error fetching data: " + err.message);
                 setLoading(false);
             });
-    }, []);
+    };
+
+    const handleAddMarker = () => {
+        addMarker(newMarker)
+            .then(() => {
+                fetchMarkers();
+                setAddModalVisible(false);
+            })
+            .catch(err => {
+                console.error(err);
+                setError("Error adding marker: " + err.message);
+            });
+    };
 
     if (loading) {
         return (
@@ -33,7 +51,7 @@ const Information = () => {
     if (error) {
         return (
             <View style={styles.container}>
-                <Text>Error fetching data.</Text>
+                <Text>{error}</Text>
             </View>
         );
     }
@@ -41,21 +59,43 @@ const Information = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.header}>Information</Text>
-            <Text style={styles.header}>{JSON.stringify(markers)}</Text>
-
+            <Button onPress={() => setAddModalVisible(true)}>
+                Add Marker
+            </Button>
             <FlatList
                 data={markers}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item }) => (
                     <Card style={styles.card}>
-                        <Card.Title title={item} />
+                        <Card.Title title={item.title} />
                         <Card.Content>
-                            <Paragraph>{item}</Paragraph>
-                            {/* Include other details as needed */}
+                            <Image source={{ uri: item.image }} style={styles.image} />
+                            <Paragraph>{JSON.stringify(item.coordinate)}</Paragraph>
+                            <Paragraph>{item.description}</Paragraph>
                         </Card.Content>
                     </Card>
                 )}
             />
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={addModalVisible}
+                onRequestClose={() => {
+                    setAddModalVisible(!addModalVisible);
+                }}
+            >
+                <View style={styles.modalView}>
+                    <TextInput placeholder="Title" onChangeText={(text) => setNewMarker({ ...newMarker, title: text })} />
+                    <TextInput placeholder="Description" onChangeText={(text) => setNewMarker({ ...newMarker, description: text })} />
+                    <TextInput placeholder="Image URL" onChangeText={(text) => setNewMarker({ ...newMarker, image: text })} />
+                    <Button onPress={handleAddMarker}>
+                        Add Marker
+                    </Button>
+                    <Button onPress={() => setAddModalVisible(false)} >
+                        Close
+                    </Button>
+                </View>
+            </Modal>
         </View>
     );
 };
@@ -73,6 +113,26 @@ const styles = StyleSheet.create({
     },
     card: {
         marginBottom: 10,
+    },
+    image: {
+        width: '100%',
+        height: 200,
+        resizeMode: 'contain',
+    },
+    modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
     },
 });
 
