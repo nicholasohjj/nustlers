@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, Platform } from 'react-native';
 import { Text, TextInput, Button, Menu, Provider } from 'react-native-paper';
+import { useNavigation } from "@react-navigation/native";
 
 const Feedback = () => {
   const [selectedTopic, setSelectedTopic] = useState('Account');
   const [feedbackText, setFeedbackText] = useState('');
   const [menuVisible, setMenuVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigation = useNavigation();
 
   const handleSubmit = () => {
-    // Handle the submit action
+    setLoading(true);
     console.log('Submitted Feedback:', selectedTopic, feedbackText);
+    // Simulate a network request
+    setTimeout(() => setLoading(false), 2000);
     // Add logic to send feedback to a server or handle it as needed
+    navigation.navigate("Content");
+
   };
 
   return (
@@ -25,7 +32,7 @@ const Feedback = () => {
             <Button 
               mode="outlined" 
               onPress={() => setMenuVisible(true)} 
-              style={styles.menuButton}
+              style={styles.input}
             >
               {selectedTopic}
             </Button>
@@ -39,19 +46,19 @@ const Feedback = () => {
           mode="outlined"
           label="Your feedback"
           multiline
-          numberOfLines={5}  // Adjust number of lines for bigger text area
+          numberOfLines={5}
           onChangeText={setFeedbackText}
           value={feedbackText}
           style={styles.input}
         />
 
-        <Button
-          mode="contained"
-          onPress={handleSubmit}
-          style={styles.button}
-        >
-          Submit
-        </Button>
+        {loading ? (
+          <ActivityIndicator size="large" color="#0000ff" />
+        ) : (
+          <Button mode="contained" onPress={handleSubmit} style={styles.button}>
+            Submit
+          </Button>
+        )}
       </View>
     </Provider>
   );
@@ -60,25 +67,28 @@ const Feedback = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    justifyContent: 'center',
+    justifyContent: "center",
+    padding: 12,
+    alignItems: "center",
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20,
-    textAlign: 'center',
-  },
-  menuButton: {
-    marginBottom: 20,
-    width: '100%', // Set button width to full container width
+    textAlign: "center",
+    color: "#000000",
   },
   input: {
-    marginBottom: 20,
-    height: 120, // Increase height for bigger text area
+    marginBottom: 15,
+    backgroundColor: "white",
+    width: "100%",
+    maxWidth: 400,
   },
   button: {
     marginTop: 10,
+    paddingVertical: 8,
+    width: Platform.OS === "web" ? "50%" : "100%",
+    maxWidth: 400,
   },
 });
 

@@ -3,10 +3,11 @@ import { StyleSheet } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
-import Map from "./map/Map";
 import Display from "./map/Display";
 import Sample from "./Sample";
 import Account from "./Account";
+import Information from "./Information";
+
 const RecentsRoute = () => <Text>Recents</Text>;
 
 const Content = () => {
@@ -25,7 +26,12 @@ const Content = () => {
       focusedIcon: "map",
       unfocusedIcon: "account-outline",
     },
-    { key: "recents", title: "Recents", focusedIcon: "history" },
+    {
+      key: "information",
+      title: "Information",
+      focusedIcon: "information",
+      unfocusedIcon: "information-outline",
+    },
     {
       key: "account",
       title: "Account",
@@ -41,8 +47,8 @@ const Content = () => {
         return <Sample jumpTo={jumpTo} />;
       case "map":
         return <Display jumpTo={jumpTo} />;
-      case "recents":
-        return <RecentsRoute jumpTo={jumpTo} />;
+      case "information":
+        return <Information jumpTo={jumpTo} />;
       case "account":
         return <Account jumpTo={jumpTo} />;
     }

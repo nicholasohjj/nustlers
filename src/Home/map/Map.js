@@ -3,7 +3,6 @@ import { View, StyleSheet, Platform, Alert, Animated } from "react-native";
 import { Text, FAB } from "react-native-paper";
 import * as Location from 'expo-location';
 import { useNavigation } from "@react-navigation/native";
-const mapStyle = require("./mapStyle.json");
 
 const Map = () => {
   const pulseAnim = useRef(new Animated.Value(1)).current;
@@ -15,6 +14,7 @@ const Map = () => {
     Marker = require("react-native-maps").Marker;
   }
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+  const mapStyle = require("./mapStyle.json");
 
   const navigation = useNavigation();
   const mapRef = useRef(null);

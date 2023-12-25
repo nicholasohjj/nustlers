@@ -32,6 +32,8 @@ const linking = {
             },
           },
           EditProfile: 'editprofile',
+          Feedback: 'feedback2',
+
           // Add other nested routes under 'Home' here if any
         },
       },

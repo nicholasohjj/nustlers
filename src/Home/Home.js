@@ -2,13 +2,13 @@ import { React } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EditProfile from "./EditProfile";
 import Content from "./Content";
-import Feedback from "./feedback";
+import Feedback from "./Feedback";
 const HomeStack = createNativeStackNavigator();
 
 const Home = () => {
   return (
     <HomeStack.Navigator
-      initialRouteName="DefaultHome"
+      initialRouteName="Content"
       screenOptions={{
         headerShown: false // This hides the header for all screens in this stack
       }}

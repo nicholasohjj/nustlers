@@ -1,6 +1,6 @@
 import React from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
-import { List, Divider } from 'react-native-paper';
+import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import { Text, List, Divider } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 import { supabase } from "../supabase";
 
