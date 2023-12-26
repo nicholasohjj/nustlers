@@ -126,7 +126,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     textAlign: "left",
-    color: "#000000",
     paddingTop: 20,
     paddingBottom: 20,
   },
@@ -137,16 +136,6 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     width: "100%",
-  },
-  content: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
-  },
-  contentMobile: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexGrow: 1,
   },
 });
 

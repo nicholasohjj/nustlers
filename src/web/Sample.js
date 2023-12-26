@@ -1,14 +1,30 @@
 import React, {useState, useEffect} from "react";
-import { View, StyleSheet, Alert, Platform, ActivityIndicator } from "react-native";
+import { View, StyleSheet, Alert, Platform } from "react-native";
 import { Text } from "react-native-paper";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
-import { useUser } from "./UserProvider";
 const Sample = () => {
   const navigation = useNavigation(); // Get the navigation object
   const isMobile = Platform.OS === "web" ? false : true;
-  const { user } = useUser();
-  
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
+  const fetchProfile = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+          
+    if (user) {
+      console.log(user.user_metadata)
+      setUser(user); // Store the user data in state
+      console.log(user)
+    }
+
+  };
+
 
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
@@ -21,7 +37,6 @@ const Sample = () => {
   const handleEditProfile = () => {
     navigation.navigate("EditProfile");
   };
-
 
   return (
     <View style={styles.container}>

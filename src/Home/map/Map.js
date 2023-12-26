@@ -40,6 +40,7 @@ const Map = ({ route }) => {
       goToUserLocation();
     }
   }, [route.params?.selectedMarker]);
+  
 
 
   useEffect(() => {
@@ -172,18 +173,15 @@ const Map = ({ route }) => {
     return markers.map((marker, index) => (
       <Marker
         key={index}
-        coordinate={{
-          latitude: marker.coordinate.latitude,
-          longitude: marker.coordinate.longitude,
-          latitudeDelta: 0.001,
-          longitudeDelta: 0.001,
-        }}
+        pinColor={currentMarker && currentMarker.title === marker.title ? "blue" : "red"}
+        coordinate={marker.coordinate}
         title={marker.title}
         description={marker.description}
         onPress={() => handleMarkerPress(marker)}
       />
     ));
-  }, []);
+  }, [currentMarker]); // Include currentMarker in dependency array
+  
 
   const handleLocationSearch = () => {
     navigation.navigate("LocationSearch");
@@ -273,7 +271,6 @@ const styles = StyleSheet.create({
   },
   searchBar: {
     width: "100%",
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
     zIndex: 1,
   },
   content: {

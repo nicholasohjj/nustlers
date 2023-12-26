@@ -1,10 +1,21 @@
 import { React } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text } from "react-native-paper";
+import Content from "./Content";
+import Account from "../Home/Account";
+const HomeWebStack = createNativeStackNavigator();
 
 const HomeWeb = () => {
   return (
-    <Text>Home</Text>
+
+    <HomeWebStack.Navigator
+      initialRouteName="Content"
+      screenOptions={{
+        headerShown: false, // This hides the header for all screens in this stack
+      }}
+    >
+      <HomeWebStack.Screen name="Content" component={Content} />
+        <HomeWebStack.Screen name="Account" component={Account} />
+    </HomeWebStack.Navigator>
   );
 };
 

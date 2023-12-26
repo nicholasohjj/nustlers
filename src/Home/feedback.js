@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ActivityIndicator, Platform } from 'react-native';
-import { Text, TextInput, Button, Menu, Provider } from 'react-native-paper';
+import { View, StyleSheet, ActivityIndicator, SafeAreaView } from 'react-native';
+import { Text, TextInput, Button, Surface  } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
+import DropDown from "react-native-paper-dropdown";
 
 const Feedback = () => {
   const [selectedTopic, setSelectedTopic] = useState('Account');
   const [feedbackText, setFeedbackText] = useState('');
-  const [menuVisible, setMenuVisible] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(false);
+
+  const topics = [
+    {
+      value: 'account',
+      label: 'Account',
+    },
+    {
+      value: 'general',
+      label: 'General Feedback',
+    },
+    { value: 'payment', label: 'Payment' },
+  ]
+
   const navigation = useNavigation();
 
   const handleSubmit = () => {
@@ -21,26 +35,21 @@ const Feedback = () => {
   };
 
   return (
-    <Provider>
-      <View style={styles.container}>
-        <Text style={styles.title}>Feedback</Text>
+    <SafeAreaView style={styles.container}>
+    <Text style={styles.title}>Feedback</Text>
         
-        <Menu
-          visible={menuVisible}
-          onDismiss={() => setMenuVisible(false)}
-          anchor={
-            <Button 
-              mode="outlined" 
-              onPress={() => setMenuVisible(true)} 
-              style={styles.input}
-            >
-              {selectedTopic}
-            </Button>
-          }>
-          <Menu.Item onPress={() => { setSelectedTopic('Account'); setMenuVisible(false); }} title="Account" />
-          <Menu.Item onPress={() => { setSelectedTopic('General Feedback'); setMenuVisible(false); }} title="General Feedback" />
-          <Menu.Item onPress={() => { setSelectedTopic('Payment'); setMenuVisible(false); }} title="Payment" />
-        </Menu>
+          <SafeAreaView style={styles.dropdown}>
+            <DropDown
+              label={"Topic"}
+              mode={"outlined"}
+              visible={showDropDown}
+              showDropDown={() => setShowDropDown(true)}
+              onDismiss={() => setShowDropDown(false)}
+              value={selectedTopic}
+              setValue={setSelectedTopic}
+              list={topics}
+            />
+          </SafeAreaView>
 
         <TextInput
           mode="outlined"
@@ -59,30 +68,34 @@ const Feedback = () => {
             Submit
           </Button>
         )}
-      </View>
-    </Provider>
+      </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    padding: 12,
-    alignItems: "center",
+    padding: 20,
+    width: "100%",
+  },
+  dropdown: {
+    marginBottom: 15,
+    width: "100%",
+    maxWidth: 400,
   },
   title: {
+    paddingTop: 40,
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 20,
-    textAlign: "center",
-    color: "#000000",
+    textAlign: "left",
+    paddingBottom: 20,
   },
   input: {
     marginBottom: 15,
     backgroundColor: "white",
     width: "100%",
     maxWidth: 400,
+    
   },
   button: {
     marginTop: 10,
