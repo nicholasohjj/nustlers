@@ -4,10 +4,12 @@ import { supabase } from "../supabase";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginForm from "./LoginForm";
 import ResetPassword from "./ResetPassword";
+import { Platform } from "react-native";
 
 const LoginStack = createNativeStackNavigator();
 
 const Login = () => {
+  const isMobile = Platform.OS !== "web";
   const navigation = useNavigation();
 
   const checkUserLoggedIn = async () => {
@@ -15,7 +17,11 @@ const Login = () => {
       data: { user },
     } = await supabase.auth.getUser();
     if (user) {
-      navigation.navigate("Content");
+      if (isMobile) {
+        navigation.navigate("Home");
+      } else { 
+        navigation.navigate("HomeWeb");
+      }
     }
   };
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, StyleSheet, Platform, Image } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { supabase } from "./supabase";
 import { useNavigation } from "@react-navigation/native";
@@ -26,11 +26,9 @@ const Welcome = () => {
   const handleSignUp = async () => {
     navigation.navigate("Signup");
   };
-  const isMobile = Platform.OS !== "web";
-
   return (
     <View style={styles.container}>
-      <View style={isMobile ? styles.contentMobile : styles.content}>
+      <View style={styles.contentMobile}>
         <Text style={styles.title}>Welcome to Our App!</Text>
       </View>
 
@@ -73,12 +71,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     padding: 20,
-  },
-  content: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1, // This will allow the content to grow while leaving space for buttons
-
   },
   contentMobile: {
     justifyContent: "center",

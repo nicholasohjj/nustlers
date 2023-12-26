@@ -1,8 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Platform, ActivityIndicator } from 'react-native';
+import { View, StyleSheet, Platform, ActivityIndicator } from "react-native";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
+import { makeRedirectUri } from "expo-auth-session";
+import * as QueryParams from "expo-auth-session/build/QueryParams";
+import * as WebBrowser from "expo-web-browser";
+import * as Linking from "expo-linking";
+
+WebBrowser.maybeCompleteAuthSession(); // required for web only
+const redirectTo = makeRedirectUri();
+console.log(redirectTo);
+const createSessionFromUrl = async (url) => {
+  const { params, errorCode } = QueryParams.getQueryParams(url);
+
+  if (errorCode) throw new Error(errorCode);
+  const { access_token, refresh_token } = params;
+
+  if (!access_token) return;
+
+  const { data, error } = await supabase.auth.setSession({
+    access_token,
+    refresh_token,
+  });
+  if (error) throw error;
+  return data.session;
+};
 
 const SignupForm = () => {
   const [displayName, setDisplayName] = useState("");
@@ -11,6 +34,9 @@ const SignupForm = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordVisibility, setPasswordVisibility] = useState(true);
+
+  const url = Linking.useURL();
+  if (url) createSessionFromUrl(url);
 
   const navigation = useNavigation();
   const isNumeric = (value) => {
@@ -46,6 +72,8 @@ const SignupForm = () => {
             displayName,
             phone: parseInt(phone, 10),
           },
+          emailRedirectTo: redirectTo
+
         },
       });
       const { error } = response;
@@ -78,7 +106,6 @@ const SignupForm = () => {
         placeholder="John Doe"
         style={styles.input}
         left={<TextInput.Icon icon="account" />}
-
       />
       <TextInput
         label="Email"
@@ -90,7 +117,6 @@ const SignupForm = () => {
         keyboardType="email-address"
         style={styles.input}
         left={<TextInput.Icon icon="email" />}
-
       />
       <TextInput
         label="Phone Number"
@@ -102,7 +128,6 @@ const SignupForm = () => {
         keyboardType="numeric"
         style={styles.input}
         left={<TextInput.Icon icon="phone" />}
-
       />
       <TextInput
         label="Password"
@@ -128,9 +153,9 @@ const SignupForm = () => {
           Sign up
         </Button>
       )}
-              <Button mode="contained" onPress={test} style={styles.button}>
-          Sign up test
-        </Button>
+      <Button mode="contained" onPress={test} style={styles.button}>
+        Sign up test
+      </Button>
     </View>
   );
 };
@@ -140,7 +165,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 12,
-    alignItems: 'center', // Center items horizontally
+    alignItems: "center", // Center items horizontally
   },
   title: {
     fontSize: 24,
@@ -152,13 +177,13 @@ const styles = StyleSheet.create({
   input: {
     marginBottom: 15,
     backgroundColor: "white",
-    width: '100%', // Ensure full width on mobile
+    width: "100%", // Ensure full width on mobile
     maxWidth: 400, // Limit width on larger screens
   },
   button: {
     marginTop: 10,
     paddingVertical: 8,
-    width: Platform.OS === 'web' ? '50%' : '100%', // Half width on web, full on mobile
+    width: Platform.OS === "web" ? "50%" : "100%", // Half width on web, full on mobile
     maxWidth: 400, // Ensure buttons are not too wide on larger screens
   },
 });

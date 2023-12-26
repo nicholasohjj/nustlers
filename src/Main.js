@@ -1,16 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./Home/Home";
 import { supabase } from "./supabase";
-import { useNavigation, CommonActions } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import Welcome from "./Welcome";
 import Login from "./login/Login";
 import Signup from './signup/Signup';
-import { ActivityIndicator, View } from 'react-native'; // Import ActivityIndicator and View
+import HomeWeb from "./web/HomeWeb";
+import { ActivityIndicator, View, Platform } from 'react-native'; // Import ActivityIndicator and View
 
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
+  const isMobile = Platform.OS !== "web";
+
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
   const [initialRouteName, setInitialRouteName] = useState('Welcome'); // State for initial route name
@@ -19,7 +22,11 @@ const Main = () => {
     const checkUserLoggedIn = async () => {
       try {
         const { data: { user } } = await supabase.auth.getUser();
-        setInitialRouteName(user ? 'Home' : 'Welcome'); // Set the initial route based on user status
+        if (user) {
+          setInitialRouteName(isMobile ? 'Home' : 'HomeWeb'); // Set the initial route name based on the platform
+        } else {
+          setInitialRouteName('Welcome');
+        }
       } catch (error) {
         console.error('Error checking user login status', error);
         setInitialRouteName("Welcome");
@@ -46,6 +53,7 @@ const Main = () => {
     >
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="HomeWeb" component={HomeWeb} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Signup" component={Signup} />
     </Stack.Navigator>

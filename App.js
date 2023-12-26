@@ -1,16 +1,17 @@
+import React, { useEffect, useRef } from "react";
 import Main from "./src/Main";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigationContainerRef } from "@react-navigation/native";
 import * as Linking from "expo-linking";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
-import { UserProvider } from './src/Home/UserProvider'
+import { UserProvider } from "./src/Home/UserProvider";
 
-const prefix = Linking.createURL('/');
+const prefix = Linking.createURL("/");
 
 const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    text: '#000000', // Set the text color to black
+    text: "#000000", // Set the text color to black
     // You can also define other color properties as needed
   },
 };
@@ -20,38 +21,37 @@ const linking = {
   config: {
     screens: {
       Home: {
-        path: 'home',
+        path: "home",
         screens: {
           Content: {
-            path: 'content',
+            path: "content",
             screens: {
-              Map: 'map',
-              Display: 'display',
-              Sample: 'sample',
-              Account: 'account',
+              Map: "map",
+              Display: "display",
+              Sample: "sample",
+              Account: "account",
             },
           },
-          EditProfile: 'editprofile',
-          Feedback: 'feedback2',
-
+          EditProfile: "editprofile",
+          Feedback: "feedback2",
           // Add other nested routes under 'Home' here if any
         },
       },
-      Login: 'login',
-      Signup: 'signup',
+      Login: "login",
+      Signup: "signup",
+      Login: "verify", // Add this line for email verification
       // Add other top-level routes here if any
     },
   },
 };
 const App = () => {
+  const navigationRef = useNavigationContainerRef();
   return (
     <PaperProvider theme={theme}>
-      <NavigationContainer linking={linking}>
+      <NavigationContainer linking={linking} ref={navigationRef}>
         <UserProvider>
-        <Main />
-
+          <Main />
         </UserProvider>
-
       </NavigationContainer>
     </PaperProvider>
   );

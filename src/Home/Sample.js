@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { View, StyleSheet, Alert, Platform } from "react-native";
 import { Text } from "react-native-paper";
 import { supabase } from "../supabase";
@@ -7,7 +7,25 @@ import { useUser } from "./UserProvider";
 const Sample = () => {
   const navigation = useNavigation(); // Get the navigation object
   const isMobile = Platform.OS === "web" ? false : true;
-  const { user } = useUser();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
+  const fetchProfile = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+          
+    if (user) {
+      console.log(user.user_metadata)
+      setUser(user); // Store the user data in state
+      console.log(user)
+    }
+
+  };
+
 
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
@@ -57,12 +75,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: "center",
     color: "#000000",
-  },
-  button: {
-    marginTop: 10,
-    width: "80%",
-    maxWidth: 400,
-    alignSelf: "center",
   },
 });
 

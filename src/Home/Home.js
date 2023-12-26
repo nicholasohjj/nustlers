@@ -16,7 +16,6 @@ const Home = () => {
       <HomeStack.Screen name="Content" component={Content} />
       <HomeStack.Screen name="EditProfile" component={EditProfile} />
       <HomeStack.Screen name="Feedback" component={Feedback} />
-
     </HomeStack.Navigator>
   );
 };

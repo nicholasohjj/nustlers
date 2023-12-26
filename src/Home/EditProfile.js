@@ -16,7 +16,6 @@ const EditProfile = () => {
   const [visible, setVisible] = useState(false);
   const { setUser } = useUser();
 
-
   useEffect(() => {
     fetchProfile();
   }, []);

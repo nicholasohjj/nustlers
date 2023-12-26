@@ -1,31 +1,63 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { View, StyleSheet, Platform, Alert, Animated } from "react-native";
-import { Text, FAB, TextInput } from "react-native-paper";
+import {
+  Text,
+  FAB,
+  Card,
+  Avatar,
+  Divider,
+  TouchableRipple,
+} from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 import { getMarkers } from "../../services/markers";
 
-const Map = () => {
+const Map = ({ route }) => {
+  const navigation = useNavigation();
+  const [currentMarker, setCurrentMarker] = useState(route.params?.selectedMarker);
+  const mapRef = useRef(null);
+
+  const goToUserLocation = () => {
+    if (userLocation) {
+      setCurrentMarker(null)
+      setRegion(userLocation); // Update region with user's current location
+      mapRef.current?.animateToRegion(userLocation, 1000);
+    }
+  };
+  
+
   // const [markers, setMarkers] = useState([]);
   // const [loading, setLoading] = useState(false);
 
   //useEffect(() => {
   //   fetchMarkers();
   //}, []);
-  const markers = require("./markers.json");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredMarkers, setFilteredMarkers] = useState(markers); // Assuming markers is your data
 
   useEffect(() => {
-    setFilteredMarkers(
-      markers.filter(
-        (marker) =>
-          marker.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          marker.description.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    );
-  }, [searchQuery, markers]);
+    if (route.params?.selectedMarker) {
+      setCurrentMarker(route.params.selectedMarker);
+    } else {
+      goToUserLocation();
+    }
+  }, [route.params?.selectedMarker]);
 
+
+  useEffect(() => {
+    if (currentMarker) {
+      console.log("Marker loaded", currentMarker.title);
+      const markerLocation = {
+        latitude: currentMarker.coordinate.latitude,
+        longitude: currentMarker.coordinate.longitude,
+        latitudeDelta: 0.001,
+        longitudeDelta: 0.001,
+      };
+      mapRef.current?.animateToRegion(markerLocation, 1000);
+    } else {
+      goToUserLocation();
+    }
+  }, [currentMarker]);
+
+  const markers = require("./markers.json");
   const fetchMarkers = () => {
     setLoading(true);
     getMarkers()
@@ -51,19 +83,25 @@ const Map = () => {
   const AnimatedCircle = Animated.createAnimatedComponent(Circle);
   const mapStyle = require("./mapStyle.json");
 
-  const navigation = useNavigation();
-  const mapRef = useRef(null);
-  const [locationData, setLocationData] = useState({
-    region: {
-      latitude: 1.2966,
-      longitude: 103.7764,
-      latitudeDelta: 0.01,
-      longitudeDelta: 0.01,
-    },
-    userLocation: null,
+  const [userLocation, setUserLocation] = useState(null); // Separate state for user's current location
+  const [region, setRegion] = useState({
+    latitude: 1.2966,
+    longitude: 103.7764,
+    latitudeDelta: 0.001,
+    longitudeDelta: 0.001,
   });
 
   const isMobile = Platform.OS === "ios" || Platform.OS === "android";
+
+  const updateLocation = (location) => {
+    const newUserLocation = {
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+      latitudeDelta: 0.001,
+      longitudeDelta: 0.001,
+    };
+    setUserLocation(newUserLocation); // Update only userLocation state
+  };
 
   const fetchLocation = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
@@ -72,14 +110,13 @@ const Map = () => {
       return;
     }
     try {
-      let location = await Location.getCurrentPositionAsync({});
-      const newRegion = {
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
-      };
-      setLocationData({ region: newRegion, userLocation: newRegion });
+      await Location.watchPositionAsync(
+        {
+          accuracy: Location.Accuracy.High,
+          distanceInterval: 1, // Update every meter.
+        },
+        updateLocation
+      );
     } catch (error) {
       Alert.alert("Location Error", "Error fetching location.");
     }
@@ -116,12 +153,6 @@ const Map = () => {
     };
   }, [isMobile, pulseAnim]);
 
-  const goToUserLocation = () => {
-    if (locationData.userLocation) {
-      mapRef.current?.animateToRegion(locationData.userLocation, 1000);
-    }
-  };
-
   const handleMarkerPress = (marker) => {
     navigation.navigate("Details", { marker });
   };
@@ -135,6 +166,7 @@ const Map = () => {
     inputRange: [1, 1.2],
     outputRange: ["rgba(135, 206, 250, 0.5)", "rgba(135, 206, 250, 0.7)"],
   });
+  const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
   const renderMarkers = useMemo(() => {
     return markers.map((marker, index) => (
@@ -143,8 +175,8 @@ const Map = () => {
         coordinate={{
           latitude: marker.coordinate.latitude,
           longitude: marker.coordinate.longitude,
-          latitudeDelta: 0.01,
-          longitudeDelta: 0.01,
+          latitudeDelta: 0.001,
+          longitudeDelta: 0.001,
         }}
         title={marker.title}
         description={marker.description}
@@ -153,13 +185,17 @@ const Map = () => {
     ));
   }, []);
 
+  const handleLocationSearch = () => {
+    navigation.navigate("LocationSearch");
+  };
+
   if (Platform.OS === "ios" || Platform.OS === "android") {
     return (
       <View style={styles.container}>
         <MapView
           ref={mapRef}
           style={styles.map}
-          region={locationData.region}
+          region={region} // Use region state here
           showsIndoorLevelPicker={true}
           customMapStyle={mapStyle}
           showsMyLocationButton={false}
@@ -168,7 +204,7 @@ const Map = () => {
           {renderMarkers}
           {Circle && (
             <AnimatedCircle
-              center={locationData.region}
+              center={region}
               radius={animatedRadius}
               fillColor={animatedFillColor}
               strokeColor="rgba(0, 0, 255, 1)"
@@ -176,27 +212,38 @@ const Map = () => {
             />
           )}
         </MapView>
-        <View style={styles.fab}>
-          <FAB
-            icon="crosshairs-gps"
-            style={styles.fab}
-            onPress={goToUserLocation}
-          />
+        <View style={styles.overlay}>
+          <View style={styles.fab}>
+            <Text variant="displaySmall">Title Here</Text>
+            <FAB icon="crosshairs-gps" onPress={goToUserLocation} />
+          </View>
+
+          <Card style={styles.searchBar}>
+            <TouchableRipple onPress={handleLocationSearch}>
+              <Card.Content style={styles.content}>
+                <Text>Location</Text>
+                <Text variant="titleMedium">
+              {currentMarker ? currentMarker.title : "Current Location"}
+            </Text>
+              </Card.Content>
+            </TouchableRipple>
+            <Divider />
+            <Card.Content style={styles.content}>
+              <Text>Location</Text>
+              {currentMarker ? (
+                <Text variant="titleMedium">{currentMarker.title}</Text>
+              ) : (
+                <Text variant="titleMedium">Current Location</Text>
+              )}
+            </Card.Content>
+          </Card>
         </View>
-        <TextInput
-        flat
-          style={styles.searchBar}
-          placeholder="Search"
-          onChangeText={setSearchQuery}
-          value={searchQuery}
-          left={<TextInput.Icon icon="map-marker" />}
-        />
       </View>
     );
   } else {
     return (
       <View style={styles.map}>
-        <Text>Map is only available on mobile</Text>
+        <Text style={styles.title}>Map is only available on mobile</Text>
       </View>
     );
   }
@@ -211,21 +258,33 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   fab: {
-    position: "absolute",
-    marginRight: 16,
-    right: 0,
-    bottom: 80, // Adjust this based on the size of the FAB
+    position: "relative",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 16,
   },
-  searchBar: {
+  overlay: {
     position: "absolute",
-    width: "90%",
+    width: "100%",
     alignSelf: "center",
     bottom: 40, // Place the search bar above the FAB
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
     paddingHorizontal: 20,
-    paddingVertical: 10,
-    fontSize: 16,
     zIndex: 1,
+  },
+  searchBar: {
+    width: "100%",
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    zIndex: 1,
+  },
+  content: {
+    padding: 10,
+  },
+  title: {
+    padding: 40,
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+    textAlign: "center",
   },
 });
 

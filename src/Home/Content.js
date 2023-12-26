@@ -8,12 +8,10 @@ import Sample from "./Sample";
 import Account from "./Account";
 import Information from "./Information";
 
-const RecentsRoute = () => <Text>Recents</Text>;
-
 const Content = () => {
-  const [userData, setUserData] = useState(null);
   const navigation = useNavigation();
-  const [routes] = useState([
+  const [index, setIndex] = useState(0);
+  let baseRoutes = [
     {
       key: "test",
       title: "Testing",
@@ -24,7 +22,7 @@ const Content = () => {
       key: "map",
       title: "Map",
       focusedIcon: "map",
-      unfocusedIcon: "account-outline",
+      unfocusedIcon: "map-outline",
     },
     {
       key: "information",
@@ -37,9 +35,11 @@ const Content = () => {
       title: "Account",
       focusedIcon: "account",
       unfocusedIcon: "account-outline",
-    },
-  ]);
-  const [index, setIndex] = useState(0);
+    }
+
+  ];
+
+  const [routes] = useState(baseRoutes);
 
   const renderScene = ({ route, jumpTo }) => {
     switch (route.key) {
@@ -63,9 +63,7 @@ const Content = () => {
       if (error) {
         // Handle error if needed
       }
-      if (user) {
-        setUserData(user);
-      } else {
+      if (!user) {
         navigation.navigate("Welcome");
       }
     };

@@ -11,6 +11,8 @@ import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
 
 const LoginForm = () => {
+  const isMobile = Platform.OS !== "web";
+
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +45,11 @@ const LoginForm = () => {
       data: { user },
     } = await supabase.auth.getUser();
     if (user) {
-      navigation.navigate("Home");
+      if (isMobile) {
+        navigation.navigate("Home");
+      } else {
+        navigation.navigate("HomeWeb");
+      }
     }
   };
 

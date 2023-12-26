@@ -61,15 +61,14 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    padding: 20,
+    width: "100%",
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
-    marginTop: 30, // Increase top margin to lower the title
-    marginBottom: 20,
-    textAlign: 'left',
-    paddingHorizontal: 20,
-    color: '#000000',
+    fontWeight: "bold",
+    textAlign: "left",
+    padding:20,
   },
 });
 
