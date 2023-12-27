@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, Platform } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { supabase } from "./supabase";
 import { useNavigation } from "@react-navigation/native";
 
 const Welcome = () => {
+  const isMobile = Platform.OS !== "web";
   const navigation = useNavigation();
 
   useEffect(() => {

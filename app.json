@@ -31,10 +31,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": []
+      "permissions": [],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCH7ss9tHIa3TfLUOmiglQSMu88G6KJyPw"
+        }
+      }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -47,6 +53,11 @@
       "color": "#000000",
       "iosDisplayInForeground": true,
       "androidMode": "default"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5365a367-c9af-42d2-b17b-224bf51d3fe7"
+      }
     }
   }
 }

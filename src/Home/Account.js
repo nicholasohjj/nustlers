@@ -57,7 +57,6 @@ const ListItem = ({ title, icon, onPress }) => (
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fff', // or any other background color you prefer
   },
   container: {
     flex: 1,
@@ -69,6 +68,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "left",
     padding:20,
+    paddingTop:40
   },
 });
 

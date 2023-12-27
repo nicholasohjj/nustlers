@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, FlatList, Image } from 'react-native';
-import { ActivityIndicator, Text, Card, Paragraph, Button, TextInput, Modal } from 'react-native-paper';
+import { ActivityIndicator, Text, Card, Paragraph, List } from 'react-native-paper';
 import { getMarkers, addMarker } from "../services/markers";
 
 const Information = () => {
@@ -59,9 +59,6 @@ const Information = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.header}>Information</Text>
-            <Button onPress={() => setAddModalVisible(true)}>
-                Add Marker
-            </Button>
             <FlatList
                 data={markers}
                 keyExtractor={(item, index) => index.toString()}
@@ -70,32 +67,11 @@ const Information = () => {
                         <Card.Title title={item.title} />
                         <Card.Content>
                             <Image source={{ uri: item.image }} style={styles.image} />
-                            <Paragraph>{JSON.stringify(item.coordinate)}</Paragraph>
                             <Paragraph>{item.description}</Paragraph>
                         </Card.Content>
                     </Card>
                 )}
             />
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={addModalVisible}
-                onRequestClose={() => {
-                    setAddModalVisible(!addModalVisible);
-                }}
-            >
-                <View style={styles.modalView}>
-                    <TextInput placeholder="Title" onChangeText={(text) => setNewMarker({ ...newMarker, title: text })} />
-                    <TextInput placeholder="Description" onChangeText={(text) => setNewMarker({ ...newMarker, description: text })} />
-                    <TextInput placeholder="Image URL" onChangeText={(text) => setNewMarker({ ...newMarker, image: text })} />
-                    <Button onPress={handleAddMarker}>
-                        Add Marker
-                    </Button>
-                    <Button onPress={() => setAddModalVisible(false)} >
-                        Close
-                    </Button>
-                </View>
-            </Modal>
         </View>
     );
 };
@@ -103,13 +79,15 @@ const Information = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        padding: 10,
+        padding: 20,
+        width: "100%",
     },
     header: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 10,
+        fontSize: 24,
+        fontWeight: "bold",
+        textAlign: "left",
+        paddingTop: 40,
+        paddingBottom: 20,
     },
     card: {
         marginBottom: 10,
@@ -134,6 +112,9 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5
     },
+    scrollView: {
+        width: "100%",
+      },
 });
 
 export default Information;

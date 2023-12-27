@@ -26,12 +26,12 @@ const Map = ({ route }) => {
   };
   
 
-  // const [markers, setMarkers] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [markers, setMarkers] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  //useEffect(() => {
-  //   fetchMarkers();
-  //}, []);
+  useEffect(() => {
+     fetchMarkers();
+  }, []);
 
   useEffect(() => {
     if (route.params?.selectedMarker) {
@@ -58,7 +58,6 @@ const Map = ({ route }) => {
     }
   }, [currentMarker]);
 
-  const markers = require("./markers.json");
   const fetchMarkers = () => {
     setLoading(true);
     getMarkers()

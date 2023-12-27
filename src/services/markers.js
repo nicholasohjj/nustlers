@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3000";
+const baseURL = "https://hacknroll-server-bq0i8qnsh-nicholasohjj.vercel.app";
 
 export const getMarkers = async () => {
     try {
@@ -12,3 +12,4 @@ export const getMarkers = async () => {
     return null; // or however you wish to handle this
   }
 };
+
