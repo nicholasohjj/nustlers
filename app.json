@@ -31,7 +31,9 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "permissions": [],
+      "permissions": [
+        "CAMERA_ROLL"
+      ],
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyCH7ss9tHIa3TfLUOmiglQSMu88G6KJyPw"

@@ -1,89 +1,21 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { View, StyleSheet, Platform, Alert, Animated } from "react-native";
-import {
-  Text,
-  FAB,
-  Card,
-  Avatar,
-  Divider,
-  TouchableRipple,
-} from "react-native-paper";
+import { View, StyleSheet, Alert, Animated } from "react-native";
+import { Text, FAB, Card, Avatar, Divider, TouchableRipple } from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 import { getMarkers } from "../../services/markers";
 
+const MapView = require("react-native-maps").default;
+const Circle = require("react-native-maps").Circle;
+const Marker = require("react-native-maps").Marker;
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+const mapStyle = require("./mapStyle.json");
+
 const Map = ({ route }) => {
   const navigation = useNavigation();
   const [currentMarker, setCurrentMarker] = useState(route.params?.selectedMarker);
-  const mapRef = useRef(null);
-
-  const goToUserLocation = () => {
-    if (userLocation) {
-      setCurrentMarker(null)
-      setRegion(userLocation); // Update region with user's current location
-      mapRef.current?.animateToRegion(userLocation, 1000);
-    }
-  };
-  
-
   const [markers, setMarkers] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-     fetchMarkers();
-  }, []);
-
-  useEffect(() => {
-    if (route.params?.selectedMarker) {
-      setCurrentMarker(route.params.selectedMarker);
-    } else {
-      goToUserLocation();
-    }
-  }, [route.params?.selectedMarker]);
-  
-
-
-  useEffect(() => {
-    if (currentMarker) {
-      console.log("Marker loaded", currentMarker.title);
-      const markerLocation = {
-        latitude: currentMarker.coordinate.latitude,
-        longitude: currentMarker.coordinate.longitude,
-        latitudeDelta: 0.001,
-        longitudeDelta: 0.001,
-      };
-      mapRef.current?.animateToRegion(markerLocation, 1000);
-    } else {
-      goToUserLocation();
-    }
-  }, [currentMarker]);
-
-  const fetchMarkers = () => {
-    setLoading(true);
-    getMarkers()
-      .then((data) => {
-        setMarkers(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setError("Error fetching data: " + err.message);
-        setLoading(false);
-      });
-  };
-
-  const pulseAnim = useRef(new Animated.Value(1)).current;
-
-  let MapView, Circle, Marker;
-  if (Platform.OS !== "web") {
-    MapView = require("react-native-maps").default;
-    Circle = require("react-native-maps").Circle;
-    Marker = require("react-native-maps").Marker;
-  }
-  const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-  const mapStyle = require("./mapStyle.json");
-
-  const [userLocation, setUserLocation] = useState(null); // Separate state for user's current location
+  const [userLocation, setUserLocation] = useState(null);
   const [region, setRegion] = useState({
     latitude: 1.2966,
     longitude: 103.7764,
@@ -91,7 +23,72 @@ const Map = ({ route }) => {
     longitudeDelta: 0.001,
   });
 
-  const isMobile = Platform.OS === "ios" || Platform.OS === "android";
+  const mapRef = useRef(null);
+  const pulseAnim = useRef(new Animated.Value(1)).current;
+
+  useEffect(() => {
+    fetchMarkers();
+    subscribeLocationUpdates();
+    animatePulse();
+  }, []);
+
+  useEffect(() => {
+    if (route.params?.selectedMarker) {
+      setCurrentMarker(route.params.selectedMarker);
+    } else {
+      goToUserLocation()
+    }
+  }, [route.params?.selectedMarker]);
+
+  useEffect(() => {
+    if (route.params?.selectedMarker) {
+      animateToMarker(currentMarker);
+    }
+  }, [currentMarker]);
+
+  const fetchMarkers = async () => {
+    try {
+      const data = await getMarkers();
+      setMarkers(data);
+    } catch (error) {
+      console.error("Error fetching markers:", error);
+      Alert.alert("Error", "Unable to fetch markers.");
+    }
+  };
+
+  const subscribeLocationUpdates = async () => {
+    let { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== 'granted') {
+      Alert.alert("Location Permission Denied", "Unable to fetch location.");
+      return;
+    }
+
+    Location.watchPositionAsync(
+      { accuracy: Location.Accuracy.High, distanceInterval: 1 },
+      updateLocation
+    ).catch(error => {
+      Alert.alert("Location Error", "Error fetching location.");
+      console.error("Location subscription error:", error);
+    });
+  };
+
+  const animatePulse = () => {
+    pulseAnim.setValue(1);
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(pulseAnim, {
+          toValue: 1.2,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(pulseAnim, {
+          toValue: 1,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+  };
 
   const updateLocation = (location) => {
     const newUserLocation = {
@@ -101,6 +98,14 @@ const Map = ({ route }) => {
       longitudeDelta: 0.001,
     };
     setUserLocation(newUserLocation); // Update only userLocation state
+  };
+
+  const goToUserLocation = () => {
+    console.log("My location", userLocation)
+    if (userLocation) {
+      setCurrentMarker(null);
+      mapRef.current?.animateToRegion(userLocation, 1000);
+    }
   };
 
   const fetchLocation = async () => {
@@ -122,40 +127,26 @@ const Map = ({ route }) => {
     }
   };
 
-  useEffect(() => {
-    let isMounted = true; // Flag to check if component is mounted
-
-    const animate = () => {
-      if (!isMounted) return;
-
-      pulseAnim.setValue(1);
-      Animated.sequence([
-        Animated.timing(pulseAnim, {
-          toValue: 1.2,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
-        Animated.timing(pulseAnim, {
-          toValue: 1,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
-      ]).start(() => animate());
-    };
-
-    if (isMobile) {
-      fetchLocation();
-    }
-    animate();
-
-    return () => {
-      isMounted = false; // Set the flag to false when component unmounts
-    };
-  }, [isMobile, pulseAnim]);
-
   const handleMarkerPress = (marker) => {
     navigation.navigate("Details", { marker });
   };
+
+  const animateToMarker = (marker) => {
+    if (!marker || !marker.coordinate) {
+      console.error("Invalid marker data");
+      return;
+    }
+  
+    const markerLocation = {
+      latitude: marker.coordinate.latitude,
+      longitude: marker.coordinate.longitude,
+      latitudeDelta: 0.001, // Adjust these delta values as needed for zoom level
+      longitudeDelta: 0.001,
+    };
+  
+    mapRef.current?.animateToRegion(markerLocation, 1000); // 1000 milliseconds for the animation
+  };
+  
 
   const animatedRadius = pulseAnim.interpolate({
     inputRange: [1, 1.2],
@@ -168,82 +159,73 @@ const Map = ({ route }) => {
   });
   const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
-  const renderMarkers = useMemo(() => {
-    return markers.map((marker, index) => (
+  const renderMarkers = useMemo(() => markers.map((marker, index) => (
       <Marker
         key={index}
-        pinColor={currentMarker && currentMarker.title === marker.title ? "blue" : "red"}
+        pinColor={
+          currentMarker && currentMarker.title === marker.title ? "blue" : "red"
+        }
         coordinate={marker.coordinate}
         title={marker.title}
         description={marker.description}
         onPress={() => handleMarkerPress(marker)}
       />
-    ));
-  }, [currentMarker]); // Include currentMarker in dependency array
-  
+      )), [markers, currentMarker]);
 
   const handleLocationSearch = () => {
     navigation.navigate("LocationSearch");
   };
 
-  if (Platform.OS === "ios" || Platform.OS === "android") {
-    return (
-      <View style={styles.container}>
-        <MapView
-          ref={mapRef}
-          style={styles.map}
-          region={region} // Use region state here
-          showsIndoorLevelPicker={true}
-          customMapStyle={mapStyle}
-          showsMyLocationButton={false}
-          loadingEnabled={true}
-        >
-          {renderMarkers}
-          {Circle && (
-            <AnimatedCircle
-              center={region}
-              radius={animatedRadius}
-              fillColor={animatedFillColor}
-              strokeColor="rgba(0, 0, 255, 1)"
-              strokeWidth={2}
-            />
-          )}
-        </MapView>
-        <View style={styles.overlay}>
-          <View style={styles.fab}>
-            <Text variant="displaySmall">Title Here</Text>
-            <FAB icon="crosshairs-gps" onPress={goToUserLocation} />
-          </View>
+  return (
+    <View style={styles.container}>
+      <MapView
+        ref={mapRef}
+        style={styles.map}
+        region={region} // Use region state here
+        showsIndoorLevelPicker={true}
+        customMapStyle={mapStyle}
+        showsMyLocationButton={false}
+        loadingEnabled={true}
+      >
+        {renderMarkers}
+        {Circle && (
+          <AnimatedCircle
+            center={region}
+            radius={animatedRadius}
+            fillColor={animatedFillColor}
+            strokeColor="rgba(0, 0, 255, 1)"
+            strokeWidth={2}
+          />
+        )}
+      </MapView>
+      <View style={styles.overlay}>
+        <View style={styles.fab}>
+          <Text variant="displaySmall">Title Here</Text>
+          <FAB icon="crosshairs-gps" onPress={goToUserLocation} />
+        </View>
 
-          <Card style={styles.searchBar}>
-            <TouchableRipple onPress={handleLocationSearch}>
-              <Card.Content style={styles.content}>
-                <Text>Location</Text>
-                <Text variant="titleMedium">
-              {currentMarker ? currentMarker.title : "Current Location"}
-            </Text>
-              </Card.Content>
-            </TouchableRipple>
-            <Divider />
+        <Card style={styles.searchBar}>
+          <TouchableRipple onPress={handleLocationSearch}>
             <Card.Content style={styles.content}>
               <Text>Location</Text>
-              {currentMarker ? (
-                <Text variant="titleMedium">{currentMarker.title}</Text>
-              ) : (
-                <Text variant="titleMedium">Current Location</Text>
-              )}
+              <Text variant="titleMedium">
+                {currentMarker ? currentMarker.title : "Current Location"}
+              </Text>
             </Card.Content>
-          </Card>
-        </View>
+          </TouchableRipple>
+          <Divider />
+          <Card.Content style={styles.content}>
+            <Text>Location</Text>
+            {currentMarker ? (
+              <Text variant="titleMedium">{currentMarker.title}</Text>
+            ) : (
+              <Text variant="titleMedium">Current Location</Text>
+            )}
+          </Card.Content>
+        </Card>
       </View>
-    );
-  } else {
-    return (
-      <View style={styles.map}>
-        <Text style={styles.title}>Map is only available on mobile</Text>
-      </View>
-    );
-  }
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

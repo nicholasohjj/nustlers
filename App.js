@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Main from "./src/Main";
 import { NavigationContainer, useNavigationContainerRef } from "@react-navigation/native";
 import * as Linking from "expo-linking";

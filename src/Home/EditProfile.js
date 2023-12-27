@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, Platform, ActivityIndicator, Alert } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, ActivityIndicator, Alert } from 'react-native';
 import { Button, TextInput, Dialog, Portal } from 'react-native-paper';
 import { supabase } from '../supabase';
 import { useNavigation } from "@react-navigation/native";

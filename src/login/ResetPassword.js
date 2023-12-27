@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Alert, Platform } from 'react-native';
+import { View, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { Text, TextInput, Button, ActivityIndicator } from 'react-native-paper';  
 import { supabase } from "../supabase";
@@ -22,7 +22,7 @@ const ResetPassword = () => {
       }
     })
   }, [])
-
+Platform
 
   const handleResetPassword = async () => {
     if (!isValidEmail(email)) {
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10,
     paddingVertical: 8,
-    width: Platform.OS === 'web' ? '50%' : '100%',
+    width: '100%',
     maxWidth: 400,
   },
 });

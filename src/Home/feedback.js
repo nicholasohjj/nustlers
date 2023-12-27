@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ActivityIndicator, SafeAreaView, Platform } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, SafeAreaView } from 'react-native';
 import { Text, TextInput, Button, Surface  } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 import DropDown from "react-native-paper-dropdown";
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10,
     paddingVertical: 8,
-    width: Platform.OS === "web" ? "50%" : "100%",
+    width: "100%",
     maxWidth: 400,
   },
 });

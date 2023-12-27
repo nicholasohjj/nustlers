@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { View, StyleSheet, Alert, Platform, ActivityIndicator } from "react-native";
+import { View, StyleSheet, Alert, ActivityIndicator } from "react-native";
 import { Text } from "react-native-paper";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
 import { useUser } from "./UserProvider";
 const Sample = () => {
   const navigation = useNavigation(); // Get the navigation object
-  const isMobile = Platform.OS === "web" ? false : true;
   const { user } = useUser();
   
 
@@ -25,7 +24,7 @@ const Sample = () => {
 
   return (
     <View style={styles.container}>
-      <View style={isMobile ? styles.contentMobile : styles.content}>
+      <View style={styles.contentMobile}>
         <Text style={styles.title}>
           {user
             ? `Welcome back, ${user.user_metadata?.displayName}`
@@ -42,11 +41,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     padding: 20,
-  },
-  content: {
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 1,
   },
   contentMobile: {
     justifyContent: "center",

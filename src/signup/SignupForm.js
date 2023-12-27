@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Platform, ActivityIndicator } from "react-native";
+import { View, StyleSheet, ActivityIndicator } from "react-native";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 10,
     paddingVertical: 8,
-    width: Platform.OS === "web" ? "50%" : "100%", // Half width on web, full on mobile
+    width: "100%", // Half width on web, full on mobile
     maxWidth: 400, // Ensure buttons are not too wide on larger screens
   },
 });

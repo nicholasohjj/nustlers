@@ -5,30 +5,30 @@ import { supabase } from "./supabase";
 import { useNavigation } from "@react-navigation/native";
 import Welcome from "./Welcome";
 import Login from "./login/Login";
-import Signup from './signup/Signup';
-import HomeWeb from "./web/HomeWeb";
-import { ActivityIndicator, View, Platform } from 'react-native'; // Import ActivityIndicator and View
+import Signup from "./signup/Signup";
+import { ActivityIndicator, View } from "react-native"; // Import ActivityIndicator and View
+import { StatusBar } from 'expo-status-bar';
 
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
-  const isMobile = Platform.OS !== "web";
-
   const navigation = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
-  const [initialRouteName, setInitialRouteName] = useState('Welcome'); // State for initial route name
+  const [initialRouteName, setInitialRouteName] = useState("Welcome"); // State for initial route name
 
   useEffect(() => {
     const checkUserLoggedIn = async () => {
       try {
-        const { data: { user } } = await supabase.auth.getUser();
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
         if (user) {
-          setInitialRouteName(isMobile ? 'Home' : 'HomeWeb'); // Set the initial route name based on the platform
+          setInitialRouteName("Home");
         } else {
-          setInitialRouteName('Welcome');
+          setInitialRouteName("Welcome");
         }
       } catch (error) {
-        console.error('Error checking user login status', error);
+        console.error("Error checking user login status", error);
         setInitialRouteName("Welcome");
       } finally {
         setIsLoading(false);
@@ -40,23 +40,24 @@ const Main = () => {
 
   if (isLoading) {
     return (
-      <View style={{ flex: 1, justifyHome: 'center', alignItems: 'center' }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" />
       </View>
     );
   }
 
   return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false }}
-      initialRouteName={initialRouteName} // Use the state to dynamically set the initial route
-    >
-      <Stack.Screen name="Welcome" component={Welcome} />
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="HomeWeb" component={HomeWeb} />
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Signup" component={Signup} />
-    </Stack.Navigator>
+    <View style={{ flex: 1, marginTop: StatusBar.currentHeight }}>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={initialRouteName} // Use the state to dynamically set the initial route
+      >
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={Signup} />
+      </Stack.Navigator>
+    </View>
   );
 };
 

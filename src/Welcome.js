@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import { View, StyleSheet, Image, Platform } from "react-native";
+import { View, StyleSheet, Imag } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { supabase } from "./supabase";
 import { useNavigation } from "@react-navigation/native";
 
 const Welcome = () => {
-  const isMobile = Platform.OS !== "web";
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -32,19 +31,6 @@ const Welcome = () => {
       <View style={styles.contentMobile}>
         <Text style={styles.title}>Welcome to Our App!</Text>
       </View>
-
-      {!isMobile && (
-        <>
-          <Button mode="contained" onPress={handleSignUp} style={styles.button}>
-            Sign up
-          </Button>
-          <Button mode="outlined" onPress={handleSignIn} style={styles.button}>
-            Log in
-          </Button>
-        </>
-      )}
-
-      {isMobile && (
         <View style={styles.mobileButtonContainer}>
           <Button
             mode="contained"
@@ -61,7 +47,6 @@ const Welcome = () => {
             Log in
           </Button>
         </View>
-      )}
     </View>
   );
 };
