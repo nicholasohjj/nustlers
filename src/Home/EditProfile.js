@@ -55,7 +55,7 @@ const EditProfile = () => {
     }
 
     if (!isValidPhone(mobileNumber)) {
-      Alert.alert("Invalid Phone Number", "Please enter a valid phone number.");
+      Alert.alert("Invalid Phone Number", "Please enter a valid phone number registered to your Paynow account.");
       return;
     }
 
@@ -108,11 +108,11 @@ const EditProfile = () => {
         left={<TextInput.Icon icon="email" />}
       />
       <TextInput
-        label="Mobile Number"
+        label="Mobile Number (Paynow)"
         mode="outlined"
         onChangeText={setMobileNumber}
         value={mobileNumber}
-        placeholder="Enter your mobile number"
+        placeholder="Enter your Paynow registered mobile number"
         keyboardType="phone-pad"
         style={styles.input}
         left={<TextInput.Icon icon="phone" />}

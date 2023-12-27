@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { View, StyleSheet, Alert, Animated } from "react-native";
-import { Text, FAB, Card, Avatar, Divider, TouchableRipple } from "react-native-paper";
+import { Text, FAB, Card, Divider, TouchableRipple } from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 import { getMarkers } from "../../services/markers";
@@ -13,7 +13,9 @@ const mapStyle = require("./mapStyle.json");
 
 const Map = ({ route }) => {
   const navigation = useNavigation();
-  const [currentMarker, setCurrentMarker] = useState(route.params?.selectedMarker);
+  const [currentMarker, setCurrentMarker] = useState(
+    route.params?.selectedMarker
+  );
   const [markers, setMarkers] = useState([]);
   const [userLocation, setUserLocation] = useState(null);
   const [region, setRegion] = useState({
@@ -24,19 +26,18 @@ const Map = ({ route }) => {
   });
 
   const mapRef = useRef(null);
-  const pulseAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
+    fetchLocation();
     fetchMarkers();
     subscribeLocationUpdates();
-    animatePulse();
   }, []);
 
   useEffect(() => {
     if (route.params?.selectedMarker) {
       setCurrentMarker(route.params.selectedMarker);
     } else {
-      goToUserLocation()
+      goToUserLocation();
     }
   }, [route.params?.selectedMarker]);
 
@@ -58,7 +59,7 @@ const Map = ({ route }) => {
 
   const subscribeLocationUpdates = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
-    if (status !== 'granted') {
+    if (status !== "granted") {
       Alert.alert("Location Permission Denied", "Unable to fetch location.");
       return;
     }
@@ -66,28 +67,10 @@ const Map = ({ route }) => {
     Location.watchPositionAsync(
       { accuracy: Location.Accuracy.High, distanceInterval: 1 },
       updateLocation
-    ).catch(error => {
+    ).catch((error) => {
       Alert.alert("Location Error", "Error fetching location.");
       console.error("Location subscription error:", error);
     });
-  };
-
-  const animatePulse = () => {
-    pulseAnim.setValue(1);
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(pulseAnim, {
-          toValue: 1.2,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
-        Animated.timing(pulseAnim, {
-          toValue: 1,
-          duration: 1000,
-          useNativeDriver: true,
-        }),
-      ])
-    ).start();
   };
 
   const updateLocation = (location) => {
@@ -101,9 +84,10 @@ const Map = ({ route }) => {
   };
 
   const goToUserLocation = () => {
-    console.log("My location", userLocation)
+    console.log("My location", userLocation);
     if (userLocation) {
       setCurrentMarker(null);
+      setRegion(userLocation);
       mapRef.current?.animateToRegion(userLocation, 1000);
     }
   };
@@ -122,55 +106,63 @@ const Map = ({ route }) => {
         },
         updateLocation
       );
+      setRegion(userLocation);
+      console.log("Current region set", region); // Update only region state
     } catch (error) {
       Alert.alert("Location Error", "Error fetching location.");
     }
   };
 
   const handleMarkerPress = (marker) => {
+    setCurrentMarker(marker);
     navigation.navigate("Details", { marker });
   };
 
   const animateToMarker = (marker) => {
-    if (!marker || !marker.coordinate) {
-      console.error("Invalid marker data");
+    console.log("Animate to marker", marker)
+    if (!marker) {
+      goToUserLocation()
       return;
     }
-  
+
     const markerLocation = {
       latitude: marker.coordinate.latitude,
       longitude: marker.coordinate.longitude,
       latitudeDelta: 0.001, // Adjust these delta values as needed for zoom level
       longitudeDelta: 0.001,
     };
-  
+
     mapRef.current?.animateToRegion(markerLocation, 1000); // 1000 milliseconds for the animation
   };
-  
 
-  const animatedRadius = pulseAnim.interpolate({
-    inputRange: [1, 1.2],
-    outputRange: [10, 12], // Example values, adjust as needed
-  });
+  const renderMarkers = useMemo(
+    () =>
+      markers.map((marker, index) => (
+        <Marker
+          key={index}
+          coordinate={marker.coordinate}
+          title={marker.title}
+          description={marker.description}
+          onPress={() => handleMarkerPress(marker)}
+        />
+      )),
+    [markers, currentMarker]
+  );
 
-  const animatedFillColor = pulseAnim.interpolate({
-    inputRange: [1, 1.2],
-    outputRange: ["rgba(135, 206, 250, 0.5)", "rgba(135, 206, 250, 0.7)"],
-  });
-  const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
-
-  const renderMarkers = useMemo(() => markers.map((marker, index) => (
-      <Marker
-        key={index}
-        pinColor={
-          currentMarker && currentMarker.title === marker.title ? "blue" : "red"
-        }
-        coordinate={marker.coordinate}
-        title={marker.title}
-        description={marker.description}
-        onPress={() => handleMarkerPress(marker)}
-      />
-      )), [markers, currentMarker]);
+  const renderCircle = useMemo(() => {
+    console.log("Current region", region);
+    if (region) {
+      return (
+        <Circle
+          center={region}
+          radius={12} // Example static radius value
+          fillColor="rgba(135, 206, 250, 1)" // Example static fill color
+          strokeColor="rgba(0, 0, 255, 1)"
+          strokeWidth={2}
+        />
+      );
+    }
+  }, [region]);
 
   const handleLocationSearch = () => {
     navigation.navigate("LocationSearch");
@@ -188,19 +180,11 @@ const Map = ({ route }) => {
         loadingEnabled={true}
       >
         {renderMarkers}
-        {Circle && (
-          <AnimatedCircle
-            center={region}
-            radius={animatedRadius}
-            fillColor={animatedFillColor}
-            strokeColor="rgba(0, 0, 255, 1)"
-            strokeWidth={2}
-          />
-        )}
+        {renderCircle}
       </MapView>
       <View style={styles.overlay}>
         <View style={styles.fab}>
-          <Text variant="displaySmall">Title Here</Text>
+          <Text variant="displaySmall">Find some Food</Text>
           <FAB icon="crosshairs-gps" onPress={goToUserLocation} />
         </View>
 
@@ -213,15 +197,20 @@ const Map = ({ route }) => {
               </Text>
             </Card.Content>
           </TouchableRipple>
-          <Divider />
-          <Card.Content style={styles.content}>
-            <Text>Location</Text>
-            {currentMarker ? (
-              <Text variant="titleMedium">{currentMarker.title}</Text>
-            ) : (
-              <Text variant="titleMedium">Current Location</Text>
-            )}
-          </Card.Content>
+          {currentMarker ? (
+            <View>
+              <Divider />
+
+              <Card.Content style={styles.content}>
+                <Text>Location</Text>
+                {currentMarker ? (
+                  <Text variant="titleMedium">{currentMarker.title}</Text>
+                ) : (
+                  <Text variant="titleMedium">Current Location</Text>
+                )}
+              </Card.Content>
+            </View>
+          ) : null}
         </Card>
       </View>
     </View>

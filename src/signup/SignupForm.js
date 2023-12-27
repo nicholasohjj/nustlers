@@ -54,7 +54,7 @@ const SignupForm = () => {
       return;
     }
 
-    if (!isNumeric(phone)) {
+    if (!isNumeric(phone) || phone.length !== 8 || !(phone.startsWith('8') || phone.startsWith('9'))) {
       Alert.alert(
         "Invalid Phone Number",
         "Please enter a valid numerical phone number."
@@ -119,7 +119,7 @@ const SignupForm = () => {
         left={<TextInput.Icon icon="email" />}
       />
       <TextInput
-        label="Phone Number"
+        label="Phone Number (Paynow registered)"
         mode="outlined"
         onChangeText={setPhone}
         value={phone}
