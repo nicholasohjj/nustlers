@@ -5,6 +5,7 @@ import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 import { getMarkers } from "../../services/markers";
 
+const { PROVIDER_GOOGLE } = require("react-native-maps");
 const MapView = require("react-native-maps").default;
 const Circle = require("react-native-maps").Circle;
 const Marker = require("react-native-maps").Marker;
@@ -119,9 +120,9 @@ const Map = ({ route }) => {
   };
 
   const animateToMarker = (marker) => {
-    console.log("Animate to marker", marker)
+    console.log("Animate to marker", marker);
     if (!marker) {
-      goToUserLocation()
+      goToUserLocation();
       return;
     }
 
@@ -171,6 +172,7 @@ const Map = ({ route }) => {
   return (
     <View style={styles.container}>
       <MapView
+        provider={PROVIDER_GOOGLE}
         ref={mapRef}
         style={styles.map}
         region={region} // Use region state here

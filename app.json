@@ -22,6 +22,10 @@
       "infoPlist": {
         "NSCameraUsageDescription": "This app uses the camera to...",
         "NSMicrophoneUsageDescription": "This app uses the microphone to..."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyCAgKDiOgl7mHRufajffwQWFvOklrwLz5Q"
+        
       }
     },
     "android": {
