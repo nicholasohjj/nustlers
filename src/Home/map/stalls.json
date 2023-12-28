@@ -1,0 +1,53 @@
+[
+    {
+        "stall_id": "3768d8e3-e4b5-4034-81e3-0f88840af565",
+        "items": [
+            {
+                "item_id": "12346",
+                "item_name": "Chicken Chop",
+                "item_image": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fine-Food-1-1024x684.jpg",
+                "item_price": 3.50
+            },
+            {
+                "item_id": "12347",
+                "item_name": "Fish and Chips",
+                "item_image": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fine-Food-1-1024x684.jpg",
+                "item_price": 3.50
+            }
+        ]
+    },
+    {
+        "stall_id": "e037d7af-28f9-4a1d-bf17-533b0dc38eec",
+        "items": [
+            {
+                "item_id": "12348",
+                "item_name": "Chicken Chop",
+                "item_image": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fine-Food-1-1024x684.jpg",
+                "item_price": 3.50
+            },
+            {
+                "item_id": "12349",
+                "item_name": "Fish and Chips",
+                "item_image": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fine-Food-1-1024x684.jpg",
+                "item_price": 3.50
+            }
+        ]
+    },
+    {
+        "stall_id": "12346",
+        "items": [
+            {
+                "item_id": "12348",
+                "item_name": "Chicken Chop",
+                "item_image": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fine-Food-1-1024x684.jpg",
+                "item_price": 3.50
+            },
+            {
+                "item_id": "12349",
+                "item_name": "Fish and Chips",
+                "item_image": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fine-Food-1-1024x684.jpg",
+                "item_price": 3.50
+            }
+        ]
+    }
+]

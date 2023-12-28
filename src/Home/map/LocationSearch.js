@@ -100,7 +100,6 @@ const LocationSearch = () => {
               <TouchableRipple onPress={handleMarkerPress(marker)}>
                 <List.Item
                   title={marker.title}
-                  description={marker.description}
                   left={() => <List.Icon icon="map-marker" />}
                 />
               </TouchableRipple>

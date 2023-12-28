@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://hacknroll-server-bq0i8qnsh-nicholasohjj.vercel.app";
+const baseURL = "https://nustlers-backend-abc7tcqox-nicholasohjj.vercel.app";
 
 export const getMarkers = async () => {
     try {

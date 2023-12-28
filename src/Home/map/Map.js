@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { View, StyleSheet, Alert, Animated } from "react-native";
-import { Text, FAB, Card, Divider, TouchableRipple } from "react-native-paper";
+import { Text, FAB, Card, Divider, TouchableRipple, Button } from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 import { getMarkers } from "../../services/markers";
@@ -14,10 +14,10 @@ const mapStyle = require("./mapStyle.json");
 
 const Map = ({ route }) => {
   const navigation = useNavigation();
-  const [currentMarker, setCurrentMarker] = useState(
-    route.params?.selectedMarker
-  );
-  const [markers, setMarkers] = useState([]);
+  const [currentMarker, setCurrentMarker] = useState(route.params?.selectedMarker);
+  const markers = require("./markers.json"); // For testing
+  //const [markers, setMarkers] = useState([]); For fetching markers from backend
+  
   const [userLocation, setUserLocation] = useState(null);
   const [region, setRegion] = useState({
     latitude: 1.2966,
@@ -27,10 +27,9 @@ const Map = ({ route }) => {
   });
 
   const mapRef = useRef(null);
-
+  
   useEffect(() => {
     fetchLocation();
-    fetchMarkers();
     subscribeLocationUpdates();
   }, []);
 
@@ -116,7 +115,6 @@ const Map = ({ route }) => {
 
   const handleMarkerPress = (marker) => {
     setCurrentMarker(marker);
-    navigation.navigate("Details", { marker });
   };
 
   const animateToMarker = (marker) => {
@@ -143,7 +141,6 @@ const Map = ({ route }) => {
           key={index}
           coordinate={marker.coordinate}
           title={marker.title}
-          description={marker.description}
           onPress={() => handleMarkerPress(marker)}
         />
       )),
@@ -169,6 +166,19 @@ const Map = ({ route }) => {
     navigation.navigate("LocationSearch");
   };
 
+  const handleQueueButton = (marker) => {
+    if (marker.stalls == 0) {
+    navigation.navigate("Stall", { marker });
+  } else {
+    navigation.navigate("Canteen", { marker });
+    console.log("Queue button pressed for canteen", marker.title);
+  }
+  }
+
+  const handleOrderButton = (marker) => {
+    console.log("Order button pressed", marker);
+  }
+
   return (
     <View style={styles.container}>
       <MapView
@@ -186,7 +196,7 @@ const Map = ({ route }) => {
       </MapView>
       <View style={styles.overlay}>
         <View style={styles.fab}>
-          <Text variant="displaySmall">Find some Food</Text>
+          <Text variant="displaySmall"></Text>
           <FAB icon="crosshairs-gps" onPress={goToUserLocation} />
         </View>
 
@@ -204,15 +214,28 @@ const Map = ({ route }) => {
               <Divider />
 
               <Card.Content style={styles.content}>
-                <Text>Location</Text>
-                {currentMarker ? (
-                  <Text variant="titleMedium">{currentMarker.title}</Text>
+                <Text>Operating Hours</Text>
+                {currentMarker.operating_hours.vacation == currentMarker.operating_hours.term ? (
+                  <Text variant="titleMedium">Term Time and Vacation: {currentMarker.operating_hours.term}</Text>
                 ) : (
-                  <Text variant="titleMedium">Current Location</Text>
-                )}
+                  <View>
+                  <Text variant="titleMedium">Term Time: {currentMarker.operating_hours.term}</Text>
+                  <Text variant="titleMedium">Vacation: {currentMarker.operating_hours.vacation}</Text>
+                  </View>
+                )  
+                }
+              </Card.Content>
+              <Divider/>
+                       <Card.Content style={styles.content}>
+                       <Card.Actions style={styles.actions}>
+      <Button onPress={() => handleQueueButton(currentMarker)}>I'm queuing!</Button>
+      <Button onPress={() => handleOrderButton(currentMarker)}>I'm hungry...</Button>
+    </Card.Actions>
+
               </Card.Content>
             </View>
           ) : null}
+
         </Card>
       </View>
     </View>
@@ -254,6 +277,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
+  },
+  actions: {
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
 });
 
