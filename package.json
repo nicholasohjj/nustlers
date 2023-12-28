@@ -1,5 +1,5 @@
 {
-  "name": "hacknroll",
+  "name": "nustlers",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "expo-linking": "~5.0.2",
     "expo-location": "~16.1.0",
     "expo-media-library": "~15.4.1",
-    "expo-permissions": "^14.4.0",
+    "expo-permissions": "~14.2.1",
     "expo-status-bar": "~1.6.0",
     "expo-web-browser": "~12.3.2",
     "react": "18.2.0",
