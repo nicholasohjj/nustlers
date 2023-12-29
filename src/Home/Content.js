@@ -3,26 +3,27 @@ import { StyleSheet } from "react-native";
 import { BottomNavigation, Text } from "react-native-paper";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
-import Display from "./map/Display";
-import Sample from "./Sample";
-import Account from "./Account";
-import Information from "./Information";
+import Search from "./map/search";
+import Sample from "./sample";
+import Account from "./account";
+import Information from "./information";
 
 const Content = () => {
   const navigation = useNavigation();
+  const initialRouteIndex = 0; // Index of 'map' route
   const [index, setIndex] = useState(0);
   let baseRoutes = [
+    {
+      key: "search",
+      title: "Search",
+      focusedIcon: "map-search",
+      unfocusedIcon: "map-search-outline",
+    },
     {
       key: "test",
       title: "Testing",
       focusedIcon: "heart",
       unfocusedIcon: "heart-outline",
-    },
-    {
-      key: "map",
-      title: "Map",
-      focusedIcon: "map",
-      unfocusedIcon: "map-outline",
     },
     {
       key: "information",
@@ -45,8 +46,8 @@ const Content = () => {
     switch (route.key) {
       case "test":
         return <Sample jumpTo={jumpTo} />;
-      case "map":
-        return <Display jumpTo={jumpTo} />;
+      case "search":
+        return <Search jumpTo={jumpTo} />;
       case "information":
         return <Information jumpTo={jumpTo} />;
       case "account":
@@ -55,6 +56,7 @@ const Content = () => {
   };
 
   useEffect(() => {
+    setIndex(initialRouteIndex);
     const checkUserLoggedIn = async () => {
       const {
         data: { user },
@@ -68,6 +70,7 @@ const Content = () => {
       }
     };
     checkUserLoggedIn();
+
   }, [navigation]);
 
   return (
@@ -83,7 +86,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  map: {
+  search: {
     width: "100%",
     height: "100%",
   },

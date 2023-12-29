@@ -3,7 +3,7 @@ import { View, StyleSheet, Alert, ActivityIndicator } from "react-native";
 import { Text } from "react-native-paper";
 import { supabase } from "../supabase";
 import { useNavigation } from "@react-navigation/native";
-import { useUser } from "./UserProvider";
+import { useUser } from "./userProvider";
 const Sample = () => {
   const navigation = useNavigation(); // Get the navigation object
   const { user } = useUser();

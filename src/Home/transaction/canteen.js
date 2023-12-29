@@ -2,16 +2,21 @@ import React, { useMemo } from 'react';
 import { View, Image, StyleSheet, ScrollView } from 'react-native';
 import { Card, Text } from 'react-native-paper';
 import PropTypes from 'prop-types';
+import { useNavigation } from "@react-navigation/native";
 
-const StallCard = ({ stall }) => (
-  <Card key={stall.stall_id} style={styles.card}>
+
+const StallCard = ({ stall, handleStallPress }) => (
+  <Card key={stall.stall_id} style={styles.card} onPress={() => handleStallPress(stall)}>
     <Card.Content style={styles.cardContent}>
       <Image
         source={{ uri: stall.stall_image }}
         style={styles.stallImage}
         onError={() => console.log('Error loading image')}
       />
-      <Text style={styles.stallName}>{stall.stall_name}</Text>
+      <View style = {styles.stall}>
+      <Text variant="titleMedium">{stall.stall_name}</Text>
+      <Text variant="bodyLarge">{stall.cuisine}</Text>
+      </View>
     </Card.Content>
   </Card>
 );
@@ -21,8 +26,13 @@ StallCard.propTypes = {
 };
 
 const Canteen = ({ route }) => {
-  const { marker } = route.params;
+  const navigation = useNavigation();
+  const { marker, isQueuing } = route.params;
   const canteens = require("./canteens.json");
+
+  const handleStallPress = (stall) => {
+    navigation.navigate("Stall", { stall, isQueuing });
+  };
 
   const canteenStalls = useMemo(() => 
   canteens.filter((canteen) => canteen.markers_id === marker.id)[0]?.stalls || [], 
@@ -31,7 +41,8 @@ const Canteen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      <Card style={styles.header}>
+      <Card.Content style={styles.headerContent}>
         {marker.image && (
           <Image
             source={{ uri: marker.image }}
@@ -40,11 +51,12 @@ const Canteen = ({ route }) => {
           />
         )}
         <Text style={styles.title}>{marker.title}</Text>
-      </View>
+      </Card.Content>
+        </Card>
 
       <ScrollView style={styles.scrollView}>
         {canteenStalls.length > 0 ? (
-          canteenStalls.map((stall) => <StallCard key={stall.stall_id} stall={stall} />)
+          canteenStalls.map((stall) => <StallCard key={stall.stall_id} stall={stall} handleStallPress={handleStallPress} />)
         ) : (
           <Text>No stalls available</Text>
         )}
@@ -64,11 +76,12 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding:20,
     marginTop:40,
     marginBottom: 20,
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   image: {
     width: 100, // Adjust as needed
@@ -79,7 +92,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#333',
     flexShrink: 1, // Ensure the text wraps if too long
   },
   card: {
@@ -95,6 +107,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  stall: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    paddingLeft:30
   },
   stallImage: {
     width: 100,

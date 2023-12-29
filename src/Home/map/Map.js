@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { View, StyleSheet, Alert, Animated } from "react-native";
-import { Text, FAB, Card, Divider, TouchableRipple, Button } from "react-native-paper";
+import { View, StyleSheet, Alert } from "react-native";
+import {
+  Text,
+  FAB,
+  Card,
+  Divider,
+  TouchableRipple,
+  Button,
+} from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 import { getMarkers } from "../../services/markers";
@@ -9,15 +16,16 @@ const { PROVIDER_GOOGLE } = require("react-native-maps");
 const MapView = require("react-native-maps").default;
 const Circle = require("react-native-maps").Circle;
 const Marker = require("react-native-maps").Marker;
-const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const mapStyle = require("./mapStyle.json");
 
 const Map = ({ route }) => {
   const navigation = useNavigation();
-  const [currentMarker, setCurrentMarker] = useState(route.params?.selectedMarker);
+  const [currentMarker, setCurrentMarker] = useState(
+    route.params?.selectedMarker
+  );
   const markers = require("./markers.json"); // For testing
   //const [markers, setMarkers] = useState([]); For fetching markers from backend
-  
+
   const [userLocation, setUserLocation] = useState(null);
   const [region, setRegion] = useState({
     latitude: 1.2966,
@@ -27,7 +35,7 @@ const Map = ({ route }) => {
   });
 
   const mapRef = useRef(null);
-  
+
   useEffect(() => {
     fetchLocation();
     subscribeLocationUpdates();
@@ -168,16 +176,56 @@ const Map = ({ route }) => {
 
   const handleQueueButton = (marker) => {
     if (marker.stalls == 0) {
-    navigation.navigate("Stall", { marker });
-  } else {
-    navigation.navigate("Canteen", { marker });
-    console.log("Queue button pressed for canteen", marker.title);
-  }
-  }
+      //Consider the restaurant as a stall and convert it to a stall page
+      const stall = {
+        stall_id: marker.id,
+        stall_name: marker.title,
+        stall_image: marker.image,
+      };
+      navigation.navigate('Transaction', {
+        screen: 'Stall',
+        params: {
+          stall,
+          isQueuing: true
+        },
+      });
+    } else {
+      navigation.navigate('Transaction', {
+        screen: 'Canteen',
+        params: {
+          marker,
+          isQueuing: true
+        },
+      });
+            console.log("Queue button pressed for canteen", marker.title);
+    }
+  };
 
   const handleOrderButton = (marker) => {
-    console.log("Order button pressed", marker);
-  }
+    if (marker.stalls == 0) {
+      //Consider the restaurant as a stall and convert it to a stall page
+      const stall = {
+        stall_id: marker.id,
+        stall_name: marker.title,
+        stall_image: marker.image,
+      };
+      navigation.navigate('Transaction', {
+        screen: 'Stall',
+        params: {
+          stall,
+          isQueuing: false
+        },
+      });
+    } else {
+      navigation.navigate('Transaction', {
+        screen: 'Canteen',
+        params: {
+          marker,
+          isQueuing: false
+        },
+      });
+  };
+}
 
   return (
     <View style={styles.container}>
@@ -215,27 +263,35 @@ const Map = ({ route }) => {
 
               <Card.Content style={styles.content}>
                 <Text>Operating Hours</Text>
-                {currentMarker.operating_hours.vacation == currentMarker.operating_hours.term ? (
-                  <Text variant="titleMedium">Term Time and Vacation: {currentMarker.operating_hours.term}</Text>
+                {currentMarker.operating_hours.vacation ==
+                currentMarker.operating_hours.term ? (
+                  <Text variant="titleMedium">
+                    Term Time and Vacation: {currentMarker.operating_hours.term}
+                  </Text>
                 ) : (
                   <View>
-                  <Text variant="titleMedium">Term Time: {currentMarker.operating_hours.term}</Text>
-                  <Text variant="titleMedium">Vacation: {currentMarker.operating_hours.vacation}</Text>
+                    <Text variant="titleMedium">
+                      Term Time: {currentMarker.operating_hours.term}
+                    </Text>
+                    <Text variant="titleMedium">
+                      Vacation: {currentMarker.operating_hours.vacation}
+                    </Text>
                   </View>
-                )  
-                }
+                )}
               </Card.Content>
-              <Divider/>
-                       <Card.Content style={styles.content}>
-                       <Card.Actions style={styles.actions}>
-      <Button onPress={() => handleQueueButton(currentMarker)}>I'm queuing!</Button>
-      <Button onPress={() => handleOrderButton(currentMarker)}>I'm hungry...</Button>
-    </Card.Actions>
-
+              <Divider />
+              <Card.Content style={styles.content}>
+                <Card.Actions style={styles.actions}>
+                  <Button onPress={() => handleQueueButton(currentMarker)}>
+                    I'm queuing!
+                  </Button>
+                  <Button onPress={() => handleOrderButton(currentMarker)}>
+                    I'm hungry...
+                  </Button>
+                </Card.Actions>
               </Card.Content>
             </View>
           ) : null}
-
         </Card>
       </View>
     </View>
@@ -279,8 +335,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   actions: {
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    justifyContent: "space-around",
+    alignItems: "center",
   },
 });
 

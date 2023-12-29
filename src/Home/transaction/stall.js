@@ -1,25 +1,41 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native'; // Corrected import
-import { Card, Paragraph } from 'react-native-paper'; // Example if you want to use other components from react-native-paper
+import { View, Image, StyleSheet } from 'react-native'; // Corrected import
+import { Card, Paragraph, Text } from 'react-native-paper'; // Example if you want to use other components from react-native-paper
+import Setup from './setup';
 
 const Stall = ({ route }) => {
-  const { marker } = route.params;
+  const { stall, isQueuing } = route.params;
   const stalls = require("./stalls.json");
 
-  const stall = stalls.filter((stall) => stall.stall_id === marker.id)[0];
+  const stallItems = stalls.filter((stall) => stall.stall_id === stall.id)[0];
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        {marker.image && (
+      <Card style={styles.header}>
+      <Card.Content style={styles.headerContent}>
+        {stall.stall_image && (
           <Image
-            source={{ uri: marker.image }}
+            source={{ uri: stall.stall_image }}
             style={styles.image}
             onError={() => console.log('Error loading canteen image')}
           />
         )}
-        <Text style={styles.title}>{marker.title}</Text>
-      </View>
+        <Text variant="headlineSmall" fontWeight={24} >{stall.stall_name}</Text>
+      </Card.Content>
+      </Card>
       
+      {isQueuing ? (
+      <Setup stall={stall} />
+
+      ) : (
+      <View>
+      <Text>Stall Page</Text>
+      <Text>{stall.stall_name}</Text>
+      <Text>{stall.stall_image}</Text>
+      <Text>{stall.stall_id}</Text>
+      <Text>{stall.cuisine}</Text>
+      </View> 
+      )}
       </View>
   );
 };
@@ -30,11 +46,12 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding:20,
     marginTop:40,
     marginBottom: 20,
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   image: {
     width: 100, // Adjust as needed

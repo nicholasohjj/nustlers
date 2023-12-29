@@ -1,9 +1,9 @@
 import React from "react";
-import Main from "./src/Main";
+import Main from "./src/main";
 import { NavigationContainer, useNavigationContainerRef } from "@react-navigation/native";
 import * as Linking from "expo-linking";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
-import { UserProvider } from "./src/Home/UserProvider";
+import { UserProvider } from "./src/Home/userProvider";
 
 const prefix = Linking.createURL("/");
 

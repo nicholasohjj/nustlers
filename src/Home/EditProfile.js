@@ -3,7 +3,7 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, ActivityIndicator, Alert } 
 import { Button, TextInput, Dialog, Portal } from 'react-native-paper';
 import { supabase } from '../supabase';
 import { useNavigation } from "@react-navigation/native";
-import { useUser  } from './UserProvider';
+import { useUser  } from './userProvider';
 
 const EditProfile = () => {
   const [currentUser, setCurrentUser] = useState(null);

@@ -4,8 +4,8 @@ import { StyleSheet } from "react-native";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import EmailVerification from "./EmailVerification";
-import SignupForm from "./SignupForm";
+import EmailVerification from "./emailVerification";
+import SignupForm from "./signupForm";
 const SignUpStack = createNativeStackNavigator();
 
 

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./Home/Home";
+import Home from "./Home/home";
 import { supabase } from "./supabase";
 import { useNavigation } from "@react-navigation/native";
-import Welcome from "./Welcome";
-import Login from "./login/Login";
-import Signup from "./signup/Signup";
+import Welcome from "./welcome";
+import Login from "./login/login";
+import Signup from "./signup/signup";
 import { ActivityIndicator, View } from "react-native"; // Import ActivityIndicator and View
 import { StatusBar } from 'expo-status-bar';
 

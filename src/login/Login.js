@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { supabase } from "../supabase";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginForm from "./LoginForm";
-import ResetPassword from "./ResetPassword";
+import LoginForm from "./loginForm";
+import ResetPassword from "./resetPassword";
 
 const LoginStack = createNativeStackNavigator();
 
