@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, ScrollView} from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import * as Location from "expo-location";
-import { Modal, Portal, Button, TouchableRipple, List, Text, TextInput, Divider } from "react-native-paper";
-
+import {
+  Modal,
+  Portal,
+  Button,
+  TouchableRipple,
+  List,
+  Text,
+  TextInput,
+  Divider,
+  IconButton,
+  Icon,
+} from "react-native-paper";
+import VenuesMap from "./venuesMap";
 const Setup = () => {
   const venues = require("./venues.json");
 
@@ -17,35 +28,53 @@ const Setup = () => {
     searchQuery: "",
   });
   const [displayedItemCount, setDisplayedItemCount] = useState(20);
+  const [currentDestination, setcurrentDestination] = useState();
+  const [via, setVia] = useState([]);
+  const [mapOpen, setMapOpen] = useState(false);
   const loadMoreItems = () => {
-    setDisplayedItemCount(prevCount => prevCount + 20); // Load 20 more items
+    setDisplayedItemCount((prevCount) => prevCount + 20); // Load 20 more items
   };
 
+  const getTitle = (destination) => {
+    if (
+      destination.roomName
+        .toLowerCase()
+        .includes(destination.roomCode.toLowerCase())
+    ) {
+      return destination.roomName;
+    }
+    return destination.roomCode + " " + destination.roomName;
+  };
 
   const handleStateChange = (key, value) => {
-    setState(prevState => ({ ...prevState, [key]: value }));
+    setState((prevState) => ({ ...prevState, [key]: value }));
   };
 
-   useEffect(() => {
+  useEffect(() => {
     (async () => {
       const location = await Location.getCurrentPositionAsync({});
-      handleStateChange('currentLocation', location.coords);
+      handleStateChange("currentLocation", location.coords);
     })();
   }, []);
 
   useEffect(() => {
     if (state.currentLocation) {
       const filtered = venues
-        .filter((venue) =>
-        venue.roomCode.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-        venue.roomName.toLowerCase().includes(state.searchQuery.toLowerCase())
+        .filter(
+          (venue) =>
+            venue.roomCode
+              .toLowerCase()
+              .includes(state.searchQuery.toLowerCase()) ||
+            venue.roomName
+              .toLowerCase()
+              .includes(state.searchQuery.toLowerCase())
         )
         .sort((a, b) => {
           let distanceA = getDistance(state.currentLocation, a.coordinate);
           let distanceB = getDistance(state.currentLocation, b.coordinate);
           return distanceA - distanceB;
         });
-        handleStateChange('filteredVenues', filtered);
+      handleStateChange("filteredVenues", filtered);
     }
   }, [state.searchQuery, state.currentLocation, venues]);
 
@@ -57,14 +86,21 @@ const Setup = () => {
 
   const handleVenuePress = (venue) => {
     console.log(venue);
-    handleStateChange('destination', venue);
-    console.log(state.destination)
+    handleStateChange("destination", venue);
+    console.log(state.destination);
     hideModal();
   };
 
+  const showModal = () => {
+    handleStateChange("visible", true);
+    setMapOpen(true);
+  };
 
-  const showModal = () => handleStateChange('visible', true);
-  const hideModal = () => handleStateChange('visible', false);
+  const hideModal = () => handleStateChange("visible", false);
+
+  const toggleVenueSearch = () => {
+    setMapOpen(!mapOpen);
+  };
 
   return (
     <View style={styles.container}>
@@ -75,7 +111,7 @@ const Setup = () => {
           keyboardType="numeric"
           placeholder="XX"
           value={state.itemCount}
-          onChangeText={(text) => handleStateChange('itemCount', text)}
+          onChangeText={(text) => handleStateChange("itemCount", text)}
         />
         <Text style={styles.text}>items.</Text>
       </View>
@@ -83,7 +119,9 @@ const Setup = () => {
       <View style={styles.inline}>
         <Text style={styles.text}>I'm heading towards </Text>
         <Button style={styles.input} onPress={showModal}>
-          {state.destination ? state.destination.roomName + " " + state.destination.roomCode : "Select a destination"}
+          {state.destination
+            ? getTitle(state.destination)
+            : "Select a destination"}
         </Button>
       </View>
 
@@ -95,18 +133,23 @@ const Setup = () => {
       </View>
 
       <View style={styles.inline}>
-  <Text style={styles.text}>
-    For your convenience, there is a convenience fee of $
-  </Text>
-  <TextInput
-    style={styles.feeInput}
-    keyboardType="decimal-pad"
-    placeholder="0.00"
-    value={state.feePerItem}
-    onChangeText={(text) => handleStateChange('feePerItem', text)}
-  />
-  <Text style={styles.text}> per item</Text>
-</View>
+        <Text style={styles.text}>
+          For your convenience, there is a convenience fee of $
+        </Text>
+        <TextInput
+          style={styles.feeInput}
+          keyboardType="decimal-pad"
+          placeholder="0.00"
+          value={state.feePerItem}
+          onChangeText={(text) => handleStateChange("feePerItem", text)}
+        />
+        <Text style={styles.text}> per item</Text>
+      </View>
+      <Button mode="contained" 
+                onPress={() => console.log("test")} 
+      style={styles.button}>
+        Submit
+      </Button>
 
       <Portal>
         <Modal
@@ -114,39 +157,60 @@ const Setup = () => {
           onDismiss={hideModal}
           contentContainerStyle={styles.modal}
         >
-            <View style={styles.header}>
-              <Text style={styles.title}>Enter Location</Text>
-              <TextInput
-                mode="outlined"
-                style={styles.textInput}
-                placeholder="Enter location"
-                value={state.searchQuery}
-                onChangeText={(text) => handleStateChange('searchQuery', text)}
-                left={<TextInput.Icon icon="map-search" />}
-              />
-            </View>
+          {mapOpen ? (
+            <VenuesMap
+              currentDestination={currentDestination}
+              setcurrentDestination={setcurrentDestination}
+              toggleVenueSearch={toggleVenueSearch}
+            />
+          ) : (
+            <View style={styles.listContainer}>
+              <View style={styles.header}>
+                <View style={styles.subheader}>
+                  <IconButton
+                    icon="arrow-left-drop-circle"
+                    size={20}
+                    onPress={() => toggleVenueSearch()}
+                  />
 
-            <ScrollView style={styles.scrollView}>
-              <List.Section>                
-              {state.filteredVenues
-                .slice(0, displayedItemCount)
-                .map((venue, index) => (
-                  <View key={index}>
-                    <TouchableRipple onPress={() => handleVenuePress(venue)}>
-                      <List.Item
-                        title={venue.roomName + " " + venue.roomCode}
-                        left={() => <List.Icon icon="map-marker" />}
-                      />
-                    </TouchableRipple>
-                    <Divider />
-                  </View>
-                )
+                  <Text style={styles.title}>Enter Location</Text>
+                </View>
+                <TextInput
+                  mode="outlined"
+                  style={styles.textInput}
+                  placeholder="Enter location"
+                  value={state.searchQuery}
+                  onChangeText={(text) =>
+                    handleStateChange("searchQuery", text)
+                  }
+                  left={<TextInput.Icon icon="map-search" />}
+                />
+              </View>
+
+              <ScrollView style={styles.scrollView}>
+                <List.Section>
+                  {state.filteredVenues
+                    .slice(0, displayedItemCount)
+                    .map((venue, index) => (
+                      <View key={index}>
+                        <TouchableRipple
+                          onPress={() => handleVenuePress(venue)}
+                        >
+                          <List.Item
+                            title={getTitle(venue)}
+                            left={() => <List.Icon icon="map-marker" />}
+                          />
+                        </TouchableRipple>
+                        <Divider />
+                      </View>
+                    ))}
+                </List.Section>
+                {displayedItemCount < state.filteredVenues.length && (
+                  <Button onPress={loadMoreItems}>Load More</Button>
                 )}
-              </List.Section>
-              {displayedItemCount < state.filteredVenues.length && (
-              <Button onPress={loadMoreItems}>Load More</Button>
-            )}
-            </ScrollView>
+              </ScrollView>
+            </View>
+          )}
         </Modal>
       </Portal>
     </View>
@@ -192,14 +256,21 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
+  subheader: {
+    flexDirection: "row",
+  },
   modal: {
+    flex: 1,
     backgroundColor: "white",
+  },
+  listContainer: {
+    flex: 1,
     padding: 20,
-    borderRadius: 10, // Optional: adds rounded corners to the modal
+    width: "100%",
   },
 
   header: {
-    margin:20
+    paddingTop: 20,
   },
   title: {
     fontSize: 24,
@@ -209,11 +280,19 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   textInput: {
-    width: "auto",
+    width: "100%",
+    marginBottom: 20,
+    backgroundColor: "white",
   },
   scrollView: {
     width: "100%",
-    paddingBottom: 20, // Adds padding at the bottom
+  },
+  button: {
+    marginTop: 16,
+    paddingVertical: 10,
+    width: "80%", // Relative width for better appearance on web
+    maxWidth: 400, // Maximum width for button
+    alignSelf: "center", // Center align the button
   },
 });
 

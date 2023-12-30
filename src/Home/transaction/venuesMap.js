@@ -10,22 +10,15 @@ import {
 } from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
-import { getMarkers } from "../../services/markers";
 import MapView from "react-native-map-clustering";
 
 const { PROVIDER_GOOGLE } = require("react-native-maps");
 const Circle = require("react-native-maps").Circle;
 const Marker = require("react-native-maps").Marker;
-const mapStyle = require("./mapStyle.json");
+const mapStyle = require("../map/mapStyle.json");
 
-const Map = ({ route }) => {
-  const navigation = useNavigation();
-  const [currentMarker, setCurrentMarker] = useState(
-    route.params?.selectedMarker
-  );
-  const markers = require("./markers.json"); // For testing
-  //const [markers, setMarkers] = useState([]); For fetching markers from backend
-
+const VenuesMap = ({currentDestination, setcurrentDestination, toggleVenueSearch}) => {
+  const venues = require("./venues.json"); // For testing
   const [userLocation, setUserLocation] = useState(null);
   const [region, setRegion] = useState({
     latitude: 1.2966,
@@ -42,28 +35,12 @@ const Map = ({ route }) => {
   }, []);
 
   useEffect(() => {
-    if (route.params?.selectedMarker) {
-      setCurrentMarker(route.params.selectedMarker);
+    if (currentDestination) {
+        animateTodestination(currentDestination);
     } else {
       goToUserLocation();
     }
-  }, [route.params?.selectedMarker]);
-
-  useEffect(() => {
-    if (route.params?.selectedMarker) {
-      animateToMarker(currentMarker);
-    }
-  }, [currentMarker]);
-
-  const fetchMarkers = async () => {
-    try {
-      const data = await getMarkers();
-      setMarkers(data);
-    } catch (error) {
-      console.error("Error fetching markers:", error);
-      Alert.alert("Error", "Unable to fetch markers.");
-    }
-  };
+  }, [currentDestination]);
 
   const subscribeLocationUpdates = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
@@ -94,7 +71,7 @@ const Map = ({ route }) => {
   const goToUserLocation = () => {
     console.log("My location", userLocation);
     if (userLocation) {
-      setCurrentMarker(null);
+      setcurrentDestination(null);
       setRegion(userLocation);
       mapRef.current?.animateToRegion(userLocation, 1000);
     }
@@ -121,38 +98,45 @@ const Map = ({ route }) => {
     }
   };
 
-  const handleMarkerPress = (marker) => {
-    setCurrentMarker(marker);
+  const handledestinationPress = (destination) => {
+    setcurrentDestination(destination);
   };
 
-  const animateToMarker = (marker) => {
-    console.log("Animate to marker", marker);
-    if (!marker) {
+  const getTitle = (destination) => {
+    if (destination.roomName.toLowerCase().includes(destination.roomCode.toLowerCase())) {
+        return destination.roomName;
+    }
+    return destination.roomCode + " " + destination.roomName;
+    };
+
+  const animateTodestination = (destination) => {
+    console.log("Animate to destination", destination);
+    if (!destination) {
       goToUserLocation();
       return;
     }
 
-    const markerLocation = {
-      latitude: marker.coordinate.latitude,
-      longitude: marker.coordinate.longitude,
+    const destinationLocation = {
+      latitude: destination.coordinate.latitude,
+      longitude: destination.coordinate.longitude,
       latitudeDelta: 0.001, // Adjust these delta values as needed for zoom level
       longitudeDelta: 0.001,
     };
 
-    mapRef.current?.animateToRegion(markerLocation, 1000); // 1000 milliseconds for the animation
+    mapRef.current?.animateToRegion(destinationLocation, 1000); // 1000 milliseconds for the animation
   };
 
-  const renderMarkers = useMemo(
+  const renderdestinations = useMemo(
     () =>
-      markers.map((marker, index) => (
+      venues.map((venue, index) => (
         <Marker
           key={index}
-          coordinate={marker.coordinate}
-          title={marker.title}
-          onPress={() => handleMarkerPress(marker)}
+          coordinate={venue.coordinate}
+          title={getTitle(venue)}
+          onPress={() => setcurrentDestination(venue)}
         />
       )),
-    [markers, currentMarker]
+    [venues, setcurrentDestination]
   );
 
   const renderCircle = useMemo(() => {
@@ -170,62 +154,9 @@ const Map = ({ route }) => {
     }
   }, [region]);
 
-  const handleLocationSearch = () => {
-    navigation.navigate("LocationSearch");
+  const handleVenueSearch = () => {
+    console.log("Test search")
   };
-
-  const handleQueueButton = (marker) => {
-    if (marker.stalls == 0) {
-      //Consider the restaurant as a stall and convert it to a stall page
-      const stall = {
-        stall_id: marker.id,
-        stall_name: marker.title,
-        stall_image: marker.image,
-      };
-      navigation.navigate('Transaction', {
-        screen: 'Stall',
-        params: {
-          stall,
-          isQueuing: true
-        },
-      });
-    } else {
-      navigation.navigate('Transaction', {
-        screen: 'Canteen',
-        params: {
-          marker,
-          isQueuing: true
-        },
-      });
-            console.log("Queue button pressed for canteen", marker.title);
-    }
-  };
-
-  const handleOrderButton = (marker) => {
-    if (marker.stalls == 0) {
-      //Consider the restaurant as a stall and convert it to a stall page
-      const stall = {
-        stall_id: marker.id,
-        stall_name: marker.title,
-        stall_image: marker.image,
-      };
-      navigation.navigate('Transaction', {
-        screen: 'Stall',
-        params: {
-          stall,
-          isQueuing: false
-        },
-      });
-    } else {
-      navigation.navigate('Transaction', {
-        screen: 'Canteen',
-        params: {
-          marker,
-          isQueuing: false
-        },
-      });
-  };
-}
 
   return (
     <View style={styles.container}>
@@ -239,7 +170,7 @@ const Map = ({ route }) => {
         showsMyLocationButton={false}
         loadingEnabled={true}
       >
-        {renderMarkers}
+        {renderdestinations}
         {renderCircle}
       </MapView>
       <View style={styles.overlay}>
@@ -249,44 +180,21 @@ const Map = ({ route }) => {
         </View>
 
         <Card style={styles.searchBar}>
-          <TouchableRipple onPress={handleLocationSearch}>
+          <TouchableRipple onPress={toggleVenueSearch}>
             <Card.Content style={styles.content}>
-              <Text>Location</Text>
+              <Text>Destination</Text>
               <Text variant="titleMedium">
-                {currentMarker ? currentMarker.title : "Current Location"}
+                {currentDestination ? getTitle(currentDestination) : "Current Location"}
               </Text>
             </Card.Content>
           </TouchableRipple>
-          {currentMarker ? (
+          {currentDestination ? (
             <View>
-              <Divider />
-
-              <Card.Content style={styles.content}>
-                <Text>Operating Hours</Text>
-                {currentMarker.operating_hours.vacation ==
-                currentMarker.operating_hours.term ? (
-                  <Text variant="titleMedium">
-                    Term Time and Vacation: {currentMarker.operating_hours.term}
-                  </Text>
-                ) : (
-                  <View>
-                    <Text variant="titleMedium">
-                      Term Time: {currentMarker.operating_hours.term}
-                    </Text>
-                    <Text variant="titleMedium">
-                      Vacation: {currentMarker.operating_hours.vacation}
-                    </Text>
-                  </View>
-                )}
-              </Card.Content>
-              <Divider />
+                <Divider/>
               <Card.Content style={styles.content}>
                 <Card.Actions style={styles.actions}>
-                  <Button onPress={() => handleQueueButton(currentMarker)}>
-                    I'm queuing!
-                  </Button>
-                  <Button onPress={() => handleOrderButton(currentMarker)}>
-                    I'm hungry...
+                  <Button onPress={() => console.log("test2")}>
+                    Select
                   </Button>
                 </Card.Actions>
               </Card.Content>
@@ -340,4 +248,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Map;
+export default VenuesMap;

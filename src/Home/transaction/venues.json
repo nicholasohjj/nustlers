@@ -4,8 +4,8 @@
         "roomName": "Lecture Theatre 17",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77401107931558,
-            "latitude": 1.2936062312700383
+            "longitude": 103.774011,
+            "latitude": 1.293606
         }
     },
     {
@@ -13,152 +13,152 @@
         "roomName": "Lecture Theatre 16",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77386420264736,
-            "latitude": 1.2939170885884703
+            "longitude": 103.773864,
+            "latitude": 1.293917
         }
     },
     {
-        "roomCode": "BIZ2-0301",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 3-1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77472214694177,
-            "latitude": 1.293767094527918
+            "longitude": 103.774722,
+            "latitude": 1.293767
         }
     },
     {
-        "roomCode": "BIZ2-0404",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 4-4",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77472235450287,
-            "latitude": 1.2937671894910092
+            "longitude": 103.774722,
+            "latitude": 1.293767
         }
     },
     {
-        "roomCode": "BIZ2-0509",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 5-9",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77534379798186,
-            "latitude": 1.293256567172797
+            "longitude": 103.775344,
+            "latitude": 1.293257
         }
     },
     {
-        "roomCode": "BIZ1-0301",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 3-1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77405044962676,
-            "latitude": 1.2924148334324945
+            "longitude": 103.77405,
+            "latitude": 1.292415
         }
     },
     {
-        "roomCode": "BIZ2-0510",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 5-10",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77522103815542,
-            "latitude": 1.2933003093570126
+            "longitude": 103.775221,
+            "latitude": 1.2933
         }
     },
     {
-        "roomCode": "BIZ2-0202",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 2-2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77482884542967,
-            "latitude": 1.293523907999633
+            "longitude": 103.774829,
+            "latitude": 1.293524
         }
     },
     {
-        "roomCode": "BIZ1-0205",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 2-5",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77402241673727,
-            "latitude": 1.2926550012018911
+            "longitude": 103.774022,
+            "latitude": 1.292655
         }
     },
     {
-        "roomCode": "BIZ1-0304",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 3-4",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7739122274241,
-            "latitude": 1.2927029724261363
+            "longitude": 103.773912,
+            "latitude": 1.292703
         }
     },
     {
-        "roomCode": "BIZ1-0201",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 2-1",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77405087721557,
-            "latitude": 1.2924198834131768
+            "longitude": 103.774051,
+            "latitude": 1.29242
         }
     },
     {
-        "roomCode": "BIZ1-0202",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 2-2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77392488408341,
-            "latitude": 1.292479705057965
+            "longitude": 103.773925,
+            "latitude": 1.29248
         }
     },
     {
-        "roomCode": "BIZ2-0201",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 2-1",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77480046804925,
-            "latitude": 1.293585699845722
+            "longitude": 103.7748,
+            "latitude": 1.293586
         }
     },
     {
-        "roomCode": "BIZ1-0206",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 2-6",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77414714137413,
-            "latitude": 1.292623660669996
+            "longitude": 103.774147,
+            "latitude": 1.292624
         }
     },
     {
-        "roomCode": "BIZ2-B104",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room B1-4",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77529531979695,
-            "latitude": 1.293297779751492
+            "longitude": 103.775295,
+            "latitude": 1.293298
         }
     },
     {
-        "roomCode": "BIZ1-0204",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 2-4",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7739122274241,
-            "latitude": 1.2927029724261363
+            "longitude": 103.773912,
+            "latitude": 1.292703
         }
     },
     {
-        "roomCode": "BIZ1-0303",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 3-3",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77381357167226,
-            "latitude": 1.2926403066941994
+            "longitude": 103.773814,
+            "latitude": 1.29264
         }
     },
     {
-        "roomCode": "BIZ2-0229",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 2-29",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77501112911452,
-            "latitude": 1.293366004775327
+            "longitude": 103.775011,
+            "latitude": 1.293366
         }
     },
     {
@@ -166,134 +166,134 @@
         "roomName": "Lecture Theatre 10",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7720594590288,
-            "latitude": 1.2949157602130599
+            "longitude": 103.772059,
+            "latitude": 1.294916
         }
     },
     {
-        "roomCode": "AS7-0214",
+        "roomCode": "AS7",
         "roomName": "Tutorial Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77106866993512,
-            "latitude": 1.2943718340425634
+            "longitude": 103.771069,
+            "latitude": 1.294372
         }
     },
     {
-        "roomCode": "AS8-0402",
+        "roomCode": "AS8",
         "roomName": "FASS Tutorial Room",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.7721182951268,
-            "latitude": 1.2962459856888273
+            "longitude": 103.772118,
+            "latitude": 1.296246
         }
     },
     {
-        "roomCode": "AS7-0102",
+        "roomCode": "AS7",
         "roomName": "Seminar Room",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7710383009886,
-            "latitude": 1.2946298656111013
+            "longitude": 103.771038,
+            "latitude": 1.29463
         }
     },
     {
-        "roomCode": "S2-0414",
+        "roomCode": "S2",
         "roomName": "Teaching Assistant Room",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77805188103908,
-            "latitude": 1.2954979930016757
+            "longitude": 103.778052,
+            "latitude": 1.295498
         }
     },
     {
-        "roomCode": "S2-0415",
+        "roomCode": "S2",
         "roomName": "Staff Room",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.7779925839155,
-            "latitude": 1.2955198239603223
+            "longitude": 103.777993,
+            "latitude": 1.29552
         }
     },
     {
-        "roomCode": "S1A-0217",
+        "roomCode": "S1A",
         "roomName": "Seminar Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.778166051549,
-            "latitude": 1.2959208247559988
+            "longitude": 103.778166,
+            "latitude": 1.295921
         }
     },
     {
-        "roomCode": "S16-0437",
+        "roomCode": "S16",
         "roomName": "Seminar Room 8",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78061256634672,
-            "latitude": 1.2968291014586761
+            "longitude": 103.780613,
+            "latitude": 1.296829
         }
     },
     {
-        "roomCode": "BIZ1-0302",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 3-2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77392249854232,
-            "latitude": 1.2924759356111268
+            "longitude": 103.773922,
+            "latitude": 1.292476
         }
     },
     {
-        "roomCode": "BIZ1-0307",
+        "roomCode": "BIZ1",
         "roomName": "EMBA Seminar Room 3-7",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77436910141846,
-            "latitude": 1.292527584386196
+            "longitude": 103.774369,
+            "latitude": 1.292528
         }
     },
     {
-        "roomCode": "BIZ2-0420",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 4-20",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77502873478593,
-            "latitude": 1.2933426065627958
+            "longitude": 103.775029,
+            "latitude": 1.293343
         }
     },
     {
-        "roomCode": "BIZ2-0228",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 2-28",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77509473195855,
-            "latitude": 1.2933361735350462
+            "longitude": 103.775095,
+            "latitude": 1.293336
         }
     },
     {
-        "roomCode": "BIZ2-HSSAU",
+        "roomCode": "BIZ2",
         "roomName": "Hon Sui Sen Auditorium",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7746254,
-            "latitude": 1.2933012
+            "longitude": 103.774625,
+            "latitude": 1.293301
         }
     },
     {
-        "roomCode": "BIZ1-0203",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 2-3",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77380853874396,
-            "latitude": 1.292648678276406
+            "longitude": 103.773809,
+            "latitude": 1.292649
         }
     },
     {
-        "roomCode": "BIZ1-0305",
+        "roomCode": "BIZ1",
         "roomName": "Seminar Room 3-5",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77402241673727,
-            "latitude": 1.2926550012018911
+            "longitude": 103.774022,
+            "latitude": 1.292655
         }
     },
     {
@@ -301,17 +301,17 @@
         "roomName": "Lecture Theatre 3",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77340105516473,
-            "latitude": 1.297782788396538
+            "longitude": 103.773401,
+            "latitude": 1.297783
         }
     },
     {
-        "roomCode": "EA-06-04",
+        "roomCode": "EA",
         "roomName": "Seminar Room 4",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77040660907785,
-            "latitude": 1.3000611759601464
+            "longitude": 103.770407,
+            "latitude": 1.300061
         }
     },
     {
@@ -319,26 +319,26 @@
         "roomName": "Seminar Room @ LT19",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77129296022898,
-            "latitude": 1.2995128919233356
+            "longitude": 103.771293,
+            "latitude": 1.299513
         }
     },
     {
-        "roomCode": "EA-06-02",
+        "roomCode": "EA",
         "roomName": "Seminar Room 2",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77038150521669,
-            "latitude": 1.2998929011780467
+            "longitude": 103.770382,
+            "latitude": 1.299893
         }
     },
     {
-        "roomCode": "EA-02-11",
+        "roomCode": "EA",
         "roomName": "Seminar Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77048516695865,
-            "latitude": 1.3002818961646707
+            "longitude": 103.770485,
+            "latitude": 1.300282
         }
     },
     {
@@ -346,53 +346,53 @@
         "roomName": "Lecture Theatre 5",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77135093589285,
-            "latitude": 1.2983045966610414
+            "longitude": 103.771351,
+            "latitude": 1.298305
         }
     },
     {
-        "roomCode": "EA-06-07",
+        "roomCode": "EA",
         "roomName": "Seminar Room 7 (Active Learning Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.7704782297597,
-            "latitude": 1.3002631503286262
+            "longitude": 103.770478,
+            "latitude": 1.300263
         }
     },
     {
-        "roomCode": "EA-06-03",
+        "roomCode": "EA",
         "roomName": "Seminar Room 3",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.7703764980984,
-            "latitude": 1.2999827695371007
+            "longitude": 103.770376,
+            "latitude": 1.299983
         }
     },
     {
-        "roomCode": "E1-06-01",
+        "roomCode": "E1",
         "roomName": "Seminar Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77122930564994,
-            "latitude": 1.2984783970979255
+            "longitude": 103.771229,
+            "latitude": 1.298478
         }
     },
     {
-        "roomCode": "E4A-06-03",
+        "roomCode": "E4A",
         "roomName": "Linear Electronics Laboratory",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77262273463798,
-            "latitude": 1.2986179076481752
+            "longitude": 103.772623,
+            "latitude": 1.298618
         }
     },
     {
-        "roomCode": "E3-06-04",
+        "roomCode": "E3",
         "roomName": "Tutorial Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77159127843342,
-            "latitude": 1.2995254509506342
+            "longitude": 103.771591,
+            "latitude": 1.299525
         }
     },
     {
@@ -400,136 +400,127 @@
         "roomName": "Lecture Theatre 4",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.7735183186846,
-            "latitude": 1.2974781271276108
+            "longitude": 103.773518,
+            "latitude": 1.297478
         }
     },
     {
-        "roomCode": "E3-06-03",
+        "roomCode": "E3",
         "roomName": "Seminar Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77162119970221,
-            "latitude": 1.2994619969668137
+            "longitude": 103.771621,
+            "latitude": 1.299462
         }
     },
     {
-        "roomCode": "BIZ2-0303",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 3-3",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77477811718812,
-            "latitude": 1.2936476012594607
+            "longitude": 103.774778,
+            "latitude": 1.293648
         }
     },
     {
-        "roomCode": "BIZ2-0302",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 3-2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7747506420134,
-            "latitude": 1.2937062576944849
+            "longitude": 103.774751,
+            "latitude": 1.293706
         }
     },
     {
-        "roomCode": "COM1-0212",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 3",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77400841456318,
-            "latitude": 1.2947910941174683
+            "longitude": 103.774008,
+            "latitude": 1.294791
         }
     },
     {
-        "roomCode": "COM1-0204",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77363022755422,
-            "latitude": 1.2950716958743245
+            "longitude": 103.77363,
+            "latitude": 1.295072
         }
     },
     {
-        "roomCode": "COM1-0203",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 6",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77377825034073,
-            "latitude": 1.295245217052662
+            "longitude": 103.773778,
+            "latitude": 1.295245
         }
     },
     {
-        "roomCode": "COM1-0201",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 5 (Active Learning Room)",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77364859508984,
-            "latitude": 1.295399299579972
+            "longitude": 103.773649,
+            "latitude": 1.295399
         }
     },
     {
-        "roomCode": "COM1-0209",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 9",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77416220604057,
-            "latitude": 1.2948080988798212
+            "longitude": 103.774162,
+            "latitude": 1.294808
         }
     },
     {
-        "roomCode": "COM1-0216",
+        "roomCode": "COM1",
         "roomName": "Tutorial Room 11",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77397325718385,
-            "latitude": 1.2947181065642799
+            "longitude": 103.773973,
+            "latitude": 1.294718
         }
     },
     {
-        "roomCode": "COM1-0207",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 7",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7740489892307,
-            "latitude": 1.2949426312679213
+            "longitude": 103.774049,
+            "latitude": 1.294943
         }
     },
     {
-        "roomCode": "COM1-0217",
+        "roomCode": "COM1",
         "roomName": "Tutorial Room 10",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7739295391784,
-            "latitude": 1.2947700558396817
+            "longitude": 103.77393,
+            "latitude": 1.29477
         }
     },
     {
-        "roomCode": "i3-0344",
+        "roomCode": "i3",
         "nusRoomCode": "I3-03-44",
         "roomName": "STMI Executive Training Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7755675261885,
-            "latitude": 1.2924530137961476,
+            "longitude": 103.775568,
+            "latitude": 1.292453,
             "z": 10
         }
     },
     {
-        "roomCode": "AS8-0646",
+        "roomCode": "AS8",
         "roomName": "Conference Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77230168400571,
-            "latitude": 1.2960286695897383
-        }
-    },
-    {
-        "roomCode": "E1-06-04",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77113407123136,
-            "latitude": 1.2986802597007854
+            "longitude": 103.772302,
+            "latitude": 1.296029
         }
     },
     {
@@ -537,53 +528,17 @@
         "roomName": "Lecture Theatre 7",
         "floor": null,
         "coordinate": {
-            "longitude": 103.77108408506066,
-            "latitude": 1.3000819751503252
+            "longitude": 103.771084,
+            "latitude": 1.300082
         }
     },
     {
-        "roomCode": "E1-06-06",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77107265346072,
-            "latitude": 1.2988104468426558
-        }
-    },
-    {
-        "roomCode": "E1-06-09",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77105321711622,
-            "latitude": 1.2990281268413146
-        }
-    },
-    {
-        "roomCode": "E1-06-03",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77116478236066,
-            "latitude": 1.2986151634160727
-        }
-    },
-    {
-        "roomCode": "E1-06-05",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77110336279617,
-            "latitude": 1.298745351463249
-        }
-    },
-    {
-        "roomCode": "E4-04-03",
+        "roomCode": "E4",
         "roomName": "Advance Control Technology Lab",
         "floor": 4,
         "coordinate": {
             "longitude": 103.771701,
-            "latitude": 1.2988515
+            "latitude": 1.298852
         }
     },
     {
@@ -591,8 +546,8 @@
         "roomName": "Lecture Theatre 2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77140470268863,
-            "latitude": 1.2993124975071704
+            "longitude": 103.771405,
+            "latitude": 1.299312
         }
     },
     {
@@ -600,288 +555,162 @@
         "roomName": "Lecture Theatre 6",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77196318826034,
-            "latitude": 1.2987585148416605
+            "longitude": 103.771963,
+            "latitude": 1.298759
         }
     },
     {
-        "roomCode": "E1-06-08",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77098527449711,
-            "latitude": 1.298995662095381
-        }
-    },
-    {
-        "roomCode": "E3-06-09",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77151272213253,
-            "latitude": 1.2998648198508147
-        }
-    },
-    {
-        "roomCode": "E4-04-04",
+        "roomCode": "E4",
         "roomName": "Active Learning Room",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77171694758965,
-            "latitude": 1.2987982529100295
+            "longitude": 103.771717,
+            "latitude": 1.298798
         }
     },
     {
-        "roomCode": "E1-06-07",
+        "roomCode": "E1",
         "roomName": "Seminar Room (Active Learning Room)",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77103634320771,
-            "latitude": 1.2988874118637497
+            "longitude": 103.771036,
+            "latitude": 1.298887
         }
     },
     {
-        "roomCode": "E2-03-02",
+        "roomCode": "E2",
         "roomName": "Seminar Room (Active Learning Room)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77124098908604,
-            "latitude": 1.2991178380970212
+            "longitude": 103.771241,
+            "latitude": 1.299118
         }
     },
     {
-        "roomCode": "E2-03-32",
+        "roomCode": "E2",
         "roomName": "Seminar Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7712929437992,
-            "latitude": 1.2990077022822446
+            "longitude": 103.771293,
+            "latitude": 1.299008
         }
     },
     {
-        "roomCode": "E2-03-03",
+        "roomCode": "E2",
         "roomName": "Tutorial Room (Active Learning Room)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77120560887423,
-            "latitude": 1.299192845194747
+            "longitude": 103.771206,
+            "latitude": 1.299193
         }
     },
     {
-        "roomCode": "E3-06-01",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77168612825712,
-            "latitude": 1.2993243027699033
-        }
-    },
-    {
-        "roomCode": "E3-06-08",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77144462853268,
-            "latitude": 1.299832231214548
-        }
-    },
-    {
-        "roomCode": "COM1-0113",
+        "roomCode": "COM1",
         "roomName": "Embedded Systems Teaching Lab 2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77399879754427,
-            "latitude": 1.2948261488620085
+            "longitude": 103.773999,
+            "latitude": 1.294826
         }
     },
     {
-        "roomCode": "COM1-0114",
+        "roomCode": "COM1",
         "roomName": "Embedded Systems Teaching Lab 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77395649927423,
-            "latitude": 1.2948764061055216
+            "longitude": 103.773956,
+            "latitude": 1.294876
         }
     },
     {
-        "roomCode": "AS3-0303",
+        "roomCode": "AS3",
         "roomName": "Seminar Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77143809188564,
-            "latitude": 1.2947555513545945
+            "longitude": 103.771438,
+            "latitude": 1.294756
         }
     },
     {
-        "roomCode": "AS5-0309",
+        "roomCode": "AS5",
         "roomName": "Seminar Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77183677759575,
-            "latitude": 1.2942108118444964
+            "longitude": 103.771837,
+            "latitude": 1.294211
         }
     },
     {
-        "roomCode": "AS7-0106",
-        "roomName": "Seminar Room",
-        "floor": 1,
-        "coordinate": {
-            "longitude": 103.77115679974798,
-            "latitude": 1.2945617708102077
-        }
-    },
-    {
-        "roomCode": "AS1-0301",
+        "roomCode": "AS1",
         "roomName": "Seminar Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77242463868491,
-            "latitude": 1.295546379598693
+            "longitude": 103.772425,
+            "latitude": 1.295546
         }
     },
     {
-        "roomCode": "AS1-0208",
+        "roomCode": "AS1",
         "roomName": "Seminar Room (Active Learning Room)",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77221961367701,
-            "latitude": 1.295245297279139
+            "longitude": 103.77222,
+            "latitude": 1.295245
         }
     },
     {
-        "roomCode": "AS4-0206",
+        "roomCode": "AS4",
         "roomName": "Seminar Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77197963582599,
-            "latitude": 1.294627705573499
+            "longitude": 103.77198,
+            "latitude": 1.294628
         }
     },
     {
-        "roomCode": "AS2-0413",
+        "roomCode": "AS2",
         "roomName": "Seminar Room",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.7715262318452,
-            "latitude": 1.2951959445714136
+            "longitude": 103.771526,
+            "latitude": 1.295196
         }
     },
     {
-        "roomCode": "AS5-0205",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.7717777970229,
-            "latitude": 1.2941464911099443
-        }
-    },
-    {
-        "roomCode": "AS3-0307",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77113279902782,
-            "latitude": 1.2946989867008212
-        }
-    },
-    {
-        "roomCode": "AS4-0604",
+        "roomCode": "AS4",
         "roomName": "Research Lab (Temp)",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77213996573175,
-            "latitude": 1.294692076698793
+            "longitude": 103.77214,
+            "latitude": 1.294692
         }
     },
     {
-        "roomCode": "AS5-0202",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.7717125547647,
-            "latitude": 1.2939599508094428
-        }
-    },
-    {
-        "roomCode": "AS8-0401",
+        "roomCode": "AS8",
         "roomName": "FASS Seminar Room",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77207885443464,
-            "latitude": 1.2961353873044867
+            "longitude": 103.772079,
+            "latitude": 1.296135
         }
     },
     {
-        "roomCode": "AS4-0119",
-        "roomName": "Seminar Room",
-        "floor": 1,
-        "coordinate": {
-            "longitude": 103.77145341527222,
-            "latitude": 1.2943997458713126
-        }
-    },
-    {
-        "roomCode": "AS1-0304",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.7723465065967,
-            "latitude": 1.2953286800325798
-        }
-    },
-    {
-        "roomCode": "AS7-0101",
-        "roomName": "Seminar Room",
-        "floor": 1,
-        "coordinate": {
-            "longitude": 103.77097285948192,
-            "latitude": 1.2945093683012465
-        }
-    },
-    {
-        "roomCode": "AS4-0603",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77223475074419,
-            "latitude": 1.2947484959587636
-        }
-    },
-    {
-        "roomCode": "AS7-0119",
+        "roomCode": "AS7",
         "roomName": "Seminar Room D",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77118729437709,
-            "latitude": 1.2940494473729465
+            "longitude": 103.771187,
+            "latitude": 1.294049
         }
     },
     {
-        "roomCode": "AS3-0305",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77131443894076,
-            "latitude": 1.2946816047747634
-        }
-    },
-    {
-        "roomCode": "AS1-0303",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77236923911566,
-            "latitude": 1.2953920204513354
-        }
-    },
-    {
-        "roomCode": "AS4-0110",
+        "roomCode": "AS4",
         "nusRoomCode": "AS4-01-10",
         "roomName": "Computer Lab",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77193139943837,
-            "latitude": 1.2946245970026615,
+            "longitude": 103.771931,
+            "latitude": 1.294625,
             "z": 0
         }
     },
@@ -890,35 +719,35 @@
         "roomName": "Lecture Theatre 28",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7811495867657,
-            "latitude": 1.297199706737715
+            "longitude": 103.78115,
+            "latitude": 1.2972
         }
     },
     {
-        "roomCode": "S16-0307",
+        "roomCode": "S16",
         "roomName": "Department Seminar Room (Seminar Room 1)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78020476545214,
-            "latitude": 1.2968108229079032
+            "longitude": 103.780205,
+            "latitude": 1.296811
         }
     },
     {
-        "roomCode": "S5-0224",
+        "roomCode": "S5",
         "roomName": "Chem Tutorial Room 2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77963675090095,
-            "latitude": 1.2956297353180064
+            "longitude": 103.779637,
+            "latitude": 1.29563
         }
     },
     {
-        "roomCode": "S16-0430",
+        "roomCode": "S16",
         "roomName": "Tutorial Room 10",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78046491027257,
-            "latitude": 1.2966662856295585
+            "longitude": 103.780465,
+            "latitude": 1.296666
         }
     },
     {
@@ -926,8 +755,8 @@
         "roomName": "Lecture Theatre 32",
         "floor": null,
         "coordinate": {
-            "longitude": 103.77830217071332,
-            "latitude": 1.2961400836523527
+            "longitude": 103.778302,
+            "latitude": 1.29614
         }
     },
     {
@@ -935,8 +764,8 @@
         "roomName": "Lecture Theatre 27",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78090117515984,
-            "latitude": 1.2969925415205374
+            "longitude": 103.780901,
+            "latitude": 1.296993
         }
     },
     {
@@ -944,17 +773,17 @@
         "roomName": "Lecture Theatre 31",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78039359238537,
-            "latitude": 1.296863036752469
+            "longitude": 103.780394,
+            "latitude": 1.296863
         }
     },
     {
-        "roomCode": "E5-03-19",
+        "roomCode": "E5",
         "roomName": "Seminar Room(Active Learning Room)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77203256266569,
-            "latitude": 1.29817763882849
+            "longitude": 103.772033,
+            "latitude": 1.298178
         }
     },
     {
@@ -962,8 +791,8 @@
         "roomName": "Lecture Theatre 34",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78083854913713,
-            "latitude": 1.2977295044675978
+            "longitude": 103.780839,
+            "latitude": 1.29773
         }
     },
     {
@@ -971,17 +800,17 @@
         "roomName": "Lecture Theatre 26",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78110405867265,
-            "latitude": 1.2964439980596048
+            "longitude": 103.781104,
+            "latitude": 1.296444
         }
     },
     {
-        "roomCode": "S5-0223",
+        "roomCode": "S5",
         "roomName": "Chem Tutorial Room 3",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77968110871842,
-            "latitude": 1.295613570749399
+            "longitude": 103.779681,
+            "latitude": 1.295614
         }
     },
     {
@@ -989,8 +818,8 @@
         "roomName": "Lecture Theatre 21",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77946703176282,
-            "latitude": 1.295356780941112
+            "longitude": 103.779467,
+            "latitude": 1.295357
         }
     },
     {
@@ -998,26 +827,26 @@
         "roomName": "Lecture Theatre 33",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.78090879191791,
-            "latitude": 1.2977441788622253
+            "longitude": 103.780909,
+            "latitude": 1.297744
         }
     },
     {
-        "roomCode": "S5-0410",
+        "roomCode": "S5",
         "roomName": "Experimental Cubicle 5",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77971470484341,
-            "latitude": 1.2955043902597878
+            "longitude": 103.779715,
+            "latitude": 1.295504
         }
     },
     {
-        "roomCode": "S14-0620",
+        "roomCode": "S14",
         "roomName": "Seminar Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77959245458497,
-            "latitude": 1.296735091084466
+            "longitude": 103.779592,
+            "latitude": 1.296735
         }
     },
     {
@@ -1025,8 +854,8 @@
         "roomName": "Lecture Theatre 20",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77882045948085,
-            "latitude": 1.2958439182978323
+            "longitude": 103.77882,
+            "latitude": 1.295844
         }
     },
     {
@@ -1034,108 +863,81 @@
         "roomName": "Lecture Theatre 29",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78121942281726,
-            "latitude": 1.2970306748465374
+            "longitude": 103.781219,
+            "latitude": 1.297031
         }
     },
     {
-        "roomCode": "S14-0619",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.7797014692963,
-            "latitude": 1.2967861411655512
-        }
-    },
-    {
-        "roomCode": "S8-0314",
+        "roomCode": "S8",
         "roomName": "Executive Classroom",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7792463148344,
-            "latitude": 1.2961066770026624
+            "longitude": 103.779246,
+            "latitude": 1.296107
         }
     },
     {
-        "roomCode": "S13-M-09",
+        "roomCode": "S13",
         "roomName": "Computer Lab 1",
         "floor": 105,
         "coordinate": {
-            "longitude": 103.7790883205841,
-            "latitude": 1.2967727470417594
+            "longitude": 103.779088,
+            "latitude": 1.296773
         }
     },
     {
-        "roomCode": "S16-0436",
+        "roomCode": "S16",
         "roomName": "Tutorial Room 13",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78057362218198,
-            "latitude": 1.296717767048963
+            "longitude": 103.780574,
+            "latitude": 1.296718
         }
     },
     {
-        "roomCode": "S16-0435",
+        "roomCode": "S16",
         "roomName": "Seminar Room 7",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.7805560494127,
-            "latitude": 1.2968023410340423
+            "longitude": 103.780556,
+            "latitude": 1.296802
         }
     },
     {
-        "roomCode": "E3-06-07",
+        "roomCode": "E3",
         "roomName": "Seminar Room (Active Learning Room)",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77149631806587,
-            "latitude": 1.2997268984685864
+            "longitude": 103.771496,
+            "latitude": 1.299727
         }
     },
     {
-        "roomCode": "E5-03-22",
+        "roomCode": "E5",
         "roomName": "Seminar Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77229147043936,
-            "latitude": 1.2980839837384197
+            "longitude": 103.772291,
+            "latitude": 1.298084
         }
     },
     {
-        "roomCode": "E5-03-21",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.7722243755894,
-            "latitude": 1.2981082552454721
-        }
-    },
-    {
-        "roomCode": "E5-02-32",
+        "roomCode": "E5",
         "roomName": "Executive Seminar Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77287015889299,
-            "latitude": 1.2978119839358138
+            "longitude": 103.77287,
+            "latitude": 1.297812
         }
     },
     {
-        "roomCode": "E5-03-20",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77214569481326,
-            "latitude": 1.2981367163883881
-        }
-    },
-    {
-        "roomCode": "EW2-0402",
+        "roomCode": "EW2",
         "nusRoomCode": "EW2-04-02",
         "roomName": "Chemical & Biomolecular Engineering UG Lab",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77260123626932,
-            "latitude": 1.2990990325535583,
+            "longitude": 103.772601,
+            "latitude": 1.299099,
             "z": 20
         }
     },
@@ -1144,174 +946,147 @@
         "roomName": "Lecture Theatre 7A",
         "floor": null,
         "coordinate": {
-            "longitude": 103.77094760790798,
-            "latitude": 1.3004814583946265
+            "longitude": 103.770948,
+            "latitude": 1.300481
         }
     },
     {
-        "roomCode": "E5-03-23",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.7723572965332,
-            "latitude": 1.2980601725201302
-        }
-    },
-    {
-        "roomCode": "E1-06-02",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77119549169116,
-            "latitude": 1.2985500698439354
-        }
-    },
-    {
-        "roomCode": "E3-06-06",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77153143409402,
-            "latitude": 1.299652360725575
-        }
-    },
-    {
-        "roomCode": "MD1-08-01E",
+        "roomCode": "MD1",
         "roomName": "Seminar Room 1",
         "floor": 8,
         "coordinate": {
-            "longitude": 103.78071805838483,
-            "latitude": 1.2954196977993246
+            "longitude": 103.780718,
+            "latitude": 1.29542
         }
     },
     {
-        "roomCode": "S13-M-08",
+        "roomCode": "S13",
         "roomName": "Computer Lab 2",
         "floor": 105,
         "coordinate": {
-            "longitude": 103.77922139066418,
-            "latitude": 1.2967170184504604
+            "longitude": 103.779221,
+            "latitude": 1.296717
         }
     },
     {
-        "roomCode": "COM1-B108",
+        "roomCode": "COM1",
         "roomName": "Programming Lab 3",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77399490559694,
-            "latitude": 1.2948802261411385
+            "longitude": 103.773995,
+            "latitude": 1.29488
         }
     },
     {
-        "roomCode": "COM1-0120",
+        "roomCode": "COM1",
         "roomName": "Programming Lab 6",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77393662964938,
-            "latitude": 1.2946898018099136
+            "longitude": 103.773937,
+            "latitude": 1.29469
         }
     },
     {
-        "roomCode": "COM1-B111",
+        "roomCode": "COM1",
         "roomName": "Programming Lab 4",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77390670433856,
-            "latitude": 1.2949318976322264
+            "longitude": 103.773907,
+            "latitude": 1.294932
         }
     },
     {
-        "roomCode": "i3-0336",
+        "roomCode": "i3",
         "nusRoomCode": "I3-03-36",
         "roomName": "Graduate Students Lab 2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77600653251584,
-            "latitude": 1.292238306896456,
+            "longitude": 103.776007,
+            "latitude": 1.292238,
             "z": 10
         }
     },
     {
-        "roomCode": "i3-0338",
+        "roomCode": "i3",
         "nusRoomCode": "I3-03-38",
         "roomName": "FYP Lab 3",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7758652168729,
-            "latitude": 1.292285989913646,
+            "longitude": 103.775865,
+            "latitude": 1.292286,
             "z": 10
         }
     },
     {
-        "roomCode": "COM1-B110",
+        "roomCode": "COM1",
         "roomName": "Programming Lab 5",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77389908044206,
-            "latitude": 1.2948059113590875
+            "longitude": 103.773899,
+            "latitude": 1.294806
         }
     },
     {
-        "roomCode": "AS6-0208",
+        "roomCode": "AS6",
         "roomName": "Discussion Room 5",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77331128855921,
-            "latitude": 1.295353329958129
+            "longitude": 103.773311,
+            "latitude": 1.295353
         }
     },
     {
-        "roomCode": "COM1-0208",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 8",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77410582542402,
-            "latitude": 1.2948750937706417
+            "longitude": 103.774106,
+            "latitude": 1.294875
         }
     },
     {
-        "roomCode": "AS6-0421",
+        "roomCode": "AS6",
         "roomName": "Media Teaching Lab 1",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77307002841133,
-            "latitude": 1.2957162148539985
+            "longitude": 103.77307,
+            "latitude": 1.295716
         }
     },
     {
-        "roomCode": "COM1-B109",
+        "roomCode": "COM1",
         "roomName": "Programming Lab 2",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77394993801991,
-            "latitude": 1.2948418917897562
+            "longitude": 103.77395,
+            "latitude": 1.294842
         }
     },
     {
-        "roomCode": "COM2-0108",
+        "roomCode": "COM2",
         "roomName": "Tutorial Room 9",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7741592837536,
-            "latitude": 1.2935772164129489
+            "longitude": 103.774159,
+            "latitude": 1.293577
         }
     },
     {
-        "roomCode": "COM1-0218",
+        "roomCode": "COM1",
         "roomName": "Tutorial Room 5",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77400457029671,
-            "latitude": 1.2945721103380643
+            "longitude": 103.774005,
+            "latitude": 1.294572
         }
     },
     {
-        "roomCode": "COM1-B112",
+        "roomCode": "COM1",
         "roomName": "Programming Lab 1",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77384933268041,
-            "latitude": 1.294957757481026
+            "longitude": 103.773849,
+            "latitude": 1.294958
         }
     },
     {
@@ -1319,82 +1094,82 @@
         "roomName": "Lecture Theatre 15",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77340877469021,
-            "latitude": 1.295522499959851
+            "longitude": 103.773409,
+            "latitude": 1.295522
         }
     },
     {
-        "roomCode": "COM1-0210",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 10 (Active Learning Room)",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7742308799548,
-            "latitude": 1.294726496078519
+            "longitude": 103.774231,
+            "latitude": 1.294726
         }
     },
     {
-        "roomCode": "COM1-B103",
+        "roomCode": "COM1",
         "roomName": "Active Learning Lab",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.7741520884566,
-            "latitude": 1.2946915586338772
+            "longitude": 103.774152,
+            "latitude": 1.294692
         }
     },
     {
-        "roomCode": "COM1-B113",
+        "roomCode": "COM1",
         "roomName": "IT Security & OS Lab",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77382251299647,
-            "latitude": 1.2950339531613342
+            "longitude": 103.773823,
+            "latitude": 1.295034
         }
     },
     {
-        "roomCode": "COM1-B102",
+        "roomCode": "COM1",
         "roomName": "Data Communications & Networking Lab 2",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77418317952842,
-            "latitude": 1.2947820952796627
+            "longitude": 103.774183,
+            "latitude": 1.294782
         }
     },
     {
-        "roomCode": "AS6-0426",
+        "roomCode": "AS6",
         "roomName": "Media Teaching Lab 2A",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77296457700454,
-            "latitude": 1.295876370728193
+            "longitude": 103.772965,
+            "latitude": 1.295876
         }
     },
     {
-        "roomCode": "COM1-0206",
+        "roomCode": "COM1",
         "roomName": "Seminar Room 1",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77393175616923,
-            "latitude": 1.2950279706567276
+            "longitude": 103.773932,
+            "latitude": 1.295028
         }
     },
     {
-        "roomCode": "AS3-0207",
+        "roomCode": "AS3",
         "nusRoomCode": "AS3-02-07",
         "roomName": "Graduate Room/ Seminar Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77132252854963,
-            "latitude": 1.2947173617298973,
+            "longitude": 103.771323,
+            "latitude": 1.294717,
             "z": 5
         }
     },
     {
-        "roomCode": "S16-0598",
+        "roomCode": "S16",
         "roomName": "Seminar Room (Active Learning)",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.7805388714307,
-            "latitude": 1.2966976152714058
+            "longitude": 103.780539,
+            "latitude": 1.296698
         }
     },
     {
@@ -1402,64 +1177,37 @@
         "roomName": "Lecture Theatre 18",
         "floor": null,
         "coordinate": {
-            "longitude": 103.77460509538652,
-            "latitude": 1.2933049908717555
+            "longitude": 103.774605,
+            "latitude": 1.293305
         }
     },
     {
-        "roomCode": "S17-0404",
+        "roomCode": "S17",
         "roomName": "Seminar Room 3",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78069589858914,
-            "latitude": 1.2977219451351334
+            "longitude": 103.780696,
+            "latitude": 1.297722
         }
     },
     {
-        "roomCode": "BIZ2-0117",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 1-17",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77509832140223,
-            "latitude": 1.2933463685175903
+            "longitude": 103.775098,
+            "latitude": 1.293346
         }
     },
     {
-        "roomCode": "HSS-03-17",
+        "roomCode": "HSS",
         "nusRoomCode": "HSS-03-17",
         "roomName": "BIZ/ HSMLCR",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77435565311596,
-            "latitude": 1.2931041443946742,
+            "longitude": 103.774356,
+            "latitude": 1.293104,
             "z": 10
-        }
-    },
-    {
-        "roomCode": "E3-06-11",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77161263640383,
-            "latitude": 1.2996911481945275
-        }
-    },
-    {
-        "roomCode": "E3-06-10",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77158216249852,
-            "latitude": 1.299755776029217
-        }
-    },
-    {
-        "roomCode": "E3-06-05",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.7715613562645,
-            "latitude": 1.299588905838335
         }
     },
     {
@@ -1467,62 +1215,8 @@
         "roomName": "Lecture Theatre 9",
         "floor": null,
         "coordinate": {
-            "longitude": 103.7722506424852,
-            "latitude": 1.294968895355766
-        }
-    },
-    {
-        "roomCode": "AS4-0602",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77221057309015,
-            "latitude": 1.2948096891841967
-        }
-    },
-    {
-        "roomCode": "AS3-0208",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77133676505322,
-            "latitude": 1.2946806060016864
-        }
-    },
-    {
-        "roomCode": "AS4-0109",
-        "roomName": "Seminar Room",
-        "floor": 1,
-        "coordinate": {
-            "longitude": 103.77199127404332,
-            "latitude": 1.2946528770289971
-        }
-    },
-    {
-        "roomCode": "AS3-0209",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77128735302539,
-            "latitude": 1.2946548041759978
-        }
-    },
-    {
-        "roomCode": "AS3-0302",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77149639851056,
-            "latitude": 1.2947846606561015
-        }
-    },
-    {
-        "roomCode": "AS1-0209",
-        "roomName": "Seminar Room (Active Learning Room)",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77215585020639,
-            "latitude": 1.2952151831122907
+            "longitude": 103.772251,
+            "latitude": 1.294969
         }
     },
     {
@@ -1530,44 +1224,8 @@
         "roomName": "Lecture Theatre 11",
         "floor": null,
         "coordinate": {
-            "longitude": 103.77139878788282,
-            "latitude": 1.295456827029062
-        }
-    },
-    {
-        "roomCode": "AS2-0311",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77136444901903,
-            "latitude": 1.2951670452519441
-        }
-    },
-    {
-        "roomCode": "AS1-0204",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77237307689276,
-            "latitude": 1.2954254151011662
-        }
-    },
-    {
-        "roomCode": "AS2-0509",
-        "roomName": "Seminar Room",
-        "floor": 5,
-        "coordinate": {
-            "longitude": 103.77168942852542,
-            "latitude": 1.295280920833065
-        }
-    },
-    {
-        "roomCode": "AS4-0118",
-        "roomName": "Seminar Room",
-        "floor": 1,
-        "coordinate": {
-            "longitude": 103.77151310836271,
-            "latitude": 1.2944279381807529
+            "longitude": 103.771399,
+            "latitude": 1.295457
         }
     },
     {
@@ -1575,53 +1233,26 @@
         "roomName": "Lecture Theatre 8",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77199079513672,
-            "latitude": 1.2941286739949707
+            "longitude": 103.771991,
+            "latitude": 1.294129
         }
     },
     {
-        "roomCode": "AS1-0203",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77239537095346,
-            "latitude": 1.2954875309998122
-        }
-    },
-    {
-        "roomCode": "AS1-0302",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77239138402778,
-            "latitude": 1.2954537221475408
-        }
-    },
-    {
-        "roomCode": "AS4-0117",
+        "roomCode": "AS4",
         "roomName": "Computer Room",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7715728526709,
-            "latitude": 1.2944561549079376
+            "longitude": 103.771573,
+            "latitude": 1.294456
         }
     },
     {
-        "roomCode": "AS8-0405",
+        "roomCode": "AS8",
         "roomName": "FASS Computer Teaching Lab",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77232644493502,
-            "latitude": 1.2959253239578203
-        }
-    },
-    {
-        "roomCode": "AS3-0214",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77106737931292,
-            "latitude": 1.2947162674867374
+            "longitude": 103.772326,
+            "latitude": 1.295925
         }
     },
     {
@@ -1629,26 +1260,8 @@
         "roomName": "Lecture Theatre 12",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77114846994691,
-            "latitude": 1.2949801946461976
-        }
-    },
-    {
-        "roomCode": "AS4-0116",
-        "roomName": "Seminar Room",
-        "floor": 1,
-        "coordinate": {
-            "longitude": 103.77163235086563,
-            "latitude": 1.2944808210934202
-        }
-    },
-    {
-        "roomCode": "AS2-0510",
-        "roomName": "Seminar Room",
-        "floor": 5,
-        "coordinate": {
-            "longitude": 103.77163098257019,
-            "latitude": 1.2952535768512212
+            "longitude": 103.771148,
+            "latitude": 1.29498
         }
     },
     {
@@ -1656,508 +1269,346 @@
         "roomName": "Lecture Theatre 14",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7733578704978,
-            "latitude": 1.2957109058743046
+            "longitude": 103.773358,
+            "latitude": 1.295711
         }
     },
     {
-        "roomCode": "AS2-0312",
+        "roomCode": "AS2",
         "roomName": "Economics Dept Seminar Room (Lim Tay Boh Room)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77122113241607,
-            "latitude": 1.2952010096447986
+            "longitude": 103.771221,
+            "latitude": 1.295201
         }
     },
     {
-        "roomCode": "AS6-0214",
+        "roomCode": "AS6",
         "roomName": "Seminar Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77309907509418,
-            "latitude": 1.2956620079511314
+            "longitude": 103.773099,
+            "latitude": 1.295662
         }
     },
     {
-        "roomCode": "AS1-0213",
-        "roomName": "Seminar Room (Active Learning Room)",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77188940474412,
-            "latitude": 1.2950893397576222
-        }
-    },
-    {
-        "roomCode": "E3-06-12",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77164254599253,
-            "latitude": 1.2996277204368702
-        }
-    },
-    {
-        "roomCode": "E3-06-13",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77167246815999,
-            "latitude": 1.2995642655481459
-        }
-    },
-    {
-        "roomCode": "E3-06-15",
+        "roomCode": "E3",
         "roomName": "Tutorial Room (Active Learning Room)",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.7717323205774,
-            "latitude": 1.2994373440127818
+            "longitude": 103.771732,
+            "latitude": 1.299437
         }
     },
     {
-        "roomCode": "E3-06-14",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77170239032588,
-            "latitude": 1.2995008106589612
-        }
-    },
-    {
-        "roomCode": "E3-06-02",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.7716511209695,
-            "latitude": 1.2993985420781702
-        }
-    },
-    {
-        "roomCode": "EA-06-05",
+        "roomCode": "EA",
         "roomName": "Seminar Room 5",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77043059674752,
-            "latitude": 1.3001286991099226
+            "longitude": 103.770431,
+            "latitude": 1.300129
         }
     },
     {
-        "roomCode": "E1-06-10",
+        "roomCode": "E1",
         "roomName": "Tutorial Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77112090006638,
-            "latitude": 1.2989132814912119
+            "longitude": 103.771121,
+            "latitude": 1.298913
         }
     },
     {
-        "roomCode": "E2A-02-02",
+        "roomCode": "E2A",
         "roomName": "DCP Electronics Workshop",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77144811786084,
-            "latitude": 1.2987129222434761
+            "longitude": 103.771448,
+            "latitude": 1.298713
         }
     },
     {
-        "roomCode": "E2A-03-01",
+        "roomCode": "E2A",
         "roomName": "DCP Studio 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77147862551244,
-            "latitude": 1.2988490497153404
+            "longitude": 103.771479,
+            "latitude": 1.298849
         }
     },
     {
-        "roomCode": "E2A-03-02",
+        "roomCode": "E2A",
         "nusRoomCode": "E2A-03-02",
         "roomName": "DCP Studio 2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77148959250358,
-            "latitude": 1.2987274319812008,
+            "longitude": 103.77149,
+            "latitude": 1.298727,
             "z": 15
         }
     },
     {
-        "roomCode": "E2A-04-02",
+        "roomCode": "E2A",
         "nusRoomCode": "E2A-04-02",
         "roomName": "DCP Studio 3",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77148388232399,
-            "latitude": 1.2988355295988105,
+            "longitude": 103.771484,
+            "latitude": 1.298836,
             "z": 15
         }
     },
     {
-        "roomCode": "E2A-04-03",
+        "roomCode": "E2A",
         "nusRoomCode": "E2A-04-03",
         "roomName": "DCP Studio 4",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77148959250358,
-            "latitude": 1.2987274319812008,
+            "longitude": 103.77149,
+            "latitude": 1.298727,
             "z": 15
         }
     },
     {
-        "roomCode": "E1-06-12",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77118231604008,
-            "latitude": 1.2987831015831095
-        }
-    },
-    {
-        "roomCode": "E1-06-11",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77115160760464,
-            "latitude": 1.298848196963577
-        }
-    },
-    {
-        "roomCode": "E1-06-15",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77127444223505,
-            "latitude": 1.298587818151939
-        }
-    },
-    {
-        "roomCode": "E1-06-13",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77121302537235,
-            "latitude": 1.2987180089152839
-        }
-    },
-    {
-        "roomCode": "AS3-0304",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.7713833435048,
-            "latitude": 1.2947258696766968
-        }
-    },
-    {
-        "roomCode": "AS5-0203",
+        "roomCode": "AS5",
         "roomName": "Semiotic Research Lab (ELL)",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77173425396464,
-            "latitude": 1.2940219934452142
+            "longitude": 103.771734,
+            "latitude": 1.294022
         }
     },
     {
-        "roomCode": "AS3-0308",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77107159429184,
-            "latitude": 1.2947197313061816
-        }
-    },
-    {
-        "roomCode": "AS3-0306",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.7712004625404,
-            "latitude": 1.29467605278722
-        }
-    },
-    {
-        "roomCode": "AS3-0215",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77100773356037,
-            "latitude": 1.2947364857890038
-        }
-    },
-    {
-        "roomCode": "AS3-0212",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77119016347922,
-            "latitude": 1.2946746507685492
-        }
-    },
-    {
-        "roomCode": "AS3-0309",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.77099887463588,
-            "latitude": 1.2947443788614634
-        }
-    },
-    {
-        "roomCode": "BIZ2-0112",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 1-12",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7753262214032,
-            "latitude": 1.2932651654652032
+            "longitude": 103.775326,
+            "latitude": 1.293265
         }
     },
     {
-        "roomCode": "E1-06-16",
+        "roomCode": "E1",
         "roomName": "Tutorial Room (Active Learning Room)",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.7713082606851,
-            "latitude": 1.2985161381699963
+            "longitude": 103.771308,
+            "latitude": 1.298516
         }
     },
     {
-        "roomCode": "E1-06-14",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77124373470306,
-            "latitude": 1.2986529135338845
-        }
-    },
-    {
-        "roomCode": "S16-0440",
+        "roomCode": "S16",
         "roomName": "Tutorial Room 16",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78068208879594,
-            "latitude": 1.2967691308912979
+            "longitude": 103.780682,
+            "latitude": 1.296769
         }
     },
     {
-        "roomCode": "S16-0304",
+        "roomCode": "S16",
         "roomName": "Seminar Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78047659321881,
-            "latitude": 1.2966622225656268
+            "longitude": 103.780477,
+            "latitude": 1.296662
         }
     },
     {
-        "roomCode": "S16-0309",
+        "roomCode": "S16",
         "roomName": "Tutorial Room 3",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78014562999573,
-            "latitude": 1.2968783803944364
+            "longitude": 103.780146,
+            "latitude": 1.296878
         }
     },
     {
-        "roomCode": "BIZ2-0114",
+        "roomCode": "BIZ2",
         "nusRoomCode": "BIZ2-01-14",
         "roomName": "Seminar Room 1-14",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77524234181163,
-            "latitude": 1.2932950527776097,
+            "longitude": 103.775242,
+            "latitude": 1.293295,
             "z": 0
         }
     },
     {
-        "roomCode": "BIZ2-0115",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 1-15",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77520119363727,
-            "latitude": 1.2933097133849338
+            "longitude": 103.775201,
+            "latitude": 1.29331
         }
     },
     {
-        "roomCode": "EA-06-06",
+        "roomCode": "EA",
         "roomName": "Seminar Room 6",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77045450534278,
-            "latitude": 1.3001963714776315
+            "longitude": 103.770455,
+            "latitude": 1.300196
         }
     },
     {
-        "roomCode": "E4-02-01",
+        "roomCode": "E4",
         "nusRoomCode": "E4-02-01",
         "roomName": "Freshmen Lab 1-3",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77222768235404,
-            "latitude": 1.298439954445622,
+            "longitude": 103.772228,
+            "latitude": 1.29844,
             "z": 10
         }
     },
     {
-        "roomCode": "WS2-0530",
+        "roomCode": "WS2",
         "nusRoomCode": "WS2-05-30",
         "roomName": "Innovators Lab",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.7725319757075,
-            "latitude": 1.2993945870773602,
+            "longitude": 103.772532,
+            "latitude": 1.299395,
             "z": 25
         }
     },
     {
-        "roomCode": "AS3-0316",
+        "roomCode": "AS3",
         "roomName": "Graduate Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7712137836573,
-            "latitude": 1.2947407332508771
+            "longitude": 103.771214,
+            "latitude": 1.294741
         }
     },
     {
-        "roomCode": "AS6-0338",
+        "roomCode": "AS6",
         "roomName": "Play Room (CNM)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7729468647723,
-            "latitude": 1.2958827695853172
+            "longitude": 103.772947,
+            "latitude": 1.295883
         }
     },
     {
-        "roomCode": "AS2-0203",
+        "roomCode": "AS2",
         "roomName": "Earth Lab",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77100199113531,
-            "latitude": 1.2952816454908467
+            "longitude": 103.771002,
+            "latitude": 1.295282
         }
     },
     {
-        "roomCode": "AS2-0313",
+        "roomCode": "AS2",
         "roomName": "GIS Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77112866883857,
-            "latitude": 1.295235006938608
+            "longitude": 103.771129,
+            "latitude": 1.295235
         }
     },
     {
-        "roomCode": "AS2-0204",
-        "roomName": "Earth Lab",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77091071909385,
-            "latitude": 1.295312628559656
-        }
-    },
-    {
-        "roomCode": "E-LAB",
+        "roomCode": "E",
         "nusRoomCode": "PHYSICS E-LAB",
         "roomName": "Physics E-Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77876709739479,
-            "latitude": 1.296655722573894,
+            "longitude": 103.778767,
+            "latitude": 1.296656,
             "z": 10
         }
     },
     {
-        "roomCode": "AS2-0302",
+        "roomCode": "AS2",
         "roomName": "Honours Room (Geography)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77182382540906,
-            "latitude": 1.2953166944408956
+            "longitude": 103.771824,
+            "latitude": 1.295317
         }
     },
     {
-        "roomCode": "AS2-0316",
+        "roomCode": "AS2",
         "roomName": "Dept Meeting Room (Geo)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77153604861988,
-            "latitude": 1.2951508116071433
+            "longitude": 103.771536,
+            "latitude": 1.295151
         }
     },
     {
-        "roomCode": "S11-0301",
+        "roomCode": "S11",
         "roomName": "Lab Instruction Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77886290745013,
-            "latitude": 1.2967319752315645
+            "longitude": 103.778863,
+            "latitude": 1.296732
         }
     },
     {
-        "roomCode": "S12-0401",
+        "roomCode": "S12",
         "roomName": "Tutorial Room",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77880188060384,
-            "latitude": 1.296879928831815
+            "longitude": 103.778802,
+            "latitude": 1.29688
         }
     },
     {
-        "roomCode": "S16-0431",
+        "roomCode": "S16",
         "roomName": "Seminar Room 5",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78046968495556,
-            "latitude": 1.2967614411474688
+            "longitude": 103.78047,
+            "latitude": 1.296761
         }
     },
     {
-        "roomCode": "S17-0611",
+        "roomCode": "S17",
         "roomName": "Seminar Room 6",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.78086100474435,
-            "latitude": 1.2977837338612168
+            "longitude": 103.780861,
+            "latitude": 1.297784
         }
     },
     {
-        "roomCode": "AS4-B107",
+        "roomCode": "AS4",
         "roomName": "Tutorial Room",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77160985238247,
-            "latitude": 1.2945128712137348
+            "longitude": 103.77161,
+            "latitude": 1.294513
         }
     },
     {
-        "roomCode": "AS3-0523",
+        "roomCode": "AS3",
         "roomName": "Philosophy Meeting/Resource Room",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77120191838155,
-            "latitude": 1.294704660579218
+            "longitude": 103.771202,
+            "latitude": 1.294705
         }
     },
     {
-        "roomCode": "S17-0512",
+        "roomCode": "S17",
         "roomName": "Seminar Room 4",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.78083346314283,
-            "latitude": 1.2977127714261751
+            "longitude": 103.780833,
+            "latitude": 1.297713
         }
     },
     {
-        "roomCode": "S12-0402",
+        "roomCode": "S12",
         "roomName": "Physics Teaching Lab",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77863726856482,
-            "latitude": 1.2969946927186957
-        }
-    },
-    {
-        "roomCode": "AS1-0210",
-        "roomName": "Seminar Room (Active Learning Room)",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77209664050069,
-            "latitude": 1.2951872169198646
+            "longitude": 103.778637,
+            "latitude": 1.296995
         }
     },
     {
@@ -2165,825 +1616,744 @@
         "roomName": "NUS Theatrette (Lecture Theatre 13)",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77090632915497,
-            "latitude": 1.29506943418948
+            "longitude": 103.770906,
+            "latitude": 1.295069
         }
     },
     {
-        "roomCode": "AS4-0601",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77215302817352,
-            "latitude": 1.2947908580178276
-        }
-    },
-    {
-        "roomCode": "AS1-0207",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77232271331253,
-            "latitude": 1.2952856498018621
-        }
-    },
-    {
-        "roomCode": "BIZ2-0118",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 1-18",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77501451728376,
-            "latitude": 1.2933762295973443
+            "longitude": 103.775015,
+            "latitude": 1.293376
         }
     },
     {
-        "roomCode": "BIZ2-0224",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 2-24",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77527990323696,
-            "latitude": 1.2932701908567978
+            "longitude": 103.77528,
+            "latitude": 1.29327
         }
     },
     {
-        "roomCode": "AS1-0548",
+        "roomCode": "AS1",
         "nusRoomCode": "AS1-05-48",
         "roomName": "Tutorial Room",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77246575545446,
-            "latitude": 1.2955319840173942,
+            "longitude": 103.772466,
+            "latitude": 1.295532,
             "z": 25
         }
     },
     {
-        "roomCode": "AS3-0101",
+        "roomCode": "AS3",
         "roomName": "Theatre Studies Practice Studio",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77111198276855,
-            "latitude": 1.2947244648423655
+            "longitude": 103.771112,
+            "latitude": 1.294724
         }
     },
     {
-        "roomCode": "CELS-01-08",
+        "roomCode": "CELS",
         "roomName": "NGS Multipurpose Room",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78076417172579,
-            "latitude": 1.294411011344144
+            "longitude": 103.780764,
+            "latitude": 1.294411
         }
     },
     {
-        "roomCode": "CELS-01-06",
+        "roomCode": "CELS",
         "nusRoomCode": "CELS-01-06",
         "roomName": "Seminar Room 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78081978938593,
-            "latitude": 1.2942961817306413,
+            "longitude": 103.78082,
+            "latitude": 1.294296,
             "z": 0
         }
     },
     {
-        "roomCode": "BIZ2-0227",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 2-27",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77515669862687,
-            "latitude": 1.293314093100053
+            "longitude": 103.775157,
+            "latitude": 1.293314
         }
     },
     {
-        "roomCode": "AS1-0524",
+        "roomCode": "AS1",
         "roomName": "Meeting/ Thesis",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77173857907228,
-            "latitude": 1.2950098560160874
+            "longitude": 103.771739,
+            "latitude": 1.29501
         }
     },
     {
-        "roomCode": "E1A-05-19",
+        "roomCode": "E1A",
         "roomName": "Staff Room",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77113643180498,
-            "latitude": 1.2988600093939424
+            "longitude": 103.771136,
+            "latitude": 1.29886
         }
     },
     {
-        "roomCode": "i3-0337",
+        "roomCode": "i3",
         "nusRoomCode": "I3-03-37",
         "roomName": "Graduate Students Lab 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77592660212227,
-            "latitude": 1.2922652786525903,
+            "longitude": 103.775927,
+            "latitude": 1.292265,
             "z": 10
         }
     },
     {
-        "roomCode": "AS3-0213",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77112876915017,
-            "latitude": 1.2946954595805344
-        }
-    },
-    {
-        "roomCode": "AS4-0114",
-        "roomName": "Computer Lab",
-        "floor": 1,
-        "coordinate": {
-            "longitude": 103.77170919462839,
-            "latitude": 1.2945012869295494
-        }
-    },
-    {
-        "roomCode": "AS4-0115",
-        "roomName": "Computer Lab",
-        "floor": 1,
-        "coordinate": {
-            "longitude": 103.77168463079167,
-            "latitude": 1.2945541835019005
-        }
-    },
-    {
-        "roomCode": "AS4-0335",
+        "roomCode": "AS4",
         "roomName": "Honours Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77177213960896,
-            "latitude": 1.294601540870097
+            "longitude": 103.771772,
+            "latitude": 1.294602
         }
     },
     {
-        "roomCode": "MD4-02-03E",
+        "roomCode": "MD4",
         "roomName": "Meeting Room/Offices",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.78081788585813,
-            "latitude": 1.295626117452161
+            "longitude": 103.780818,
+            "latitude": 1.295626
         }
     },
     {
-        "roomCode": "MD1-07-01A",
+        "roomCode": "MD1",
         "roomName": "Teaching Lab 1 & Microbiology Microscope Room",
         "floor": 7,
         "coordinate": {
-            "longitude": 103.78063494808147,
-            "latitude": 1.2954422382496684
+            "longitude": 103.780635,
+            "latitude": 1.295442
         }
     },
     {
-        "roomCode": "MD7-02-03",
+        "roomCode": "MD7",
         "roomName": "Seminar Room M9",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.78101697329667,
-            "latitude": 1.2961545119029614
+            "longitude": 103.781017,
+            "latitude": 1.296155
         }
     },
     {
-        "roomCode": "S17-0302",
+        "roomCode": "S17",
         "roomName": "Computer Lab 2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78065804310808,
-            "latitude": 1.2977137101039427
+            "longitude": 103.780658,
+            "latitude": 1.297714
         }
     },
     {
-        "roomCode": "S17-0304",
+        "roomCode": "S17",
         "roomName": "Computer Lab 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78046365946426,
-            "latitude": 1.2976204877546946
+            "longitude": 103.780464,
+            "latitude": 1.29762
         }
     },
     {
-        "roomCode": "S17-0406",
+        "roomCode": "S17",
         "roomName": "Seminar Room 1",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78054811745372,
-            "latitude": 1.2976510724216344
+            "longitude": 103.780548,
+            "latitude": 1.297651
         }
     },
     {
-        "roomCode": "S17-0405",
+        "roomCode": "S17",
         "roomName": "Seminar Room 2",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78062979876718,
-            "latitude": 1.2976902448722667
+            "longitude": 103.78063,
+            "latitude": 1.29769
         }
     },
     {
-        "roomCode": "S16-05102",
+        "roomCode": "S16",
         "roomName": "Computer Laboratory 2",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.78070265004187,
-            "latitude": 1.2967751724760554
+            "longitude": 103.780703,
+            "latitude": 1.296775
         }
     },
     {
-        "roomCode": "S16-05101",
+        "roomCode": "S16",
         "roomName": "Computer Laboratory 1",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.78062926491644,
-            "latitude": 1.2967404225446177
+            "longitude": 103.780629,
+            "latitude": 1.29674
         }
     },
     {
-        "roomCode": "S16-06118",
-        "roomName": "Seminar Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.78049501305661,
-            "latitude": 1.29672016829534
-        }
-    },
-    {
-        "roomCode": "S17-0511",
+        "roomCode": "S17",
         "roomName": "Seminar Room 5",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.78083865160664,
-            "latitude": 1.2977867566847803
+            "longitude": 103.780839,
+            "latitude": 1.297787
         }
     },
     {
-        "roomCode": "E3A-0504",
+        "roomCode": "E3A",
         "nusRoomCode": "E3A-05-04",
         "roomName": "Heat Treatment",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77121465020501,
-            "latitude": 1.3004357792527184,
+            "longitude": 103.771215,
+            "latitude": 1.300436,
             "z": 0
         }
     },
     {
-        "roomCode": "AS8-0647",
+        "roomCode": "AS8",
         "roomName": "Meeting Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77232066894744,
-            "latitude": 1.2960819045510865
+            "longitude": 103.772321,
+            "latitude": 1.296082
         }
     },
     {
-        "roomCode": "AS6-0333",
+        "roomCode": "AS6",
         "roomName": "Dept Meeting Room (CNM)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77305580914974,
-            "latitude": 1.2957465550324785
+            "longitude": 103.773056,
+            "latitude": 1.295747
         }
     },
     {
-        "roomCode": "S11-0204",
+        "roomCode": "S11",
         "roomName": "Tutorial Room/Lab",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77886266466652,
-            "latitude": 1.2967402501607153
+            "longitude": 103.778863,
+            "latitude": 1.29674
         }
     },
     {
-        "roomCode": "S11-0302",
+        "roomCode": "S11",
         "roomName": "Physics E-Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77876709739479,
-            "latitude": 1.296655722573894
+            "longitude": 103.778767,
+            "latitude": 1.296656
         }
     },
     {
-        "roomCode": "S11-0401",
+        "roomCode": "S11",
         "nusRoomCode": "S11-04-01",
         "roomName": "Physics Laboratory",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.7787737761478,
-            "latitude": 1.2966613388217587,
+            "longitude": 103.778774,
+            "latitude": 1.296661,
             "z": 15
         }
     },
     {
-        "roomCode": "S12-0403",
+        "roomCode": "S12",
         "roomName": "Seminar Room",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77883030884449,
-            "latitude": 1.2969582663978476
+            "longitude": 103.77883,
+            "latitude": 1.296958
         }
     },
     {
-        "roomCode": "AS6-0204",
+        "roomCode": "AS6",
         "nusRoomCode": "AS6-02-04",
         "roomName": "Tutorial Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77322627980647,
-            "latitude": 1.2955570025354486,
+            "longitude": 103.773226,
+            "latitude": 1.295557,
             "z": 5
         }
     },
     {
-        "roomCode": "AS7-0201",
+        "roomCode": "AS7",
         "roomName": "Psychology Computer Lab",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77102097590235,
-            "latitude": 1.2946416074488063
+            "longitude": 103.771021,
+            "latitude": 1.294642
         }
     },
     {
-        "roomCode": "AS4-0208",
+        "roomCode": "AS4",
         "roomName": "Dept Meeting Room (Psychology)",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77175331439355,
-            "latitude": 1.2945208195642892
+            "longitude": 103.771753,
+            "latitude": 1.294521
         }
     },
     {
-        "roomCode": "MD1-06-01A",
+        "roomCode": "MD1",
         "roomName": "Teaching Lab 2",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.78058541257901,
-            "latitude": 1.295472350739919
+            "longitude": 103.780585,
+            "latitude": 1.295472
         }
     },
     {
-        "roomCode": "MD1-05-01A",
+        "roomCode": "MD1",
         "roomName": "Teaching Lab 3",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.78058561660362,
-            "latitude": 1.2954696747298005
+            "longitude": 103.780586,
+            "latitude": 1.29547
         }
     },
     {
-        "roomCode": "S4A-0308",
+        "roomCode": "S4A",
         "nusRoomCode": "S4A-03-08",
         "roomName": "DIGOXIN Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77926062763346,
-            "latitude": 1.2957722478669818,
+            "longitude": 103.779261,
+            "latitude": 1.295772,
             "z": 10
         }
     },
     {
-        "roomCode": "AS1-0212",
+        "roomCode": "AS1",
         "roomName": "Sociology Seminar Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77196341776914,
-            "latitude": 1.2951242961472689
+            "longitude": 103.771963,
+            "latitude": 1.295124
         }
     },
     {
-        "roomCode": "AS2-0201",
+        "roomCode": "AS2",
         "roomName": "GAMELAN Instrument Room (Studio)",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77135687474083,
-            "latitude": 1.2951490382678812
+            "longitude": 103.771357,
+            "latitude": 1.295149
         }
     },
     {
-        "roomCode": "MD1-09-01B",
+        "roomCode": "MD1",
         "nusRoomCode": "MD1-09-01B",
         "roomName": "Tutorial Room 2",
         "floor": 9,
         "coordinate": {
-            "longitude": 103.78067220337118,
-            "latitude": 1.2954036127189905,
+            "longitude": 103.780672,
+            "latitude": 1.295404,
             "z": 40
         }
     },
     {
-        "roomCode": "MD1-08-03E",
+        "roomCode": "MD1",
         "roomName": "Seminar Room 2",
         "floor": 8,
         "coordinate": {
-            "longitude": 103.78066954770269,
-            "latitude": 1.2951654130146952
+            "longitude": 103.78067,
+            "latitude": 1.295165
         }
     },
     {
-        "roomCode": "MD1-09-01A",
+        "roomCode": "MD1",
         "roomName": "Tutorial Room 1",
         "floor": 9,
         "coordinate": {
-            "longitude": 103.78075706964135,
-            "latitude": 1.2953706250858725
+            "longitude": 103.780757,
+            "latitude": 1.295371
         }
     },
     {
-        "roomCode": "MD1-09-03F",
+        "roomCode": "MD1",
         "roomName": "Tutorial Room 4",
         "floor": 9,
         "coordinate": {
-            "longitude": 103.78064073919502,
-            "latitude": 1.2951810488735283
+            "longitude": 103.780641,
+            "latitude": 1.295181
         }
     },
     {
-        "roomCode": "AS4-B110",
+        "roomCode": "AS4",
         "roomName": "Family Room (Social Work)",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77146354144062,
-            "latitude": 1.294379410584016
+            "longitude": 103.771464,
+            "latitude": 1.294379
         }
     },
     {
-        "roomCode": "AS4-B109",
+        "roomCode": "AS4",
         "roomName": "Observation Room (Social Work)",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77152940115755,
-            "latitude": 1.2944105150975271
+            "longitude": 103.771529,
+            "latitude": 1.294411
         }
     },
     {
-        "roomCode": "I3-AUD",
+        "roomCode": "I3",
         "roomName": "i3 Auditorium",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7753084,
-            "latitude": 1.2927122
+            "longitude": 103.775308,
+            "latitude": 1.292712
         }
     },
     {
-        "roomCode": "AS1-0211",
+        "roomCode": "AS1",
         "roomName": "History Honours Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7720374289992,
-            "latitude": 1.2951592516304216
+            "longitude": 103.772037,
+            "latitude": 1.295159
         }
     },
     {
-        "roomCode": "AS4-0318",
+        "roomCode": "AS4",
         "roomName": "Staff Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77186605245747,
-            "latitude": 1.2945695096743521
+            "longitude": 103.771866,
+            "latitude": 1.29457
         }
     },
     {
-        "roomCode": "AS5-0204",
+        "roomCode": "AS5",
         "roomName": "Phonetics Lab (ELL)",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77173188620486,
-            "latitude": 1.2941006559002508
+            "longitude": 103.771732,
+            "latitude": 1.294101
         }
     },
     {
-        "roomCode": "BIZ2-0116",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 1-16",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77516004456388,
-            "latitude": 1.2933243758002517
+            "longitude": 103.77516,
+            "latitude": 1.293324
         }
     },
     {
-        "roomCode": "BIZ2-0226",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 2-26",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77519784770013,
-            "latitude": 1.2932994306847816
+            "longitude": 103.775198,
+            "latitude": 1.293299
         }
     },
     {
-        "roomCode": "BIZ2-0401B",
+        "roomCode": "BIZ2",
         "roomName": "Centre For Behavioural Economics Lab",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77449738874093,
-            "latitude": 1.2938240651525725
+            "longitude": 103.774497,
+            "latitude": 1.293824
         }
     },
     {
-        "roomCode": "C4-02-01",
+        "roomCode": "C4",
         "roomName": "Staff Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77914757584118,
-            "latitude": 1.295635625815249
+            "longitude": 103.779148,
+            "latitude": 1.295636
         }
     },
     {
-        "roomCode": "CELS-04-01",
+        "roomCode": "CELS",
         "roomName": "Computer Area",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77287587158882,
-            "latitude": 1.296345680326074
+            "longitude": 103.772876,
+            "latitude": 1.296346
         }
     },
     {
-        "roomCode": "E2-03-06",
+        "roomCode": "E2",
         "roomName": "PC Cluster 3 (Teaching)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77113574164383,
-            "latitude": 1.299340949393047
+            "longitude": 103.771136,
+            "latitude": 1.299341
         }
     },
     {
-        "roomCode": "E2-03-08",
+        "roomCode": "E2",
         "roomName": "PC Cluster 5 (Teaching)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77104410334312,
-            "latitude": 1.2995352054704308
+            "longitude": 103.771044,
+            "latitude": 1.299535
         }
     },
     {
-        "roomCode": "E2-03-09",
+        "roomCode": "E2",
         "roomName": "PC Cluster 6 (Teaching)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77099726698215,
-            "latitude": 1.2996344935562927
+            "longitude": 103.770997,
+            "latitude": 1.299634
         }
     },
     {
-        "roomCode": "E2A-02-01",
+        "roomCode": "E2A",
         "roomName": "Workshop",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77147862551244,
-            "latitude": 1.2988490497153404
+            "longitude": 103.771479,
+            "latitude": 1.298849
         }
     },
     {
-        "roomCode": "E3-03-01",
+        "roomCode": "E3",
         "roomName": "ESP Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77191389845903,
-            "latitude": 1.2991748051794956
+            "longitude": 103.771914,
+            "latitude": 1.299175
         }
     },
     {
-        "roomCode": "E3-05-21",
+        "roomCode": "E3",
         "roomName": "Autonomous Robotics Lab",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77179206714204,
-            "latitude": 1.2993771772181408
+            "longitude": 103.771792,
+            "latitude": 1.299377
         }
     },
     {
-        "roomCode": "E3A-05-03",
+        "roomCode": "E3A",
         "roomName": "Magnetic Materials Characterisation Lab",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77120703914684,
-            "latitude": 1.3003045214434568
+            "longitude": 103.771207,
+            "latitude": 1.300305
         }
     },
     {
-        "roomCode": "E3A-05-07",
+        "roomCode": "E3A",
         "roomName": "Materials Physics Lab",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77145604655468,
-            "latitude": 1.3003768930179749
+            "longitude": 103.771456,
+            "latitude": 1.300377
         }
     },
     {
-        "roomCode": "E4-03-07",
+        "roomCode": "E4",
         "roomName": "DigE Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77252534290083,
-            "latitude": 1.2983316495731172
+            "longitude": 103.772525,
+            "latitude": 1.298332
         }
     },
     {
-        "roomCode": "E4A-04-08",
+        "roomCode": "E4A",
         "roomName": "DSA Lab",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77258529989966,
-            "latitude": 1.2986036801783416
+            "longitude": 103.772585,
+            "latitude": 1.298604
         }
     },
     {
-        "roomCode": "E4A-06-07",
+        "roomCode": "E4A",
         "roomName": "Staff Room",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77180186395101,
-            "latitude": 1.2988208161677515
+            "longitude": 103.771802,
+            "latitude": 1.298821
         }
     },
     {
-        "roomCode": "E5-03-24",
+        "roomCode": "E5",
         "roomName": "Computer Teaching LAB1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77244036852647,
-            "latitude": 1.2980301225086945
+            "longitude": 103.77244,
+            "latitude": 1.29803
         }
     },
     {
-        "roomCode": "EW2-03-14",
+        "roomCode": "EW2",
         "roomName": "Lab Classroom 1/2/3 (BSL1)",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77243682922185,
-            "latitude": 1.2993791689773466
+            "longitude": 103.772437,
+            "latitude": 1.299379
         }
     },
     {
-        "roomCode": "EW2-04-02",
-        "roomName": "Chemical & Biomolecular Engineering UG Lab",
-        "floor": 4,
-        "coordinate": {
-            "longitude": 103.77260123626932,
-            "latitude": 1.2990990325535583
-        }
-    },
-    {
-        "roomCode": "I3-0336",
+        "roomCode": "I3",
         "roomName": "Graduate Students Lab 2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77600653251584,
-            "latitude": 1.292238306896456
+            "longitude": 103.776007,
+            "latitude": 1.292238
         }
     },
     {
-        "roomCode": "I3-0337",
+        "roomCode": "I3",
         "roomName": "Graduate Students Lab 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77592660212227,
-            "latitude": 1.2922652786525903
+            "longitude": 103.775927,
+            "latitude": 1.292265
         }
     },
     {
-        "roomCode": "I3-0338",
+        "roomCode": "I3",
         "roomName": "FYP Lab 3",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7758652168729,
-            "latitude": 1.292285989913646
+            "longitude": 103.775865,
+            "latitude": 1.292286
         }
     },
     {
-        "roomCode": "I3-0339",
+        "roomCode": "I3",
         "roomName": "FYP Lab 2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77580382982545,
-            "latitude": 1.2923067038862432
+            "longitude": 103.775804,
+            "latitude": 1.292307
         }
     },
     {
-        "roomCode": "I3-0344",
+        "roomCode": "I3",
         "roomName": "STMI Executive Training Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7755675261885,
-            "latitude": 1.2924530137961476
+            "longitude": 103.775568,
+            "latitude": 1.292453
         }
     },
     {
-        "roomCode": "MD1-03-01B",
+        "roomCode": "MD1",
         "roomName": "Multipurpose Hall 3",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78043812746127,
-            "latitude": 1.29553673659013
+            "longitude": 103.780438,
+            "latitude": 1.295537
         }
     },
     {
-        "roomCode": "MD1-03-01C",
+        "roomCode": "MD1",
         "roomName": "Multipurpose Hall 2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78059290274638,
-            "latitude": 1.2954765760875424
+            "longitude": 103.780593,
+            "latitude": 1.295477
         }
     },
     {
-        "roomCode": "MD1-06-03M",
+        "roomCode": "MD1",
         "roomName": "Seminar Room 3",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.78048012617927,
-            "latitude": 1.2952805409717725
+            "longitude": 103.78048,
+            "latitude": 1.295281
         }
     },
     {
-        "roomCode": "MD1-08-01B",
+        "roomCode": "MD1",
         "roomName": "Computer Lab 2",
         "floor": 8,
         "coordinate": {
-            "longitude": 103.78042298526238,
-            "latitude": 1.2955343912549544
+            "longitude": 103.780423,
+            "latitude": 1.295534
         }
     },
     {
-        "roomCode": "MD1-0801AB",
-        "roomName": "Computer Lab 2",
-        "floor": 8,
-        "coordinate": {
-            "longitude": 103.78042298526238,
-            "latitude": 1.2955343912549544
-        }
-    },
-    {
-        "roomCode": "MD1-0903EF",
-        "roomName": "Tutorial Room 4",
-        "floor": 9,
-        "coordinate": {
-            "longitude": 103.78064073919502,
-            "latitude": 1.2951810488735283
-        }
-    },
-    {
-        "roomCode": "MD10-01-01",
+        "roomCode": "MD10",
         "roomName": "Reception Area",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78168113019073,
-            "latitude": 1.2964883988931324
+            "longitude": 103.781681,
+            "latitude": 1.296488
         }
     },
     {
-        "roomCode": "MD11-01-03",
+        "roomCode": "MD11",
         "roomName": "Symposium Room",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78173856312563,
-            "latitude": 1.2960524927839885
+            "longitude": 103.781739,
+            "latitude": 1.296052
         }
     },
     {
-        "roomCode": "RC2-G-02",
+        "roomCode": "RC2",
         "roomName": "Classroom 9",
         "floor": null,
         "coordinate": {
-            "longitude": 103.7719907295531,
-            "latitude": 1.306375323655279
+            "longitude": 103.771991,
+            "latitude": 1.306375
         }
     },
     {
-        "roomCode": "S13-0313",
+        "roomCode": "S13",
         "roomName": "Level 3 Physics Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7792697342841,
-            "latitude": 1.2967082923732496
+            "longitude": 103.77927,
+            "latitude": 1.296708
         }
     },
     {
-        "roomCode": "S14-0503",
+        "roomCode": "S14",
         "roomName": "Food Science & Technology Programme",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77972381491037,
-            "latitude": 1.2968413874560345
+            "longitude": 103.779724,
+            "latitude": 1.296841
         }
     },
     {
-        "roomCode": "WS2-01-30",
+        "roomCode": "WS2",
         "roomName": "IEL Teaching Studio",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77253885939898,
-            "latitude": 1.2994721120645238
+            "longitude": 103.772539,
+            "latitude": 1.299472
         }
     },
     {
-        "roomCode": "UT-AUD3",
+        "roomCode": "UT",
         "roomName": "Auditorium 3",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77304673194887,
-            "latitude": 1.307261676800578
+            "longitude": 103.773047,
+            "latitude": 1.307262
         }
     },
     {
@@ -2991,35 +2361,35 @@
         "roomName": "Seminar Room at LT19",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77432882785799,
-            "latitude": 1.2937125827502152
+            "longitude": 103.774329,
+            "latitude": 1.293713
         }
     },
     {
-        "roomCode": "ENG-AUD",
+        "roomCode": "ENG",
         "roomName": "Engineering Auditorium",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7705817818642,
-            "latitude": 1.300612137950934
+            "longitude": 103.770582,
+            "latitude": 1.300612
         }
     },
     {
-        "roomCode": "LAW_LT",
+        "roomCode": "LT",
         "roomName": "Lecture Theatre",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.81695717573167,
-            "latitude": 1.3192665513499864
+            "longitude": 103.816957,
+            "latitude": 1.319267
         }
     },
     {
-        "roomCode": "SDE-ER4",
+        "roomCode": "SDE",
         "roomName": "SDE2-ER4",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77107530832292,
-            "latitude": 1.2972897349773982
+            "longitude": 103.771075,
+            "latitude": 1.29729
         }
     },
     {
@@ -3027,21 +2397,21 @@
         "roomName": "Lecture Theater 19",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7743029,
-            "latitude": 1.2937303
+            "longitude": 103.774303,
+            "latitude": 1.29373
         }
     },
     {
-        "roomCode": "COM1-VCRM",
+        "roomCode": "COM1",
         "roomName": "VCR Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7740085,
-            "latitude": 1.2947362
+            "longitude": 103.774008,
+            "latitude": 1.294736
         }
     },
     {
-        "roomCode": "LAW_AUD",
+        "roomCode": "AUD",
         "roomName": "Auditorium",
         "floor": 3,
         "coordinate": {
@@ -3050,7 +2420,7 @@
         }
     },
     {
-        "roomCode": "LAW_SR3",
+        "roomCode": "SR3",
         "roomName": "SR 3",
         "floor": 3,
         "coordinate": {
@@ -3059,7 +2429,7 @@
         }
     },
     {
-        "roomCode": "LAW_ESR",
+        "roomCode": "ESR",
         "roomName": "Executive SR",
         "floor": 3,
         "coordinate": {
@@ -3068,84 +2438,84 @@
         }
     },
     {
-        "roomCode": "NAK-AUD",
+        "roomCode": "NAK",
         "roomName": "Ngee Ann Kongsi Auditorium",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77310842275621,
-            "latitude": 1.305495177478812
+            "longitude": 103.773108,
+            "latitude": 1.305495
         }
     },
     {
-        "roomCode": "TC-SR4",
+        "roomCode": "TC",
         "roomName": "Tembusu Seminar Room 4",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77345002721997,
-            "latitude": 1.3058887418233325
+            "longitude": 103.77345,
+            "latitude": 1.305889
         }
     },
     {
-        "roomCode": "TP-SR9",
+        "roomCode": "TP",
         "roomName": "Town Plaza Seminar Room 9",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7734447780531,
-            "latitude": 1.3040060366184345
+            "longitude": 103.773445,
+            "latitude": 1.304006
         }
     },
     {
-        "roomCode": "ERC-GLR",
+        "roomCode": "ERC",
         "roomName": "Global Learning Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77296626567842,
-            "latitude": 1.3062266437833203
+            "longitude": 103.772966,
+            "latitude": 1.306227
         }
     },
     {
-        "roomCode": "CELC-TR7",
+        "roomCode": "CELC",
         "roomName": "Training Room 7",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77142667770386,
-            "latitude": 1.2969754103578175
+            "longitude": 103.771427,
+            "latitude": 1.296975
         }
     },
     {
-        "roomCode": "UTSRC-LT51",
+        "roomCode": "UTSRC",
         "roomName": "LT51",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77298235893251,
-            "latitude": 1.3040546181167396
+            "longitude": 103.772982,
+            "latitude": 1.304055
         }
     },
     {
-        "roomCode": "UTSRC-SR7",
+        "roomCode": "UTSRC",
         "roomName": "UTown Seminar Room 7",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77302572325755,
-            "latitude": 1.3041726550718167
+            "longitude": 103.773026,
+            "latitude": 1.304173
         }
     },
     {
-        "roomCode": "Y-PgRm2",
+        "roomCode": "Yale-NUS",
         "roomName": "East Core - Programme Room 2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77238932595665,
-            "latitude": 1.30699712587118
+            "longitude": 103.772389,
+            "latitude": 1.306997
         }
     },
     {
-        "roomCode": "Y-CR3",
+        "roomCode": "Yale-NUS",
         "roomName": "Saga College - Classroom 3",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77228751042186,
-            "latitude": 1.3057888366434272
+            "longitude": 103.772288,
+            "latitude": 1.305789
         }
     },
     {
@@ -3153,17 +2523,17 @@
         "roomName": "BIZ2-0413C",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77533733844759,
-            "latitude": 1.29322559256955
+            "longitude": 103.775337,
+            "latitude": 1.293226
         }
     },
     {
-        "roomCode": "RMI-SR1",
+        "roomCode": "RMI",
         "roomName": "RMI-SR1 (i3-01-05)",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77548217773439,
-            "latitude": 1.2926128638467618
+            "longitude": 103.775482,
+            "latitude": 1.292613
         }
     },
     {
@@ -3171,44 +2541,44 @@
         "roomName": "HSSMLCR",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77434492111207,
-            "latitude": 1.293218888755013
+            "longitude": 103.774345,
+            "latitude": 1.293219
         }
     },
     {
-        "roomCode": "RC4-SR6",
+        "roomCode": "RC4",
         "roomName": "Seminar Room 6",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77289652824403,
-            "latitude": 1.3082901083261955
+            "longitude": 103.772897,
+            "latitude": 1.30829
         }
     },
     {
-        "roomCode": "SDE-SR15",
+        "roomCode": "SDE",
         "roomName": "Seminar Room 15",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7704767581688,
-            "latitude": 1.2979434993900776
+            "longitude": 103.770477,
+            "latitude": 1.297943
         }
     },
     {
-        "roomCode": "UTSRC-SR2",
+        "roomCode": "UTSRC",
         "roomName": "UTown Seminar Room 2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77266854047777,
-            "latitude": 1.3043045855179205
+            "longitude": 103.772669,
+            "latitude": 1.304305
         }
     },
     {
-        "roomCode": "SDE_ER4-5",
+        "roomCode": "SDE_ER4",
         "roomName": "SDE-ER5",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77096801996233,
-            "latitude": 1.297112209867133
+            "longitude": 103.770968,
+            "latitude": 1.297112
         }
     },
     {
@@ -3216,80 +2586,71 @@
         "roomName": "SDE-ES2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7712147831917,
-            "latitude": 1.2975278456969463
+            "longitude": 103.771215,
+            "latitude": 1.297528
         }
     },
     {
-        "roomCode": "SDE-ER5",
+        "roomCode": "SDE",
         "roomName": "SDE2-ER5",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7710538506508,
-            "latitude": 1.2971288436813906
+            "longitude": 103.771054,
+            "latitude": 1.297129
         }
     },
     {
-        "roomCode": "S11-0401A",
+        "roomCode": "S11",
         "roomName": "Physics Level 2000 Laboratory",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77884298563005,
-            "latitude": 1.2967373414850563
+            "longitude": 103.778843,
+            "latitude": 1.296737
         }
     },
     {
-        "roomCode": "S16-0306",
-        "roomName": "Seminar Room",
-        "floor": 3,
-        "coordinate": {
-            "longitude": 103.78020528302606,
-            "latitude": 1.2966934651120505
-        }
-    },
-    {
-        "roomCode": "UTSRC-LT52",
+        "roomCode": "UTSRC",
         "roomName": "Lecture Theatre 52",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77300515770914,
-            "latitude": 1.3041273122931338
+            "longitude": 103.773005,
+            "latitude": 1.304127
         }
     },
     {
-        "roomCode": "BIZ1-CMRI",
+        "roomCode": "BIZ1",
         "roomName": "CAMRI Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7741692364216,
-            "latitude": 1.2924643324975336
+            "longitude": 103.774169,
+            "latitude": 1.292464
         }
     },
     {
-        "roomCode": "CAPT-SR6",
+        "roomCode": "CAPT",
         "roomName": "Seminar Room 6, College of Alice and Peter Tan",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77342529373324,
-            "latitude": 1.3080039996096091
+            "longitude": 103.773425,
+            "latitude": 1.308004
         }
     },
     {
-        "roomCode": "USP-SR1",
+        "roomCode": "USP",
         "roomName": "Seminar Room 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77313256263734,
-            "latitude": 1.3064958843341745
+            "longitude": 103.773133,
+            "latitude": 1.306496
         }
     },
     {
-        "roomCode": "USP-SR2",
+        "roomCode": "USP",
         "roomName": "Seminar Room 2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77303868532184,
-            "latitude": 1.306742080617189
+            "longitude": 103.773039,
+            "latitude": 1.306742
         }
     },
     {
@@ -3297,341 +2658,341 @@
         "roomName": "RVR Multi-Purpose Room 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77694934606554,
-            "latitude": 1.297287053455881
+            "longitude": 103.776949,
+            "latitude": 1.297287
         }
     },
     {
-        "roomCode": "USP-MC",
+        "roomCode": "USP",
         "roomName": "USP MC",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77334982156756,
-            "latitude": 1.306699131752514
+            "longitude": 103.77335,
+            "latitude": 1.306699
         }
     },
     {
-        "roomCode": "YSTCM-SR8",
+        "roomCode": "YSTCM",
         "roomName": "Seminar Room 8",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77213938131032,
-            "latitude": 1.302343504192887
+            "longitude": 103.772139,
+            "latitude": 1.302344
         }
     },
     {
-        "roomCode": "Y-CR18",
+        "roomCode": "Yale-NUS",
         "roomName": "Cendana College - Classroom 18",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77209827949825,
-            "latitude": 1.3081501754171658
+            "longitude": 103.772098,
+            "latitude": 1.30815
         }
     },
     {
-        "roomCode": "Y-CR19",
+        "roomCode": "Yale-NUS",
         "roomName": "Cendana College - Classroom 19",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77215597089427,
-            "latitude": 1.3081995151835102
+            "longitude": 103.772156,
+            "latitude": 1.3082
         }
     },
     {
-        "roomCode": "Y-CR20",
+        "roomCode": "Yale-NUS",
         "roomName": "Cendana College - Classroom 20",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77235118806529,
-            "latitude": 1.3080455966903655
+            "longitude": 103.772351,
+            "latitude": 1.308046
         }
     },
     {
-        "roomCode": "Y-CR21",
+        "roomCode": "Yale-NUS",
         "roomName": "Cendana College - Classroom 21",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77233728358148,
-            "latitude": 1.308000010773302
+            "longitude": 103.772337,
+            "latitude": 1.308
         }
     },
     {
-        "roomCode": "Y-CR22",
+        "roomCode": "Yale-NUS",
         "roomName": "Cendana College - Classroom 22",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77225734320442,
-            "latitude": 1.307863790088413
+            "longitude": 103.772257,
+            "latitude": 1.307864
         }
     },
     {
-        "roomCode": "Y-CR23",
+        "roomCode": "Yale-NUS",
         "roomName": "Cendana College - Classroom 23",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77215275048388,
-            "latitude": 1.3078777339744636
+            "longitude": 103.772153,
+            "latitude": 1.307878
         }
     },
     {
-        "roomCode": "Y-CR15",
+        "roomCode": "Yale-NUS",
         "roomName": "East Core - Classroom 15 (Teal Classroom)",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77235445340203,
-            "latitude": 1.3068319447806727
+            "longitude": 103.772354,
+            "latitude": 1.306832
         }
     },
     {
-        "roomCode": "Y-CR17",
+        "roomCode": "Yale-NUS",
         "roomName": "East Core - Classroom 17",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77250958293335,
-            "latitude": 1.3081051258162757
+            "longitude": 103.77251,
+            "latitude": 1.308105
         }
     },
     {
-        "roomCode": "Y-CompLab",
+        "roomCode": "Yale-NUS",
         "roomName": "East Core - Computer Lab",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77246979126771,
-            "latitude": 1.307215400856019
+            "longitude": 103.77247,
+            "latitude": 1.307215
         }
     },
     {
-        "roomCode": "Y-GLRm1",
+        "roomCode": "Yale-NUS",
         "roomName": "East Core - Global Learning Room 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77237745388989,
-            "latitude": 1.3072727852552588
+            "longitude": 103.772377,
+            "latitude": 1.307273
         }
     },
     {
-        "roomCode": "Y-GLRm2",
+        "roomCode": "Yale-NUS",
         "roomName": "East Core - Global Learning Room 2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77240007414356,
-            "latitude": 1.3072642043058085
+            "longitude": 103.7724,
+            "latitude": 1.307264
         }
     },
     {
-        "roomCode": "Y-PgRm1",
+        "roomCode": "Yale-NUS",
         "roomName": "East Core - Programme Room 1",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77237859616122,
-            "latitude": 1.306963338813609
+            "longitude": 103.772379,
+            "latitude": 1.306963
         }
     },
     {
-        "roomCode": "Y-CR11",
+        "roomCode": "Yale-NUS",
         "roomName": "Elm College - Classroom 11",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77229837467895,
-            "latitude": 1.306441772265005
+            "longitude": 103.772298,
+            "latitude": 1.306442
         }
     },
     {
-        "roomCode": "Y-CR12",
+        "roomCode": "Yale-NUS",
         "roomName": "Elm College - Classroom 12",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77229837467895,
-            "latitude": 1.306441772265005
+            "longitude": 103.772298,
+            "latitude": 1.306442
         }
     },
     {
-        "roomCode": "Y-CR13",
+        "roomCode": "Yale-NUS",
         "roomName": "Elm College - Classroom 13",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77229837467895,
-            "latitude": 1.306441772265005
+            "longitude": 103.772298,
+            "latitude": 1.306442
         }
     },
     {
-        "roomCode": "Y-CR14",
+        "roomCode": "Yale-NUS",
         "roomName": "Elm College - Classroom 14",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77215083192603,
-            "latitude": 1.3066957241756028
+            "longitude": 103.772151,
+            "latitude": 1.306696
         }
     },
     {
-        "roomCode": "Y-CR9",
+        "roomCode": "Yale-NUS",
         "roomName": "Classroom 9",
         "floor": 0,
         "coordinate": {
-            "longitude": 103.77197577457565,
-            "latitude": 1.3064871024405618
+            "longitude": 103.771976,
+            "latitude": 1.306487
         }
     },
     {
-        "roomCode": "Y-KChanrai",
+        "roomCode": "Yale-NUS",
         "roomName": "Elm College - Kewalram Chanrai Room",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77229837467895,
-            "latitude": 1.306441772265005
+            "longitude": 103.772298,
+            "latitude": 1.306442
         }
     },
     {
-        "roomCode": "Y-TCTLT",
+        "roomCode": "Yale-NUS",
         "roomName": "Elm College - Tan Chin Tuan Lecture Theatre",
         "floor": 0,
         "coordinate": {
-            "longitude": 103.77199562435915,
-            "latitude": 1.3066678362266242
+            "longitude": 103.771996,
+            "latitude": 1.306668
         }
     },
     {
-        "roomCode": "Y-CR1",
+        "roomCode": "Yale-NUS",
         "roomName": "Classroom 1",
         "floor": 0,
         "coordinate": {
-            "longitude": 103.77175099762619,
-            "latitude": 1.30581028874315
+            "longitude": 103.771751,
+            "latitude": 1.30581
         }
     },
     {
-        "roomCode": "Y-CR2",
+        "roomCode": "Yale-NUS",
         "roomName": "Classroom 2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7721532656606,
-            "latitude": 1.3058998512411744
+            "longitude": 103.772153,
+            "latitude": 1.3059
         }
     },
     {
-        "roomCode": "Y-CR4",
+        "roomCode": "Yale-NUS",
         "roomName": "Saga College - Classroom 4",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77198030467714,
-            "latitude": 1.3055480367418686
+            "longitude": 103.77198,
+            "latitude": 1.305548
         }
     },
     {
-        "roomCode": "Y-CR5",
+        "roomCode": "Yale-NUS",
         "roomName": "Saga College - Classroom 5",
         "floor": 0,
         "coordinate": {
-            "longitude": 103.77175095637367,
-            "latitude": 1.3058006353023917
+            "longitude": 103.771751,
+            "latitude": 1.305801
         }
     },
     {
-        "roomCode": "Y-CR6",
+        "roomCode": "Yale-NUS",
         "roomName": "Saga College - Classroom 6",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77228639676764,
-            "latitude": 1.3057765016696252
+            "longitude": 103.772286,
+            "latitude": 1.305777
         }
     },
     {
-        "roomCode": "Y-CR7",
+        "roomCode": "Yale-NUS",
         "roomName": "Classroom 7",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7720808680825,
-            "latitude": 1.3055544725401718
+            "longitude": 103.772081,
+            "latitude": 1.305554
         }
     },
     {
-        "roomCode": "Y-CR8",
+        "roomCode": "Yale-NUS",
         "roomName": "Classroom 8",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77190469324051,
-            "latitude": 1.3055469641326765
+            "longitude": 103.771905,
+            "latitude": 1.305547
         }
     },
     {
-        "roomCode": "Y-LT1",
+        "roomCode": "Yale-NUS",
         "roomName": "Saga College - Lecture Theatre 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77192265324696,
-            "latitude": 1.3058977060435655
+            "longitude": 103.771923,
+            "latitude": 1.305898
         }
     },
     {
-        "roomCode": "Y-ArtsStud",
+        "roomCode": "Yale-NUS",
         "roomName": "West Core - Studio 2 (Georgette Chen Arts Studio)",
         "floor": 0,
         "coordinate": {
-            "longitude": 103.77209881561728,
-            "latitude": 1.307876661468576
+            "longitude": 103.772099,
+            "latitude": 1.307877
         }
     },
     {
-        "roomCode": "Y-BlackBox",
+        "roomCode": "Yale-NUS",
         "roomName": "Black Box Theatre",
         "floor": 0,
         "coordinate": {
-            "longitude": 103.77202749252321,
-            "latitude": 1.3074888814478036
+            "longitude": 103.772027,
+            "latitude": 1.307489
         }
     },
     {
-        "roomCode": "Y-PerfHall",
+        "roomCode": "Yale-NUS",
         "roomName": "West Core - Performance Hall",
         "floor": 0,
         "coordinate": {
-            "longitude": 103.77194627811501,
-            "latitude": 1.3070223321416874
+            "longitude": 103.771946,
+            "latitude": 1.307022
         }
     },
     {
-        "roomCode": "Y-PracRm6",
+        "roomCode": "Yale-NUS",
         "roomName": "West Core - Practice Room 6",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77197626576837,
-            "latitude": 1.3073548394422478
+            "longitude": 103.771976,
+            "latitude": 1.307355
         }
     },
     {
-        "roomCode": "UT-AUD1",
+        "roomCode": "UT",
         "roomName": "UTown Auditorium 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77335250377655,
-            "latitude": 1.304010121737994
+            "longitude": 103.773353,
+            "latitude": 1.30401
         }
     },
     {
-        "roomCode": "UT-AUD2",
+        "roomCode": "UT",
         "roomName": "UTown Auditorium 2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7727275490761,
-            "latitude": 1.304382852208324
+            "longitude": 103.772728,
+            "latitude": 1.304383
         }
     },
     {
-        "roomCode": "UTSRC-GLR",
+        "roomCode": "UTSRC",
         "roomName": "Global Learning Room",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7731781601906,
-            "latitude": 1.304262184076501
+            "longitude": 103.773178,
+            "latitude": 1.304262
         }
     },
     {
-        "roomCode": "USP-MML",
+        "roomCode": "USP",
         "roomName": "USP Multimedia Lab",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77321299859408,
-            "latitude": 1.3065007445741714
+            "longitude": 103.773213,
+            "latitude": 1.306501
         }
     },
     {
@@ -3639,8 +3000,8 @@
         "roomName": "EH-SR1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77461339347067,
-            "latitude": 1.2917351246659363
+            "longitude": 103.774613,
+            "latitude": 1.291735
         }
     },
     {
@@ -3648,242 +3009,224 @@
         "roomName": "Cerebro@SOC",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77368777990343,
-            "latitude": 1.2950667526656219
+            "longitude": 103.773688,
+            "latitude": 1.295067
         }
     },
     {
-        "roomCode": "TP-GLR",
+        "roomCode": "TP",
         "roomName": "Town Plaza Global Learning Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77340883016588,
-            "latitude": 1.3039978035313131
+            "longitude": 103.773409,
+            "latitude": 1.303998
         }
     },
     {
-        "roomCode": "TP-SR1",
+        "roomCode": "TP",
         "roomName": "Town Plaza Seminar Room 1",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77340883016588,
-            "latitude": 1.3039978035313131
+            "longitude": 103.773409,
+            "latitude": 1.303998
         }
     },
     {
-        "roomCode": "TP-SR3",
+        "roomCode": "TP",
         "roomName": "Town Plaza Seminar Room 3",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77340883016588,
-            "latitude": 1.3039978035313131
+            "longitude": 103.773409,
+            "latitude": 1.303998
         }
     },
     {
-        "roomCode": "TP-SR4",
+        "roomCode": "TP",
         "roomName": "Town Plaza Seminar Room 4",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77340883016588,
-            "latitude": 1.3039978035313131
+            "longitude": 103.773409,
+            "latitude": 1.303998
         }
     },
     {
-        "roomCode": "TP-SR5",
+        "roomCode": "TP",
         "roomName": "Town Plaza Seminar Room 5",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77340883016588,
-            "latitude": 1.3039978035313131
+            "longitude": 103.773409,
+            "latitude": 1.303998
         }
     },
     {
-        "roomCode": "TP-SR6",
-        "roomName": "Town Plaza Seminar Room 5",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77340883016588,
-            "latitude": 1.3039978035313131
-        }
-    },
-    {
-        "roomCode": "TP-SR7",
+        "roomCode": "TP",
         "roomName": "Town Plaza Seminar Room 7",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77340883016588,
-            "latitude": 1.3039978035313131
+            "longitude": 103.773409,
+            "latitude": 1.303998
         }
     },
     {
-        "roomCode": "TP-SR8",
+        "roomCode": "TP",
         "roomName": "Town Plaza Seminar Room 8",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77340883016588,
-            "latitude": 1.3039978035313131
+            "longitude": 103.773409,
+            "latitude": 1.303998
         }
     },
     {
-        "roomCode": "UTSRC-SR1",
+        "roomCode": "UTSRC",
         "roomName": "Seminar Room 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77282410860063,
-            "latitude": 1.3042731670895074
+            "longitude": 103.772824,
+            "latitude": 1.304273
         }
     },
     {
-        "roomCode": "UTSRC-SR3",
+        "roomCode": "UTSRC",
         "roomName": "Seminar Room 3",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77282410860063,
-            "latitude": 1.3042731670895074
+            "longitude": 103.772824,
+            "latitude": 1.304273
         }
     },
     {
-        "roomCode": "UTSRC-SR4",
+        "roomCode": "UTSRC",
         "roomName": "Seminar Room 4",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77282410860063,
-            "latitude": 1.3042731670895074
+            "longitude": 103.772824,
+            "latitude": 1.304273
         }
     },
     {
-        "roomCode": "UTSRC-SR5",
+        "roomCode": "UTSRC",
         "roomName": "Seminar Room 5",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77282410860063,
-            "latitude": 1.3042731670895074
+            "longitude": 103.772824,
+            "latitude": 1.304273
         }
     },
     {
-        "roomCode": "UTSRC-SR6",
+        "roomCode": "UTSRC",
         "roomName": "Seminar Room 6",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77282410860063,
-            "latitude": 1.3042731670895074
+            "longitude": 103.772824,
+            "latitude": 1.304273
         }
     },
     {
-        "roomCode": "UTSRC-SR9",
+        "roomCode": "UTSRC",
         "roomName": "Seminar Room 9",
         "floor": 2,
         "coordinate": {
             "longitude": 103.773151,
-            "latitude": 1.3043189
+            "latitude": 1.304319
         }
     },
     {
-        "roomCode": "UTSRC-SR8",
+        "roomCode": "UTSRC",
         "roomName": "Seminar Room 8",
         "floor": 2,
         "coordinate": {
             "longitude": 103.773151,
-            "latitude": 1.3043189
+            "latitude": 1.304319
         }
     },
     {
-        "roomCode": "ERC-ALR",
+        "roomCode": "ERC",
         "roomName": "Active Learning Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7728786,
-            "latitude": 1.3063385
+            "longitude": 103.772879,
+            "latitude": 1.306339
         }
     },
     {
-        "roomCode": "ERC-SR4",
+        "roomCode": "ERC",
         "roomName": "Seminar Room 4",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7728786,
-            "latitude": 1.3063385
+            "longitude": 103.772879,
+            "latitude": 1.306339
         }
     },
     {
-        "roomCode": "ERC-SR9CAM",
+        "roomCode": "ERC",
         "roomName": "Charted Asset Management Seminar Room ",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7728749,
-            "latitude": 1.3062172
+            "longitude": 103.772875,
+            "latitude": 1.306217
         }
     },
     {
-        "roomCode": "UTSRC-LT50",
+        "roomCode": "UTSRC",
         "roomName": "Lecture Theater 50",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77278119325639,
-            "latitude": 1.3041793140944875
+            "longitude": 103.772781,
+            "latitude": 1.304179
         }
     },
     {
-        "roomCode": "UTSRC-LT53",
+        "roomCode": "UTSRC",
         "roomName": "Lecture Theater 53",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77297163009645,
-            "latitude": 1.3041498174381898
+            "longitude": 103.772972,
+            "latitude": 1.30415
         }
     },
     {
-        "roomCode": "ERC-SR8",
+        "roomCode": "ERC",
         "roomName": "Seminar Room 8",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7728786,
-            "latitude": 1.3063385
+            "longitude": 103.772879,
+            "latitude": 1.306339
         }
     },
     {
-        "roomCode": "ERC-SR10",
+        "roomCode": "ERC",
         "roomName": "Seminar Room 10",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7727329,
-            "latitude": 1.3057714
+            "longitude": 103.772733,
+            "latitude": 1.305771
         }
     },
     {
-        "roomCode": "YI-PAR-TYO",
+        "roomCode": "YI",
         "roomName": "Paris Tokyo Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77488308492505,
-            "latitude": 1.2985444911529218
+            "longitude": 103.774883,
+            "latitude": 1.298544
         }
     },
     {
-        "roomCode": "EA-04-07",
+        "roomCode": "EA",
         "roomName": "Control & Mechanics Teaching Lab",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77043694257739,
-            "latitude": 1.300150916814686
+            "longitude": 103.770437,
+            "latitude": 1.300151
         }
     },
     {
-        "roomCode": "EA-04-06",
-        "roomName": "Control & Mechanics Teaching Lab",
-        "floor": 4,
-        "coordinate": {
-            "longitude": 103.77039939165117,
-            "latitude": 1.300059745184751
-        }
-    },
-    {
-        "roomCode": "EA-04-04",
+        "roomCode": "EA",
         "roomName": "Control & Mechanics Teaching Lab 1",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77038061618806,
-            "latitude": 1.2999068986213047
+            "longitude": 103.770381,
+            "latitude": 1.299907
         }
     },
     {
@@ -3891,35 +3234,35 @@
         "roomName": "E4-04-02",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77181637117397,
-            "latitude": 1.2987141586739923
+            "longitude": 103.771816,
+            "latitude": 1.298714
         }
     },
     {
-        "roomCode": "AS3-0610",
+        "roomCode": "AS3",
         "roomName": "Tutorial Room 1",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77154469490053,
-            "latitude": 1.2948066448369964
+            "longitude": 103.771545,
+            "latitude": 1.294807
         }
     },
     {
-        "roomCode": "AS3-0611",
+        "roomCode": "AS3",
         "roomName": "Tutorial Room 2",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77155005931856,
-            "latitude": 1.2947422882567174
+            "longitude": 103.77155,
+            "latitude": 1.294742
         }
     },
     {
-        "roomCode": "CELC-SR1B",
+        "roomCode": "CELC",
         "roomName": "SR1B",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77143193267294,
-            "latitude": 1.2970703865407238
+            "longitude": 103.771432,
+            "latitude": 1.29707
         }
     },
     {
@@ -3927,152 +3270,134 @@
         "roomName": "AS1-0201",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77213443414018,
-            "latitude": 1.2951454107251619
+            "longitude": 103.772134,
+            "latitude": 1.295145
         }
     },
     {
-        "roomCode": "EW1-01-01",
+        "roomCode": "EW1",
         "roomName": "Concrete Technology Lab",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77059982927568,
-            "latitude": 1.2988274380292781
+            "longitude": 103.7706,
+            "latitude": 1.298827
         }
     },
     {
-        "roomCode": "EW1-03-02",
+        "roomCode": "EW1",
         "roomName": "GEOTECHNICAL Engineering Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7708524696206,
-            "latitude": 1.2985588481386496
+            "longitude": 103.770852,
+            "latitude": 1.298559
         }
     },
     {
-        "roomCode": "MD9-01-02",
+        "roomCode": "MD9",
         "roomName": "Physiology Lab",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78134551280169,
-            "latitude": 1.2966962086013787
+            "longitude": 103.781346,
+            "latitude": 1.296696
         }
     },
     {
-        "roomCode": "MD10-02-01",
+        "roomCode": "MD10",
         "roomName": "Anatomy Teaching Museum",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.78172415012327,
-            "latitude": 1.296514508777875
+            "longitude": 103.781724,
+            "latitude": 1.296515
         }
     },
     {
-        "roomCode": "E1-02-03",
+        "roomCode": "E1",
         "roomName": "Dynamics Lab 2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77103038230325,
-            "latitude": 1.298702438473506
+            "longitude": 103.77103,
+            "latitude": 1.298702
         }
     },
     {
-        "roomCode": "E1-03-01",
+        "roomCode": "E1",
         "roomName": "ESP Multidisciplinary Lab",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77108113816666,
-            "latitude": 1.29860013623642
+            "longitude": 103.771081,
+            "latitude": 1.2986
         }
     },
     {
-        "roomCode": "E3A-05-04",
-        "roomName": "Heat Treatment",
-        "floor": 5,
-        "coordinate": {
-            "longitude": 103.77121465020501,
-            "latitude": 1.3004357792527184
-        }
-    },
-    {
-        "roomCode": "E4-07-08",
+        "roomCode": "E4",
         "roomName": "Staff ROOM1",
         "floor": 7,
         "coordinate": {
-            "longitude": 103.77179762078876,
-            "latitude": 1.298644862043683
+            "longitude": 103.771798,
+            "latitude": 1.298645
         }
     },
     {
-        "roomCode": "MD1-05-03K",
+        "roomCode": "MD1",
         "roomName": "Seminar Room 4",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.78048012617927,
-            "latitude": 1.2952805409717725
+            "longitude": 103.78048,
+            "latitude": 1.295281
         }
     },
     {
-        "roomCode": "MD1-08-01A",
+        "roomCode": "MD1",
         "roomName": "Computer Lab 1",
         "floor": 8,
         "coordinate": {
-            "longitude": 103.78055915336888,
-            "latitude": 1.2954814634702438
+            "longitude": 103.780559,
+            "latitude": 1.295481
         }
     },
     {
-        "roomCode": "MD1-10-01A",
+        "roomCode": "MD1",
         "roomName": "Conference Room 2",
         "floor": 10,
         "coordinate": {
-            "longitude": 103.78041258914575,
-            "latitude": 1.2955764204697735
+            "longitude": 103.780413,
+            "latitude": 1.295576
         }
     },
     {
-        "roomCode": "BIZ2-0422",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 4-22",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77486423822306,
-            "latitude": 1.2934012209405132
+            "longitude": 103.774864,
+            "latitude": 1.293401
         }
     },
     {
-        "roomCode": "AS4-0519",
+        "roomCode": "AS4",
         "roomName": "Dept Meeting Room",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77214966390184,
-            "latitude": 1.2946837531651085
+            "longitude": 103.77215,
+            "latitude": 1.294684
         }
     },
     {
-        "roomCode": "S16-0302",
+        "roomCode": "S16",
         "roomName": "Reading Hall",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78062566185325,
-            "latitude": 1.2967792133731033
+            "longitude": 103.780626,
+            "latitude": 1.296779
         }
     },
     {
-        "roomCode": "RVR-SRM01",
+        "roomCode": "RVRC",
         "roomName": "Seminar room 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77682412831622,
-            "latitude": 1.29736535383388
-        }
-    },
-    {
-        "roomCode": "AS6-0212",
-        "roomName": "Seminar Room",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77316343106568,
-            "latitude": 1.2955665885672616
+            "longitude": 103.776824,
+            "latitude": 1.297365
         }
     },
     {
@@ -4080,98 +3405,98 @@
         "roomName": "MD4 LS LAB9",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78087073564531,
-            "latitude": 1.2957451781135965
+            "longitude": 103.780871,
+            "latitude": 1.295745
         }
     },
     {
-        "roomCode": "CAPT-SR5",
+        "roomCode": "CAPT",
         "roomName": "Seminar Room 5",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77318935135669,
-            "latitude": 1.30782701977229
+            "longitude": 103.773189,
+            "latitude": 1.307827
         }
     },
     {
-        "roomCode": "CAPT-SR4",
+        "roomCode": "CAPT",
         "roomName": "Seminar Room 4",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77346605635373,
-            "latitude": 1.307735312249234
+            "longitude": 103.773466,
+            "latitude": 1.307735
         }
     },
     {
-        "roomCode": "CAPT-SR3",
+        "roomCode": "CAPT",
         "roomName": "Seminar Room 3",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77344694870638,
-            "latitude": 1.3077358486658872
+            "longitude": 103.773447,
+            "latitude": 1.307736
         }
     },
     {
-        "roomCode": "CAPT-SR1-2",
+        "roomCode": "CAPT",
         "roomName": "Seminar Room 1 & 2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77290429366835,
-            "latitude": 1.3073191457445208
+            "longitude": 103.772904,
+            "latitude": 1.307319
         }
     },
     {
-        "roomCode": "TC-SR3",
+        "roomCode": "TC",
         "roomName": "Seminar Room 3",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7735061935529,
-            "latitude": 1.3058646900451434
+            "longitude": 103.773506,
+            "latitude": 1.305865
         }
     },
     {
-        "roomCode": "RVR-SRM03",
+        "roomCode": "RVRC",
         "roomName": "Seminar Room 3",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77678093383261,
-            "latitude": 1.2974598197265705
+            "longitude": 103.776781,
+            "latitude": 1.29746
         }
     },
     {
-        "roomCode": "YSTCM-ER3",
+        "roomCode": "YSTCM",
         "roomName": "Ensemble Room 3",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7721522152424,
-            "latitude": 1.3023290630565256
+            "longitude": 103.772152,
+            "latitude": 1.302329
         }
     },
     {
-        "roomCode": "YSTCM-ER2",
+        "roomCode": "YSTCM",
         "roomName": "Ensemble Room 2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77247569384055,
-            "latitude": 1.3024826427002318
+            "longitude": 103.772476,
+            "latitude": 1.302483
         }
     },
     {
-        "roomCode": "TC-SR5",
+        "roomCode": "TC",
         "roomName": "Seminar Room 5",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77340611266035,
-            "latitude": 1.3058455617651048
+            "longitude": 103.773406,
+            "latitude": 1.305846
         }
     },
     {
-        "roomCode": "TC-SR6",
+        "roomCode": "TC",
         "roomName": "Seminar Room 6",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77349088189862,
-            "latitude": 1.3058723772982943
+            "longitude": 103.773491,
+            "latitude": 1.305872
         }
     },
     {
@@ -4179,26 +3504,17 @@
         "roomName": "Lab 8",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78117382526399,
-            "latitude": 1.296064279348453
+            "longitude": 103.781174,
+            "latitude": 1.296064
         }
     },
     {
-        "roomCode": "ERC-SR5",
+        "roomCode": "ERC",
         "roomName": "Seminar Room 5",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77291262149812,
-            "latitude": 1.3062781790917393
-        }
-    },
-    {
-        "roomCode": "AS2-ELAB",
-        "roomName": "Earth Lab",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77095729112628,
-            "latitude": 1.2952598223768155
+            "longitude": 103.772913,
+            "latitude": 1.306278
         }
     },
     {
@@ -4206,26 +3522,8 @@
         "roomName": "CELC-SR1A",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77141508957457,
-            "latitude": 1.2969542578046174
-        }
-    },
-    {
-        "roomCode": "E3-0605-06",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77156078815462,
-            "latitude": 1.2995985239475776
-        }
-    },
-    {
-        "roomCode": "E3-0603-04",
-        "roomName": "Tutorial Room",
-        "floor": 6,
-        "coordinate": {
-            "longitude": 103.77160638570787,
-            "latitude": 1.2994984664852203
+            "longitude": 103.771415,
+            "latitude": 1.296954
         }
     },
     {
@@ -4233,89 +3531,62 @@
         "roomName": "SPSWETLAB",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.78030210733415,
-            "latitude": 1.296855328454714
+            "longitude": 103.780302,
+            "latitude": 1.296855
         }
     },
     {
-        "roomCode": "BIZ2-0413B",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 04-13B",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77504911418305,
-            "latitude": 1.2933189348382488
+            "longitude": 103.775049,
+            "latitude": 1.293319
         }
     },
     {
-        "roomCode": "BIZ2-0413A",
+        "roomCode": "BIZ2",
         "roomName": "Seminar Room 04-13A",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77531319856645,
-            "latitude": 1.293255759734801
+            "longitude": 103.775313,
+            "latitude": 1.293256
         }
     },
     {
-        "roomCode": "TH-SR1",
+        "roomCode": "TH",
         "roomName": "Temasek Hall Office, Seminar Room",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77129374071957,
-            "latitude": 1.2927169615398948
+            "longitude": 103.771294,
+            "latitude": 1.292717
         }
     },
     {
-        "roomCode": "PGPH-FR4",
+        "roomCode": "PGPH",
         "roomName": "Function Room 4",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.78055155277254,
-            "latitude": 1.290896141645534
+            "longitude": 103.780552,
+            "latitude": 1.290896
         }
     },
     {
-        "roomCode": "S12-0402A",
+        "roomCode": "S12",
         "roomName": "Level 1000 Physics Lab",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77876788377763,
-            "latitude": 1.2969470029855712
+            "longitude": 103.778768,
+            "latitude": 1.296947
         }
     },
     {
-        "roomCode": "S12-0402B",
-        "roomName": "Level 1000 Physics Lab",
-        "floor": 4,
-        "coordinate": {
-            "longitude": 103.77875983715059,
-            "latitude": 1.2969389584199256
-        }
-    },
-    {
-        "roomCode": "S12-0402C",
-        "roomName": "Level 1000 Physics Lab",
-        "floor": 4,
-        "coordinate": {
-            "longitude": 103.77877861261369,
-            "latitude": 1.2969470029855712
-        }
-    },
-    {
-        "roomCode": "S12-0402D",
-        "roomName": "Level 1000 Physics Lab",
-        "floor": 4,
-        "coordinate": {
-            "longitude": 103.77879202365877,
-            "latitude": 1.2969362768980521
-        }
-    },
-    {
-        "roomCode": "S1A-03LAB1",
+        "roomCode": "S1A",
         "roomName": "Life Sciences Laboratory 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7782827,
-            "latitude": 1.2959638
+            "longitude": 103.778283,
+            "latitude": 1.295964
         }
     },
     {
@@ -4323,8 +3594,8 @@
         "roomName": "S1A-03LAB2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7784543,
-            "latitude": 1.2959319
+            "longitude": 103.778454,
+            "latitude": 1.295932
         }
     },
     {
@@ -4332,8 +3603,8 @@
         "roomName": "S1A-04LAB3",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.7783194,
-            "latitude": 1.2959363
+            "longitude": 103.778319,
+            "latitude": 1.295936
         }
     },
     {
@@ -4341,8 +3612,8 @@
         "roomName": "S2-03LAB7",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7781376,
-            "latitude": 1.2956254
+            "longitude": 103.778138,
+            "latitude": 1.295625
         }
     },
     {
@@ -4350,8 +3621,8 @@
         "roomName": "S16-03-0506",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7803574,
-            "latitude": 1.2967088
+            "longitude": 103.780357,
+            "latitude": 1.296709
         }
     },
     {
@@ -4359,26 +3630,26 @@
         "roomName": "EA-04-21",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77052545547487,
-            "latitude": 1.3001422018796116
+            "longitude": 103.770525,
+            "latitude": 1.300142
         }
     },
     {
-        "roomCode": "AS6-0211",
+        "roomCode": "AS6",
         "roomName": "as6-0211",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77317523145778,
-            "latitude": 1.295558493014907
+            "longitude": 103.773175,
+            "latitude": 1.295558
         }
     },
     {
-        "roomCode": "UTSRC-PR1",
+        "roomCode": "UTSRC",
         "roomName": "UTown, SRC, Practice Room 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77260953187944,
-            "latitude": 1.3042476033435082
+            "longitude": 103.77261,
+            "latitude": 1.304248
         }
     },
     {
@@ -4386,35 +3657,35 @@
         "roomName": "USP-TR2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7731593,
-            "latitude": 1.3065424
+            "longitude": 103.773159,
+            "latitude": 1.306542
         }
     },
     {
-        "roomCode": "RVR-SRM04",
+        "roomCode": "RVRC",
         "roomName": "RVRC Seminar Room 4",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77671974289942,
-            "latitude": 1.2974919216751664
+            "longitude": 103.77672,
+            "latitude": 1.297492
         }
     },
     {
-        "roomCode": "SDE2-ES1",
+        "roomCode": "SDE2",
         "roomName": "E-Studio 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77113163471223,
-            "latitude": 1.2972089318821012
+            "longitude": 103.771132,
+            "latitude": 1.297209
         }
     },
     {
-        "roomCode": "WT-Lab",
+        "roomCode": "WT",
         "roomName": "SDE2-02-10 (Wind Tunnel Unit)",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77111796176165,
-            "latitude": 1.297212239020798
+            "longitude": 103.771118,
+            "latitude": 1.297212
         }
     },
     {
@@ -4422,8 +3693,8 @@
         "roomName": "KEVII-MR2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78084659576416,
-            "latitude": 1.2922060118957746
+            "longitude": 103.780847,
+            "latitude": 1.292206
         }
     },
     {
@@ -4431,8 +3702,8 @@
         "roomName": "SDE4-EXR1-2",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77050131559373,
-            "latitude": 1.2966676219094895
+            "longitude": 103.770501,
+            "latitude": 1.296668
         }
     },
     {
@@ -4440,35 +3711,35 @@
         "roomName": "SDE2-MEZZ",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77113163471223,
-            "latitude": 1.297163703463061
+            "longitude": 103.771132,
+            "latitude": 1.297164
         }
     },
     {
-        "roomCode": "YSTCM-SR4",
+        "roomCode": "YSTCM",
         "roomName": "YSTCM Seminar Room 4",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77294212579729,
-            "latitude": 1.3022612709751085
+            "longitude": 103.772942,
+            "latitude": 1.302261
         }
     },
     {
-        "roomCode": "S5-01GEN",
+        "roomCode": "S5",
         "roomName": "Chemistry General Teaching Lab",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77986222505571,
-            "latitude": 1.29553333777584
+            "longitude": 103.779862,
+            "latitude": 1.295533
         }
     },
     {
-        "roomCode": "E2-0306PC3",
+        "roomCode": "E2",
         "roomName": "PC3",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7711423635483,
-            "latitude": 1.2993598687394592
+            "longitude": 103.771142,
+            "latitude": 1.29936
         }
     },
     {
@@ -4476,8 +3747,8 @@
         "roomName": "AS1-0205",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77212060584722,
-            "latitude": 1.2951284277138495
+            "longitude": 103.772121,
+            "latitude": 1.295128
         }
     },
     {
@@ -4485,8 +3756,8 @@
         "roomName": "S5-01PHYS",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77974152565004,
-            "latitude": 1.2955447342501536
+            "longitude": 103.779742,
+            "latitude": 1.295545
         }
     },
     {
@@ -4494,39 +3765,39 @@
         "roomName": "AS3-0620",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77162247896197,
-            "latitude": 1.294868319891547
+            "longitude": 103.771622,
+            "latitude": 1.294868
         }
     },
     {
-        "roomCode": "RH-CONF-RM",
+        "roomCode": "RH",
         "roomName": "Conference Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77391813424904,
-            "latitude": 1.2997500633015104
+            "longitude": 103.773918,
+            "latitude": 1.29975
         }
     },
     {
-        "roomCode": "GBT-Lab",
+        "roomCode": "GBT",
         "roomName": "Green Building Technologies Lab",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.7705455,
-            "latitude": 1.2968031
+            "longitude": 103.770545,
+            "latitude": 1.296803
         }
     },
     {
-        "roomCode": "LAW_SR4-1",
+        "roomCode": "SR4",
         "roomName": "Seminar Room 4-1",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.81666213274005,
-            "latitude": 1.3186904481919393
+            "longitude": 103.816662,
+            "latitude": 1.31869
         }
     },
     {
-        "roomCode": "SDE4-EXR-2",
+        "roomCode": "SDE4",
         "roomName": "Executive Room 2",
         "floor": 4,
         "coordinate": {
@@ -4540,97 +3811,97 @@
         "floor": 2,
         "coordinate": {
             "longitude": 103.773337,
-            "latitude": 1.2953469
+            "latitude": 1.295347
         }
     },
     {
-        "roomCode": "SDE2-ES2",
+        "roomCode": "SDE2",
         "roomName": "E-Studio 2",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77117455005647,
-            "latitude": 1.2973258458294765
+            "longitude": 103.771175,
+            "latitude": 1.297326
         }
     },
     {
-        "roomCode": "RC4-SR3",
+        "roomCode": "RC4",
         "roomName": "RC4 Seminar Room 3",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.77284167916517,
-            "latitude": 1.3082311674829945
+            "longitude": 103.772842,
+            "latitude": 1.308231
         }
     },
     {
-        "roomCode": "RC4-SR1-2",
+        "roomCode": "RC4",
         "roomName": "RC4 Seminar Room 1 & 2",
         "floor": -1,
         "coordinate": {
-            "longitude": 103.7728826457169,
-            "latitude": 1.3082432342773747
+            "longitude": 103.772883,
+            "latitude": 1.308243
         }
     },
     {
-        "roomCode": "RC4-SR4",
+        "roomCode": "RC4",
         "roomName": "RC4 Seminar Room 4",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77295017242433,
-            "latitude": 1.3082311151097674
+            "longitude": 103.77295,
+            "latitude": 1.308231
         }
     },
     {
-        "roomCode": "RC4-SR5",
+        "roomCode": "RC4",
         "roomName": "RC4 Seminar Room 5",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77286702394487,
-            "latitude": 1.308241841149222
+            "longitude": 103.772867,
+            "latitude": 1.308242
         }
     },
     {
-        "roomCode": "LAW_CR3-4",
+        "roomCode": "CR3",
         "roomName": "Classroom 3-4",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.81707519292833,
-            "latitude": 1.319114490585766
+            "longitude": 103.817075,
+            "latitude": 1.319114
         }
     },
     {
-        "roomCode": "LAW_CR4-2",
+        "roomCode": "CR4",
         "roomName": "Classroom 4-2",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.81670504808427,
-            "latitude": 1.3187687563308481
+            "longitude": 103.816705,
+            "latitude": 1.318769
         }
     },
     {
-        "roomCode": "SDE4-GISL1",
+        "roomCode": "SDE4",
         "roomName": "GIS Lab",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77018758666345,
-            "latitude": 1.2968615853665866
+            "longitude": 103.770188,
+            "latitude": 1.296862
         }
     },
     {
-        "roomCode": "SDE-EXR-2",
+        "roomCode": "SDE",
         "roomName": "SDE4 Executive Room 2",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77033949101288,
-            "latitude": 1.2968782704103055
+            "longitude": 103.770339,
+            "latitude": 1.296878
         }
     },
     {
-        "roomCode": "USP-SR3",
+        "roomCode": "USP",
         "roomName": "Seminar Room 3",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77306148409846,
-            "latitude": 1.3068129730754225
+            "longitude": 103.773061,
+            "latitude": 1.306813
         }
     },
     {
@@ -4638,26 +3909,26 @@
         "roomName": "E4-02-06",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77178341150285,
-            "latitude": 1.2986859693257289
+            "longitude": 103.771783,
+            "latitude": 1.298686
         }
     },
     {
-        "roomCode": "RVR-SRM02",
+        "roomCode": "RVRC",
         "roomName": "Seminar Rooms",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77677393571237,
-            "latitude": 1.29739163213823
+            "longitude": 103.776774,
+            "latitude": 1.297392
         }
     },
     {
-        "roomCode": "EW1-02-03",
+        "roomCode": "EW1",
         "roomName": "Hydraulics Lab",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77070488748149,
-            "latitude": 1.2986439029798538
+            "longitude": 103.770705,
+            "latitude": 1.298644
         }
     },
     {
@@ -4665,8 +3936,8 @@
         "roomName": "AS6-0215B",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77296760678293,
-            "latitude": 1.2958468141238033
+            "longitude": 103.772968,
+            "latitude": 1.295847
         }
     },
     {
@@ -4674,26 +3945,26 @@
         "roomName": "SH-SR1",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77542841044601,
-            "latitude": 1.2913909617585373
+            "longitude": 103.775428,
+            "latitude": 1.291391
         }
     },
     {
-        "roomCode": "S6-04-08",
+        "roomCode": "S6",
         "roomName": "Science Library",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.78010094165803,
-            "latitude": 1.295166639427762
+            "longitude": 103.780101,
+            "latitude": 1.295167
         }
     },
     {
-        "roomCode": "AS3-0312",
+        "roomCode": "AS3",
         "roomName": "0314",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77141864426275,
-            "latitude": 1.2947474162756536
+            "longitude": 103.771419,
+            "latitude": 1.294747
         }
     },
     {
@@ -4701,17 +3972,17 @@
         "roomName": "ERC-SR11",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77291262149812,
-            "latitude": 1.305924051894182
+            "longitude": 103.772913,
+            "latitude": 1.305924
         }
     },
     {
-        "roomCode": "S11-0302A",
+        "roomCode": "S11",
         "roomName": "0302A",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77877458930018,
-            "latitude": 1.2966448289709127
+            "longitude": 103.778775,
+            "latitude": 1.296645
         }
     },
     {
@@ -4719,44 +3990,44 @@
         "roomName": "USP-TR1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77314838535167,
-            "latitude": 1.306576128579399
+            "longitude": 103.773148,
+            "latitude": 1.306576
         }
     },
     {
-        "roomCode": "RVR-MPR01",
+        "roomCode": "RVRC",
         "roomName": "Multi Purpose Room 1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77687692642213,
-            "latitude": 1.2973480580696695
+            "longitude": 103.776877,
+            "latitude": 1.297348
         }
     },
     {
-        "roomCode": "RVR-MPR02",
+        "roomCode": "RVRC",
         "roomName": "Multi Purpose Room 2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77674013376237,
-            "latitude": 1.2974311852333447
+            "longitude": 103.77674,
+            "latitude": 1.297431
         }
     },
     {
-        "roomCode": "YSTCM-MLAB",
+        "roomCode": "YSTCM",
         "roomName": "Music Tech and Keyboard Lab",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77272941774719,
-            "latitude": 1.3023654031322103
+            "longitude": 103.772729,
+            "latitude": 1.302365
         }
     },
     {
-        "roomCode": "E2-0309PC6",
+        "roomCode": "E2",
         "roomName": "E2-0306PC6",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77116650342943,
-            "latitude": 1.299378639374635
+            "longitude": 103.771167,
+            "latitude": 1.299379
         }
     },
     {
@@ -4764,8 +4035,8 @@
         "roomName": "CFG Career Space, Yusof Ishak House",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7747633457184,
-            "latitude": 1.2985055114007384
+            "longitude": 103.774763,
+            "latitude": 1.298506
         }
     },
     {
@@ -4773,35 +4044,35 @@
         "roomName": "AS3-0314",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77111034010251,
-            "latitude": 1.2947020653932226
+            "longitude": 103.77111,
+            "latitude": 1.294702
         }
     },
     {
-        "roomCode": "YSTCM-SR3",
+        "roomCode": "YSTCM",
         "roomName": "Seminar Room 3",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7725628,
-            "latitude": 1.3025707
+            "longitude": 103.772563,
+            "latitude": 1.302571
         }
     },
     {
-        "roomCode": "AS7-0201A",
+        "roomCode": "AS7",
         "roomName": "Room 1",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77105252409778,
-            "latitude": 1.29427033995146
+            "longitude": 103.771053,
+            "latitude": 1.29427
         }
     },
     {
-        "roomCode": "AS4-0513",
+        "roomCode": "AS4",
         "roomName": "AS3-0513",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77196827769893,
-            "latitude": 1.2945733522257314
+            "longitude": 103.771968,
+            "latitude": 1.294573
         }
     },
     {
@@ -4809,26 +4080,26 @@
         "roomName": "E5-04-1617",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77254515886308,
-            "latitude": 1.297952070704839
+            "longitude": 103.772545,
+            "latitude": 1.297952
         }
     },
     {
-        "roomCode": "LAW_CR3-5",
-        "roomName": "LAW CR3-5",
+        "roomCode": "CR3",
+        "roomName": " CR3-5",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.81700009107591,
-            "latitude": 1.3189643800229218
+            "longitude": 103.817,
+            "latitude": 1.318964
         }
     },
     {
-        "roomCode": "LAW_SR5-4",
+        "roomCode": "SR5",
         "roomName": "SR 5 - 4",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.81657764315605,
-            "latitude": 1.3186839958358212
+            "longitude": 103.816578,
+            "latitude": 1.318684
         }
     },
     {
@@ -4836,8 +4107,8 @@
         "roomName": "Frontier",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78003966445547,
-            "latitude": 1.296364945076005
+            "longitude": 103.78004,
+            "latitude": 1.296365
         }
     },
     {
@@ -4845,8 +4116,8 @@
         "roomName": "S8-0402",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77937403740883,
-            "latitude": 1.296072323916885
+            "longitude": 103.779374,
+            "latitude": 1.296072
         }
     },
     {
@@ -4854,53 +4125,53 @@
         "roomName": "TP-SR2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77355339315676,
-            "latitude": 1.3038567726300767
+            "longitude": 103.773553,
+            "latitude": 1.303857
         }
     },
     {
-        "roomCode": "LAW_CR2-1",
+        "roomCode": "CR2",
         "roomName": "CR 2-1",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.81667928422443,
-            "latitude": 1.3187050325808396
+            "longitude": 103.816679,
+            "latitude": 1.318705
         }
     },
     {
-        "roomCode": "LAW_CR2-2",
+        "roomCode": "CR2",
         "roomName": "CR2-2",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.81671683479652,
-            "latitude": 1.3187506180542539
+            "longitude": 103.816717,
+            "latitude": 1.318751
         }
     },
     {
-        "roomCode": "BIZ1-0504",
+        "roomCode": "BIZ1",
         "roomName": "Biz1",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77365827560426,
-            "latitude": 1.2933264430775053
+            "longitude": 103.773658,
+            "latitude": 1.293326
         }
     },
     {
-        "roomCode": "UT22-07-02",
+        "roomCode": "UT22",
         "roomName": "CREATE SDE studio",
         "floor": 7,
         "coordinate": {
-            "longitude": 103.77355133186032,
-            "latitude": 1.3037287973496303
+            "longitude": 103.773551,
+            "latitude": 1.303729
         }
     },
     {
-        "roomCode": "Y-ELMCL",
+        "roomCode": "Yale-NUS",
         "roomName": "Elm College Lounge",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77203718409874,
-            "latitude": 1.3065375734614046
+            "longitude": 103.772037,
+            "latitude": 1.306538
         }
     },
     {
@@ -4908,17 +4179,17 @@
         "roomName": "CQT Seminar Room",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78033697605133,
-            "latitude": 1.2971461059771843
+            "longitude": 103.780337,
+            "latitude": 1.297146
         }
     },
     {
-        "roomCode": "E-Hybrid_B",
+        "roomCode": "E",
         "roomName": "Hy-brid_B",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77277314662935,
-            "latitude": 1.2974336432673221
+            "longitude": 103.772773,
+            "latitude": 1.297434
         }
     },
     {
@@ -4926,8 +4197,8 @@
         "roomName": "HSS-317",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77431601454474,
-            "latitude": 1.2932838742247788
+            "longitude": 103.774316,
+            "latitude": 1.293284
         }
     },
     {
@@ -4935,35 +4206,26 @@
         "roomName": "Interaction",
         "floor": 2,
         "coordinate": {
-            "longitude": 103.77761185169221,
-            "latitude": 1.291363565499891
+            "longitude": 103.777612,
+            "latitude": 1.291364
         }
     },
     {
-        "roomCode": "SDE2-ER1",
+        "roomCode": "SDE2",
         "roomName": "Executive Room 1",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7710244,
-            "latitude": 1.2971383
+            "longitude": 103.771024,
+            "latitude": 1.297138
         }
     },
     {
-        "roomCode": "SDE4-GIS1-2",
-        "roomName": "GIS Lab",
-        "floor": 2,
-        "coordinate": {
-            "longitude": 103.77035648909613,
-            "latitude": 1.2967945473983356
-        }
-    },
-    {
-        "roomCode": "SDE1-SR5-6",
+        "roomCode": "SDE1",
         "roomName": "Seminar Room 5",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7706401792259,
-            "latitude": 1.2973688336414937
+            "longitude": 103.77064,
+            "latitude": 1.297369
         }
     },
     {
@@ -4971,62 +4233,62 @@
         "roomName": "SDE4-EXR-1",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77057641744615,
-            "latitude": 1.296705163219649
+            "longitude": 103.770576,
+            "latitude": 1.296705
         }
     },
     {
-        "roomCode": "UTSRC-DS",
+        "roomCode": "UTSRC",
         "roomName": "Dance Studio",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7723162662604,
-            "latitude": 1.3045044142814384
+            "longitude": 103.772316,
+            "latitude": 1.304504
         }
     },
     {
-        "roomCode": "YSTCM-RS",
+        "roomCode": "YSTCM",
         "roomName": "Recording Studio",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77294451463969,
-            "latitude": 1.3021768032122787
+            "longitude": 103.772945,
+            "latitude": 1.302177
         }
     },
     {
-        "roomCode": "SDE2_ER4-5",
+        "roomCode": "SDE2_ER4",
         "roomName": "Executive Room 4, 5",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.7710287,
-            "latitude": 1.2971755
+            "longitude": 103.771029,
+            "latitude": 1.297176
         }
     },
     {
-        "roomCode": "SDE1-CL2",
+        "roomCode": "SDE1",
         "roomName": "Computer Lab 2",
         "floor": 4,
         "coordinate": {
-            "longitude": 103.77074539661409,
-            "latitude": 1.2974390622023457
+            "longitude": 103.770745,
+            "latitude": 1.297439
         }
     },
     {
-        "roomCode": "SDE1-CL3",
+        "roomCode": "SDE1",
         "roomName": "Computer Lab 3",
         "floor": 5,
         "coordinate": {
-            "longitude": 103.77063805848886,
-            "latitude": 1.2973165688964943
+            "longitude": 103.770638,
+            "latitude": 1.297317
         }
     },
     {
-        "roomCode": "MD3-03-01A",
+        "roomCode": "MD3",
         "roomName": "MD3",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.78116577863695,
-            "latitude": 1.2953536757033381
+            "longitude": 103.781166,
+            "latitude": 1.295354
         }
     },
     {
@@ -5034,8 +4296,8 @@
         "roomName": "E1-06-0102",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77118533964124,
-            "latitude": 1.298485693290246
+            "longitude": 103.771185,
+            "latitude": 1.298486
         }
     },
     {
@@ -5043,35 +4305,35 @@
         "roomName": "E1-06-0304",
         "floor": 6,
         "coordinate": {
-            "longitude": 103.77114811483986,
-            "latitude": 1.2985393236945988
+            "longitude": 103.771148,
+            "latitude": 1.298539
         }
     },
     {
-        "roomCode": "MD6-03-01E",
+        "roomCode": "MD6",
         "roomName": "03-01-E",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.78181883104845,
-            "latitude": 1.2953454016711934
+            "longitude": 103.781819,
+            "latitude": 1.295345
         }
     },
     {
-        "roomCode": "COM3-01-20",
+        "roomCode": "COM3",
         "roomName": "Seminar Room 11 (ALC)",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77431055530907,
-            "latitude": 1.2949252184799644
+            "longitude": 103.774311,
+            "latitude": 1.294925
         }
     },
     {
-        "roomCode": "COM3-01-21",
+        "roomCode": "COM3",
         "roomName": "Seminar Room 12",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77431055530907,
-            "latitude": 1.2949252184799644
+            "longitude": 103.774311,
+            "latitude": 1.294925
         }
     },
     {
@@ -5079,8 +4341,8 @@
         "roomName": "AS8-0760",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77357780933382,
-            "latitude": 1.2969676171849311
+            "longitude": 103.773578,
+            "latitude": 1.296968
         }
     },
     {
@@ -5088,35 +4350,35 @@
         "roomName": "Ambition II",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.7744086,
-            "latitude": 1.3035885
+            "longitude": 103.774409,
+            "latitude": 1.303589
         }
     },
     {
-        "roomCode": "SDE3-LT422",
+        "roomCode": "SDE3",
         "roomName": "SDE3 LT422",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77296626567842,
-            "latitude": 1.2959543369107271
+            "longitude": 103.772966,
+            "latitude": 1.295954
         }
     },
     {
-        "roomCode": "COM4SR3132",
+        "roomCode": "COM4",
         "roomName": "Seminar Room 31 and 32",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77537384926308,
-            "latitude": 1.2951198468049192
+            "longitude": 103.775374,
+            "latitude": 1.29512
         }
     },
     {
-        "roomCode": "COM4SR33",
+        "roomCode": "COM4",
         "roomName": "Seminar Room 33",
         "floor": 3,
         "coordinate": {
-            "longitude": 103.77536866488154,
-            "latitude": 1.2951105509975482
+            "longitude": 103.775369,
+            "latitude": 1.295111
         }
     },
     {
@@ -5124,17 +4386,17 @@
         "roomName": "AS7-0107",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77318888902666,
-            "latitude": 1.2964531001264854
+            "longitude": 103.773189,
+            "latitude": 1.296453
         }
     },
     {
-        "roomCode": "LAW_SR4-2",
+        "roomCode": "SR4",
         "roomName": "SR4-2",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77344760878614,
-            "latitude": 1.2965116754860795
+            "longitude": 103.773448,
+            "latitude": 1.296512
         }
     },
     {
@@ -5142,8 +4404,8 @@
         "roomName": "SDE3-LT424",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77047181129457,
-            "latitude": 1.297493530604323
+            "longitude": 103.770472,
+            "latitude": 1.297494
         }
     },
     {
@@ -5151,8 +4413,8 @@
         "roomName": "SDE3-LT421",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77105620935124,
-            "latitude": 1.297223428366857
+            "longitude": 103.771056,
+            "latitude": 1.297223
         }
     },
     {
@@ -5160,8 +4422,8 @@
         "roomName": "HSS-04-07",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77300918102264,
-            "latitude": 1.2972253784602343
+            "longitude": 103.773009,
+            "latitude": 1.297225
         }
     },
     {
@@ -5169,8 +4431,8 @@
         "roomName": "YSTCM-SR7",
         "floor": 1,
         "coordinate": {
-            "longitude": 103.77292335033418,
-            "latitude": 1.3022559079426335
+            "longitude": 103.772923,
+            "latitude": 1.302256
         }
     }
 ]
