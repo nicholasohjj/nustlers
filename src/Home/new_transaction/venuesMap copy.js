@@ -17,8 +17,10 @@ const Circle = require("react-native-maps").Circle;
 const Marker = require("react-native-maps").Marker;
 const mapStyle = require("../map/mapStyle.json");
 
-const VenuesMap = ({currentDestination, setcurrentDestination, toggleVenueSearch}) => {
+const VenuesMap = ({currentDestination, setcurrentDestination, toggleVenueSearch, hideModal}) => {
   const venues = require("./venues.json"); // For testing
+  const [selectedDestination, setSelectedDestination] = useState(currentDestination);
+
   const [userLocation, setUserLocation] = useState(null);
   const [region, setRegion] = useState({
     latitude: 1.2966,
@@ -77,6 +79,11 @@ const VenuesMap = ({currentDestination, setcurrentDestination, toggleVenueSearch
     }
   };
 
+  const handleSelectPress = () => {
+    setcurrentDestination(selectedDestination)
+    hideModal()
+  }
+
   const fetchLocation = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
@@ -96,10 +103,6 @@ const VenuesMap = ({currentDestination, setcurrentDestination, toggleVenueSearch
     } catch (error) {
       Alert.alert("Location Error", "Error fetching location.");
     }
-  };
-
-  const handledestinationPress = (destination) => {
-    setcurrentDestination(destination);
   };
 
   const getTitle = (destination) => {
@@ -133,10 +136,10 @@ const VenuesMap = ({currentDestination, setcurrentDestination, toggleVenueSearch
           key={index}
           coordinate={venue.coordinate}
           title={getTitle(venue)}
-          onPress={() => setcurrentDestination(venue)}
+          onPress={() => setSelectedDestination(venue)}
         />
       )),
-    [venues, setcurrentDestination]
+    [venues, setSelectedDestination]
   );
 
   const renderCircle = useMemo(() => {
@@ -184,16 +187,16 @@ const VenuesMap = ({currentDestination, setcurrentDestination, toggleVenueSearch
             <Card.Content style={styles.content}>
               <Text>Destination</Text>
               <Text variant="titleMedium">
-                {currentDestination ? getTitle(currentDestination) : "Current Location"}
+                {selectedDestination ? getTitle(currentDestination) : "Current Location"}
               </Text>
             </Card.Content>
           </TouchableRipple>
-          {currentDestination ? (
+          {selectedDestination ? (
             <View>
                 <Divider/>
               <Card.Content style={styles.content}>
                 <Card.Actions style={styles.actions}>
-                  <Button onPress={() => console.log("test2")}>
+                  <Button onPress={() => handleSelectPress()}>
                     Select
                   </Button>
                 </Card.Actions>

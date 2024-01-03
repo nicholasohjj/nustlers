@@ -2411,7 +2411,7 @@
         }
     },
     {
-        "roomCode": "AUD",
+        "roomCode": "LAW-AUD",
         "roomName": "Auditorium",
         "floor": 3,
         "coordinate": {
@@ -4086,7 +4086,7 @@
     },
     {
         "roomCode": "CR3",
-        "roomName": " CR3-5",
+        "roomName": "CR3-5",
         "floor": 3,
         "coordinate": {
             "longitude": 103.817,

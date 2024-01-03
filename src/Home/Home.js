@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EditProfile from "./editProfile";
 import Content from "./content";
 import Feedback from "./feedback";
-import Transaction from "./transaction/transaction";
+import Transaction from "./new_transaction/transaction";
 const HomeStack = createNativeStackNavigator();
 
 const Home = () => {

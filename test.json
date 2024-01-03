@@ -1,0 +1,15 @@
+{"app_metadata": 
+    {"provider": "email", "providers": ["email"]}, 
+"aud": "authenticated",
+"confirmation_sent_at": "2023-12-23T06:10:25.644432Z",
+"confirmed_at": "2023-12-23T06:14:27.524401Z",
+"created_at": "2023-12-23T06:10:25.640764Z",
+"email": "nicholasohjj@gmail.com",
+"email_confirmed_at": "2023-12-23T06:14:27.524401Z",
+"id": "d5737cdf-48ba-47fa-b324-936f16d83169",
+"identities": [{"created_at": "2023-12-23T06:10:25.643084Z", "email": "nicholasohjj@gmail.com", "id": "d5737cdf-48ba-47fa-b324-936f16d83169", "identity_data": [Object], "identity_id": "ff7acb4d-ee7d-48b3-903c-e49f91c16bdc", "last_sign_in_at": "2023-12-23T06:10:25.643036Z", "provider": "email", "updated_at": "2023-12-23T06:10:25.643084Z", "user_id": "d5737cdf-48ba-47fa-b324-936f16d83169"}],
+"last_sign_in_at": "2024-01-02T12:39:29.050469Z",
+"phone": "",
+"recovery_sent_at": "2023-12-24T05:23:33.174346Z",
+"role": "authenticated", "updated_at": "2024-01-02T14:35:45.73294Z",
+"user_metadata": {"displayName": "123456789", "phone": 87654321}} 

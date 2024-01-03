@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { useNavigation } from "@react-navigation/native";
 
 
-const StallCard = ({ stall, handleStallPress }) => (
-  <Card key={stall.stall_id} style={styles.card} onPress={() => handleStallPress(stall)}>
+const StallCard = ({ stall, handleStallPress, marker }) => (
+  <Card key={stall.stall_id} style={styles.card} onPress={() => handleStallPress(stall, marker)}>
     <Card.Content style={styles.cardContent}>
       <Image
         source={{ uri: stall.stall_image }}
@@ -28,15 +28,17 @@ StallCard.propTypes = {
 const Canteen = ({ route }) => {
   const navigation = useNavigation();
   const { marker, isQueuing } = route.params;
-  const canteens = require("./canteens.json");
+  const canteenStalls = require("./canteen_stalls.json");
 
-  const handleStallPress = (stall) => {
+  const handleStallPress = (stall, marker) => {
+    stall.stall_name = stall.stall_name + " (" + marker.title + ")"
+    console.log(stall.stall_name)
     navigation.navigate("Stall", { stall, isQueuing });
   };
 
-  const canteenStalls = useMemo(() => 
-  canteens.filter((canteen) => canteen.markers_id === marker.id)[0]?.stalls || [], 
-    [marker.id, canteens]
+  const currentCanteenStalls = useMemo(() => 
+  canteenStalls.filter((canteenStall) => canteenStall.markers_id === marker.id)[0]?.stalls || [], 
+    [marker.id, canteenStalls]
   );
 
   return (
@@ -55,8 +57,8 @@ const Canteen = ({ route }) => {
         </Card>
 
       <ScrollView style={styles.scrollView}>
-        {canteenStalls.length > 0 ? (
-          canteenStalls.map((stall) => <StallCard key={stall.stall_id} stall={stall} handleStallPress={handleStallPress} />)
+        {currentCanteenStalls.length > 0 ? (
+          currentCanteenStalls.map((stall) => <StallCard key={stall.stall_id} stall={stall} marker={marker} handleStallPress={handleStallPress} />)
         ) : (
           <Text>No stalls available</Text>
         )}

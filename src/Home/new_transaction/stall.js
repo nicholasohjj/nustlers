@@ -12,16 +12,22 @@ const Stall = ({ route }) => {
   return (
     <View style={styles.container}>
       <Card style={styles.header}>
-      <Card.Content style={styles.headerContent}>
-        {stall.stall_image && (
-          <Image
-            source={{ uri: stall.stall_image }}
-            style={styles.image}
-            onError={() => console.log('Error loading canteen image')}
-          />
-        )}
-        <Text variant="headlineSmall" fontWeight={24} >{stall.stall_name}</Text>
-      </Card.Content>
+        <Card.Content style={styles.headerContent}>
+          {stall.stall_image && (
+            <Image
+              source={{ uri: stall.stall_image }}
+              style={styles.image}
+              onError={() => console.log('Error loading canteen image')}
+            />
+          )}
+          <Text
+            variant="headlineSmall"
+            style={styles.title}
+            numberOfLines={2} // Allow text to wrap to a second line
+          >
+            {stall.stall_name}
+          </Text>
+        </Card.Content>
       </Card>
       
       {isQueuing ? (
@@ -49,43 +55,25 @@ const styles = StyleSheet.create({
     marginTop:40,
     marginBottom: 20,
   },
-  headerContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   image: {
     width: 100, // Adjust as needed
     height: 100, // Adjust as needed
     borderRadius: 20, // Adjust for rounded corners
     marginRight: 20,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    flexShrink: 1, // Ensure the text wraps if too long
-  },
-  card: {
-    marginVertical: 10,
-    borderRadius: 8,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  cardContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  stallImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 8,
-  },
   scrollView: {
     width: "100%",
+  },
+  title: {
+    fontSize: 20, // Adjust font size if necessary
+    fontWeight: 'bold',
+    color: '#333',
+    flexShrink: 1,
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap', // Allow items within this container to wrap
   },
 });
 

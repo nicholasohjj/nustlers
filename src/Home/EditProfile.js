@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, Text, ActivityIndicator, Alert } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, ActivityIndicator, Alert } from 'react-native';
 import { Button, TextInput, Dialog, Portal } from 'react-native-paper';
 import { supabase } from '../supabase';
 import { useNavigation } from "@react-navigation/native";
@@ -86,9 +86,9 @@ const EditProfile = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-    <ScrollView contentContainerStyle={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Edit Profile</Text>
+
       <TextInput
         label="Preferred Name"
         mode="outlined"
@@ -133,45 +133,34 @@ const EditProfile = () => {
           <Dialog.Title style={styles.dialogTitle}>Profile Updated</Dialog.Title>
           </Dialog>
         </Portal>
-      </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
   container: {
-    flexGrow: 1,
-    justifyContent: 'center',
+    flex: 1,
     padding: 20,
-    alignItems: 'center',
-    width: '100%', // Full width of the screen
-    maxWidth: 600, // Maximum width for larger screens
-    alignSelf: 'center', // Center the container
+    width: "100%",
   },
   title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 24,
-    textAlign: 'center',
-    color: '#000000',
+    paddingTop: 40,
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "left",
+    paddingBottom: 20,
   },
   input: {
-    marginBottom: 18,
-    backgroundColor: 'white',
-    width: '100%',
-    maxWidth: 400, // Maximum width for input fields
-    paddingHorizontal: 10,
+    marginBottom: 15,
+    backgroundColor: "white",
+    width: "100%",
+    maxWidth: 400,
   },
   button: {
-    marginTop: 16,
-    paddingVertical: 10,
-    width: '80%', // Relative width for better appearance on web
-    maxWidth: 400, // Maximum width for button
-    alignSelf: 'center', // Center align the button
+    marginTop: 10,
+    paddingVertical: 8,
+    width: "100%",
+    maxWidth: 400,
   },
   activityIndicator: {
     marginVertical: 20,
