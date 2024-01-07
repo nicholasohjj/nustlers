@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, Text, ActivityIndicator, Alert } from 'react-native';
 import { Button, TextInput, Dialog, Portal } from 'react-native-paper';
-import { supabase } from '../supabase';
+import { supabase } from '../../supabase/supabase';
 import { useNavigation } from "@react-navigation/native";
-import { useUser  } from './userProvider';
+import { useUser  } from '../../supabase/userProvider';
 
 const EditProfile = () => {
   const [currentUser, setCurrentUser] = useState(null);

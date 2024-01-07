@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, ActivityIndicator } from "react-native";
-import { supabase } from "../supabase";
+import { supabase } from "../supabase/supabase";
 import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
 import { makeRedirectUri } from "expo-auth-session";

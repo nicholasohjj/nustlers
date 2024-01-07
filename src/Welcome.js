@@ -1,15 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback} from "react";
 import { View, StyleSheet, Imag } from "react-native";
 import { Button, Text } from "react-native-paper";
-import { supabase } from "./supabase";
-import { useNavigation } from "@react-navigation/native";
+import { supabase } from "./supabase/supabase";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
 const Welcome = () => {
   const navigation = useNavigation();
 
-  useEffect(() => {
-    checkUserLoggedIn();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      checkUserLoggedIn();
+    }, [checkUserLoggedIn]))
+    
 
   const checkUserLoggedIn = async () => {
     const {

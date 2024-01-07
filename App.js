@@ -3,7 +3,7 @@ import Main from "./src/main";
 import { NavigationContainer, useNavigationContainerRef } from "@react-navigation/native";
 import * as Linking from "expo-linking";
 import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
-import { UserProvider } from "./src/Home/userProvider";
+import { UserProvider } from "./src/supabase/userProvider";
 
 const prefix = Linking.createURL("/");
 

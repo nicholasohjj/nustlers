@@ -3,11 +3,11 @@ import { View, StyleSheet, Alert } from "react-native";
 import { Button, Text, TextInput, Card } from "react-native-paper";
 import DestinationModal from "./destinationModal";
 import NearbyModal from "./nearbyModal";
-import { useUser } from "../userProvider";
-import { supabase } from "../../supabase";
+import { useUser } from "../../supabase/userProvider";
+import { supabase } from "../../supabase/supabase";
 
 const Setup = ({stall}) => {
-  const venues = require("./venues.json");
+  const venues = require("../../db/venues.json");
   const [destination, setDestination] = useState();
   const [nearby, setNearby] = useState([]);
   const [nearbyModal, setNearbyModal] = useState(false);

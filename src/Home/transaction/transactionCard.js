@@ -1,23 +1,31 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
 import { Text, Card, TouchableRipple  } from "react-native-paper";
-import { useNavigation } from "@react-navigation/native";
-
-const TransactionCard = ({ transaction, user }) => {
-  const navigation = useNavigation(); // Get the navigation object
+import StatusIndicator from './StatusIndicator'; // Import the custom component
+import { getTimeAgo } from "./getTimeAgo";
+const TransactionCard = ({ navigation, transaction, user }) => {
 
   const isQueuer = transaction.queuer_id === user?.id;
+
+  const handlePress = () => {
+    navigation.navigate('TransactionDetails', { transaction });
+  };
+
 
   return (
     <View style={styles.container}>
           <TouchableRipple
-    onPress={() => console.log('Pressed')}
+    onPress={handlePress}
     rippleColor="rgba(0, 0, 0, .32)"
   >
       <Card style={styles.card}>
         <Card.Content style={styles.cardContent}>
           <View style={styles.contentDetails}>
-          <Text  variant="titleLarge">{transaction.stall.stall_name}</Text>
+          <View style={styles.header}>
+            <Text  variant="titleLarge">{transaction.stall.stall_name}</Text>
+              <StatusIndicator status={transaction.status} />
+            </View>
+
 
             {isQueuer && transaction.status !== "open" && (
               <Text >Buyer: {transaction.buyer_name}</Text>
@@ -25,9 +33,7 @@ const TransactionCard = ({ transaction, user }) => {
             {!isQueuer && <Text>Queuer: {transaction.queuer_name}</Text>}
 
             <Text>Collection Point: {transaction.destination.title}</Text>
-            <Text>Status: {transaction.status}</Text>
-
-            <Text>Last updated: {transaction.tm_updated}</Text>
+            <Text>Last updated: {getTimeAgo(transaction.tm_updated)}</Text>
           </View>
           <Image
             source={{ uri: transaction.stall.stall_image }}
@@ -74,6 +80,12 @@ const styles = StyleSheet.create({
     flexDirection: "row", // Arrange children side by side
     margin: 0, // Ensure no extra margin
     padding: 0, // Ensure no extra padding
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: 'center',
+    marginBottom: 20,
   },
   card: {
     margin: 0, // Remove any default margin

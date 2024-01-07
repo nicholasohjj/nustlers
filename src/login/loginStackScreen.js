@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { supabase } from "../supabase";
+import { supabase } from "../supabase/supabase";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginForm from "./loginForm";
 import ResetPassword from "./resetPassword";
 
 const LoginStack = createNativeStackNavigator();
 
-const Login = () => {
+const LoginStackScreen = () => {
   const navigation = useNavigation();
 
   const checkUserLoggedIn = async () => {
@@ -38,4 +38,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginStackScreen;

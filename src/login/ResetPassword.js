@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { Text, TextInput, Button, ActivityIndicator } from 'react-native-paper';  
-import { supabase } from "../supabase";
+import { supabase } from "../supabase/supabase";
 
 const isValidEmail = email => {
   // Simple regex for email validation

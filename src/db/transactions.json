@@ -21,8 +21,8 @@
     "fee_per_item": 0.5,
     "max_items": 5,
     "items": [],
-    "tm_created": "2019-03-20T10:00:00.000Z",
-    "tm_updated": "2019-03-20T10:00:00.000Z",
+    "tm_created": "2019-03-20 10:00:00",
+    "tm_updated": "2019-03-20 10:00:00",
     "status": "open"
   },
   {
@@ -47,8 +47,8 @@
     "fee_per_item": 0.5,
     "max_items": 5,
     "items": [],
-    "tm_created": "2019-03-20T10:00:00.000Z",
-    "tm_updated": "2019-03-20T10:00:00.000Z",
+    "tm_created": "2019-03-20 10:00:00",
+    "tm_updated": "2019-03-20 10:00:00",
     "status": "open"
   },
   {
@@ -73,8 +73,8 @@
     "fee_per_item": 0.5,
     "max_items": 5,
     "items": [],
-    "tm_created": "2019-03-20T10:00:00.000Z",
-    "tm_updated": "2019-03-20T10:00:00.000Z",
+    "tm_created": "2019-03-20 10:00:00",
+    "tm_updated": "2019-03-20 10:00:00",
     "status": "open"
   },
   {
@@ -99,8 +99,8 @@
     "fee_per_item": 0.5,
     "max_items": 5,
     "items": [],
-    "tm_created": "2019-03-20T10:00:00.000Z",
-    "tm_updated": "2019-03-20T10:00:00.000Z",
+    "tm_created": "2019-03-20 10:00:00",
+    "tm_updated": "2019-03-20 10:00:00",
     "status": "completed"
   }
 ]

@@ -5,7 +5,7 @@ import Setup from './setup';
 
 const Stall = ({ route }) => {
   const { stall, isQueuing } = route.params;
-  const stalls = require("./stalls.json");
+  const stalls = require("../../db/stalls.json");
 
   const stallItems = stalls.filter((stall) => stall.stall_id === stall.id)[0];
 

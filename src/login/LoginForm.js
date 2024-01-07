@@ -5,7 +5,7 @@ import {
   View,
   ActivityIndicator,
 } from "react-native";
-import { supabase } from "../supabase";
+import { supabase } from "../supabase/supabase";
 import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
 
@@ -43,7 +43,7 @@ const LoginForm = () => {
       data: { user },
     } = await supabase.auth.getUser();
     if (user) {
-        navigation.navigate("Home");
+        navigation.navigate("Content");
 
     }
   };

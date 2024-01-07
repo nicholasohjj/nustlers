@@ -1,6 +1,6 @@
 [
   {
-    "markers_id": "d0a2b327-c2b2-4f51-822e-5d1736769c99",
+    "canteen_id": "d0a2b327-c2b2-4f51-822e-5d1736769c99",
 
     "stalls": [
       {
@@ -16,8 +16,8 @@
     ]
   },
   {
-    "markers_id": "1f59d5f7-620d-43d0-89e3-8ce0817b3ab6",
-    "markers_name": "Flavours@UTown",
+    "canteen_id": "1f59d5f7-620d-43d0-89e3-8ce0817b3ab6",
+    "canteen_name": "Flavours@UTown",
     "stalls": [
       {
         "stall_id": "1",

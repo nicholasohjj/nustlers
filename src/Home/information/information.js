@@ -8,7 +8,7 @@ import {
   Button,
 } from "react-native-paper";
 import { Asset } from "expo-asset";
-import { getMarkers } from "../services/markers";
+import { getMarkers } from "../../services/markers";
 import * as MediaLibrary from "expo-media-library";
 import * as FileSystem from "expo-file-system";
 import * as Permissions from "expo-permissions";

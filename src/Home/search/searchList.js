@@ -9,13 +9,13 @@ import {
 } from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
-const LocationSearch = () => {
+const SearchList = () => {
   const navigation = useNavigation();
-  const markers = require("./markers.json");
+  const locations = require("../../db/markers.json");
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredMarkers, setFilteredMarkers] = useState(markers); // Initialize with all markers
+  const [filteredLocations, setFilteredLocations] = useState(locations); // Initialize with all locations
   const [navigateToMap, setNavigateToMap] = useState(false); // New state to trigger navigation
-  const [selectedMarker, setSelectedMarker] = useState(null); // State to keep track of selected marker
+  const [selectedLocation, setSelectedLocation] = useState(null); // State to keep track of selected location
 
   const [currentLocation, setCurrentLocation] = useState(null);
 
@@ -28,27 +28,27 @@ const LocationSearch = () => {
 
   useEffect(() => {
     if (currentLocation) {
-      const filtered = markers
-        .filter((marker) =>
-          marker.title.toLowerCase().includes(searchQuery.toLowerCase())
+      const filtered = locations
+        .filter((location) =>
+          location.title.toLowerCase().includes(searchQuery.toLowerCase())
         )
         .sort((a, b) => {
           let distanceA = getDistance(currentLocation, a.coordinate);
           let distanceB = getDistance(currentLocation, b.coordinate);
           return distanceA - distanceB;
         });
-      setFilteredMarkers(filtered);
+      setFilteredLocations(filtered);
     }
-  }, [searchQuery, currentLocation, markers]);
+  }, [searchQuery, currentLocation, locations]);
 
   useEffect(() => {
     if (navigateToMap) {
       // Perform the navigation
-      console.log("Selected marker", selectedMarker)
-      navigation.navigate("Map", { selectedMarker });
+      console.log("Selected location", selectedLocation)
+      navigation.navigate("SearchMap", { selectedLocation });
       setNavigateToMap(false); // Reset the state
     }
-  }, [navigateToMap, selectedMarker, navigation]);
+  }, [navigateToMap, selectedLocation, navigation]);
 
   const getDistance = (loc1, loc2) => {
     let dx = loc1.latitude - loc2.latitude;
@@ -60,14 +60,14 @@ const LocationSearch = () => {
     let location = await Location.getCurrentPositionAsync({});
     setCurrentLocation(location.coords);
     console.log(currentLocation)
-    setSelectedMarker(null); // No specific marker selected
+    setSelectedLocation(null); // No specific location selected
     setNavigateToMap(true); // Trigger navigation
   };
 
-  const handleMarkerPress = (marker) => {
+  const handleLocationPress = (location) => {
     return () => {
-      console.log(marker);
-      setSelectedMarker(marker); // Set the selected marker
+      console.log(location);
+      setSelectedLocation(location); // Set the selected location
       setNavigateToMap(true); // Trigger navigation
     };
   };
@@ -95,11 +95,11 @@ const LocationSearch = () => {
               left={() => <List.Icon icon="crosshairs-gps" />}
             />
           </TouchableRipple>
-          {filteredMarkers.map((marker, index) => (
+          {filteredLocations.map((location, index) => (
             <View key={index}>
-              <TouchableRipple onPress={handleMarkerPress(marker)}>
+              <TouchableRipple onPress={handleLocationPress(location)}>
                 <List.Item
-                  title={marker.title}
+                  title={location.title}
                   left={() => <List.Icon icon="map-marker" />}
                 />
               </TouchableRipple>
@@ -138,4 +138,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LocationSearch;
+export default SearchList;

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./Home/home";
-import { supabase } from "./supabase";
+import Content from "./Home/content";
+import { supabase } from "./supabase/supabase";
 import { useNavigation } from "@react-navigation/native";
 import Welcome from "./welcome";
-import Login from "./login/login";
+import LoginStackScreen from "./login/loginStackScreen";
 import Signup from "./signup/signup";
 import { ActivityIndicator, View } from "react-native"; // Import ActivityIndicator and View
 import { StatusBar } from 'expo-status-bar';
@@ -23,7 +23,7 @@ const Main = () => {
           data: { user },
         } = await supabase.auth.getUser();
         if (user) {
-          setInitialRouteName("Home");
+          setInitialRouteName("Content");
         } else {
           setInitialRouteName("Welcome");
         }
@@ -53,8 +53,8 @@ const Main = () => {
         initialRouteName={initialRouteName} // Use the state to dynamically set the initial route
       >
         <Stack.Screen name="Welcome" component={Welcome} />
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Content" component={Content} />
+        <Stack.Screen name="Login" component={LoginStackScreen} />
         <Stack.Screen name="Signup" component={Signup} />
       </Stack.Navigator>
     </View>

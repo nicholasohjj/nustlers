@@ -20,8 +20,8 @@ import throttle from "lodash.throttle";
 const { PROVIDER_GOOGLE } = require("react-native-maps");
 const Circle = require("react-native-maps").Circle;
 const Marker = require("react-native-maps").Marker;
-const mapStyle = require("../map/mapStyle.json");
-const venues = require("./venues.json"); // For testing
+const mapStyle = require("../../mapStyle.json");
+const venues = require("../../db/venues.json"); // For testing
 
 
 

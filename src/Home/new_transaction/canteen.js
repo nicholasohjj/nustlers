@@ -28,7 +28,7 @@ StallCard.propTypes = {
 const Canteen = ({ route }) => {
   const navigation = useNavigation();
   const { marker, isQueuing } = route.params;
-  const canteenStalls = require("./canteen_stalls.json");
+  const canteenStalls = require("../../db/canteen_stalls.json");
 
   const handleStallPress = (stall, marker) => {
     stall.stall_name = stall.stall_name + " (" + marker.title + ")"
@@ -37,7 +37,7 @@ const Canteen = ({ route }) => {
   };
 
   const currentCanteenStalls = useMemo(() => 
-  canteenStalls.filter((canteenStall) => canteenStall.markers_id === marker.id)[0]?.stalls || [], 
+  canteenStalls.filter((canteenStall) => canteenStall.canteen_id === marker.id)[0]?.stalls || [], 
     [marker.id, canteenStalls]
   );
 

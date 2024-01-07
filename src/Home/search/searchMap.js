@@ -16,14 +16,14 @@ import MapView from "react-native-map-clustering";
 const { PROVIDER_GOOGLE } = require("react-native-maps");
 const Circle = require("react-native-maps").Circle;
 const Marker = require("react-native-maps").Marker;
-const mapStyle = require("./mapStyle.json");
+const mapStyle = require("../../mapStyle.json");
 
 const Map = ({ route }) => {
   const navigation = useNavigation();
   const [currentMarker, setCurrentMarker] = useState(
-    route.params?.selectedMarker
+    route.params?.selectedLocation
   );
-  const markers = require("./markers.json"); // For testing
+  const markers = require("../../db/markers.json"); // For testing
   //const [markers, setMarkers] = useState([]); For fetching markers from backend
 
   const [userLocation, setUserLocation] = useState(null);
@@ -42,15 +42,15 @@ const Map = ({ route }) => {
   }, []);
 
   useEffect(() => {
-    if (route.params?.selectedMarker) {
-      setCurrentMarker(route.params.selectedMarker);
+    if (route.params?.selectedLocation) {
+      setCurrentMarker(route.params.selectedLocation);
     } else {
       goToUserLocation();
     }
-  }, [route.params?.selectedMarker]);
+  }, [route.params?.selectedLocation]);
 
   useEffect(() => {
-    if (route.params?.selectedMarker) {
+    if (route.params?.selectedLocation) {
       animateToMarker(currentMarker);
     }
   }, [currentMarker]);
@@ -171,7 +171,7 @@ const Map = ({ route }) => {
   }, [region]);
 
   const handleLocationSearch = () => {
-    navigation.navigate("LocationSearch");
+    navigation.navigate("SearchList");
   };
 
   const handleQueueButton = (marker) => {
@@ -182,22 +182,16 @@ const Map = ({ route }) => {
         stall_name: marker.title,
         stall_image: marker.image,
       };
-      navigation.navigate('Transaction', {
-        screen: 'Stall',
-        params: {
-          stall,
-          isQueuing: true
-        },
+      navigation.navigate("Stall", {
+        stall,
+        isQueuing: true,
       });
     } else {
-      navigation.navigate('Transaction', {
-        screen: 'Canteen',
-        params: {
-          marker,
-          isQueuing: true
-        },
+      navigation.navigate("Canteen", {
+        marker,
+        isQueuing: true,
       });
-            console.log("Queue button pressed for canteen", marker.title);
+      console.log("Queue button pressed for canteen", marker.title);
     }
   };
 
@@ -209,23 +203,17 @@ const Map = ({ route }) => {
         stall_name: marker.title,
         stall_image: marker.image,
       };
-      navigation.navigate('Transaction', {
-        screen: 'Stall',
-        params: {
-          stall,
-          isQueuing: false
-        },
+      navigation.navigate("Stall", {
+        stall,
+        isQueuing: false,
       });
     } else {
-      navigation.navigate('Transaction', {
-        screen: 'Canteen',
-        params: {
-          marker,
-          isQueuing: false
-        },
+      navigation.navigate("Canteen", {
+        marker,
+        isQueuing: false,
       });
+    }
   };
-}
 
   return (
     <View style={styles.container}>

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView, View, StyleSheet, Text } from "react-native";
 import { SegmentedButtons } from "react-native-paper";
-import { supabase } from "../../supabase";
-import { useUser } from "../userProvider";
+import { supabase } from "../../supabase/supabase";
+import { useUser } from "../../supabase/userProvider";
 import TransactionCard from "./transactionCard";
+import { useNavigation } from "@react-navigation/native";
+const transactions = require("../../db/transactions.json"); // For testing
 
-const transactions = require("./transactions.json"); // For testing
-
-const Transactions = () => {
+const TransactionsList = () => {
   const [user, setUser] = useState(null);
   const [value, setValue] = useState("ongoing");
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function fetchUser() {
@@ -21,13 +22,20 @@ const Transactions = () => {
   }, []);
 
   const filteredTransactions = transactions.filter((transaction) =>
-    value === "ongoing" ? transaction.status !== "completed" : transaction.status === "completed"
+    value === "ongoing"
+      ? transaction.status !== "completed"
+      : transaction.status === "completed"
   );
 
   const renderTransactions = () => {
     return filteredTransactions.length > 0 ? (
       filteredTransactions.map((transaction) => (
-        <TransactionCard key={transaction.id} transaction={transaction} user={user} />
+        <TransactionCard
+          navigation={navigation}
+          key={transaction.id}
+          transaction={transaction}
+          user={user}
+        />
       ))
     ) : (
       <Text style={styles.noTransactionsText}>No transactions available.</Text>
@@ -68,10 +76,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   noTransactionsText: {
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 20,
   },
-  // ... other styles ...
 });
 
-export default Transactions;
+export default TransactionsList;

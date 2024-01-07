@@ -2,9 +2,9 @@ import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { Text, List, Divider } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
-import { supabase } from "../supabase";
+import { supabase } from "../../supabase/supabase";
 
-const Account = () => {
+const AccountOptions = () => {
     const navigation = useNavigation(); // Get the navigation object
     const handleLogout = async () => {
         const { error } = await supabase.auth.signOut();
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Account;
+export default AccountOptions;
