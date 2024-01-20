@@ -1,9 +1,10 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { View, Image, StyleSheet, ScrollView } from 'react-native';
 import { Card, Text } from 'react-native-paper';
 import PropTypes from 'prop-types';
 import { useNavigation } from "@react-navigation/native";
-
+import { getCanteens } from '../../services/canteens';
+import { getStalls } from '../../services/stalls';
 
 const StallCard = ({ stall, handleStallPress, marker }) => (
   <Card key={stall.stall_id} style={styles.card} onPress={() => handleStallPress(stall, marker)}>
@@ -26,11 +27,37 @@ StallCard.propTypes = {
 };
 
 const Canteen = ({ route }) => {
+  const [canteens, setCanteens] = useState([]);
+  const [stalls, setStalls] = useState([]);
   const navigation = useNavigation();
   const { marker, isQueuing } = route.params;
-  const canteens = require("../../db/canteens.json");
-  const stalls = require("../../db/stalls.json");
 
+  useEffect(() => {
+    const fetchCanteens = async () => {
+      try {
+        const data = await getCanteens();
+        setCanteens(data);
+      } catch (error) {
+        console.error("Error fetching canteens:", error);
+        Alert.alert("Error", "Unable to fetch canteens.");
+      }
+    };
+
+    const fetchStalls = async () => {
+      try {
+        const data = await getStalls();
+        setStalls(data);
+      } catch (error) {
+        console.error("Error fetching stalls:", error);
+        Alert.alert("Error", "Unable to fetch stalls.");
+      }
+    };
+
+    fetchCanteens();
+    fetchStalls();
+  }, []);
+
+    
   const handleStallPress = (stall,marker) => {
     const id = stall.stall_id;
     const coordinate = marker.coordinate;
@@ -42,10 +69,13 @@ const Canteen = ({ route }) => {
     [marker.marker_id, canteens]
   );
 
-  const currentCanteenStalls = useMemo(() =>
-    stalls.filter((stall) => currentCanteen.canteen_stalls_ids.includes(stall.stall_id)),
-    [currentCanteen, stalls]
-  );
+const currentCanteenStalls = useMemo(() =>
+  currentCanteen && Array.isArray(currentCanteen.canteen_stalls_ids) ?
+    stalls.filter((stall) => currentCanteen.canteen_stalls_ids.includes(stall.stall_id)) :
+    [],
+  [currentCanteen, stalls]
+);
+
   
   return (
     <View style={styles.container}>
@@ -67,7 +97,13 @@ const Canteen = ({ route }) => {
         {currentCanteenStalls.length > 0 ? (
           currentCanteenStalls.map((stall) => <StallCard  stall={stall} marker={marker} handleStallPress={handleStallPress} />)
         ) : (
+          <View>
           <Text>No stalls available</Text>
+          <Text>{JSON.stringify(canteens)}</Text>
+          <Text>{JSON.stringify(currentCanteen)}</Text>
+          <Text>{JSON.stringify(marker.marker_id)}</Text>
+
+          </View>
         )}
       </ScrollView>
     </View>

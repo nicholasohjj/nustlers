@@ -9,15 +9,32 @@ import {
 } from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
+import { getMarkers } from "../../services/markers";
 const SearchList = () => {
   const navigation = useNavigation();
-  const locations = require("../../db/markers.json");
+
+  const [markers, setMarkers] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredLocations, setFilteredLocations] = useState(locations); // Initialize with all locations
+  const [filteredLocations, setFilteredLocations] = useState(markers); // Initialize with all markers
   const [navigateToMap, setNavigateToMap] = useState(false); // New state to trigger navigation
   const [selectedLocation, setSelectedLocation] = useState(null); // State to keep track of selected location
 
   const [currentLocation, setCurrentLocation] = useState(null);
+
+  useEffect(() => {
+    fetchMarkers();
+  }, []);
+
+  const fetchMarkers = async () => {
+    try {
+      const data = await getMarkers();
+      console.log("Markers fetched", data);
+      setMarkers(data);
+    } catch (error) {
+      console.error("Error fetching markers:", error);
+      Alert.alert("Error", "Unable to fetch markers.");
+    }
+  };
 
   useEffect(() => {
     (async () => {
@@ -28,7 +45,7 @@ const SearchList = () => {
 
   useEffect(() => {
     if (currentLocation) {
-      const filtered = locations
+      const filtered = markers
         .filter((location) =>
           location.marker_title.toLowerCase().includes(searchQuery.toLowerCase())
         )
@@ -39,7 +56,7 @@ const SearchList = () => {
         });
       setFilteredLocations(filtered);
     }
-  }, [searchQuery, currentLocation, locations]);
+  }, [searchQuery, currentLocation, markers]);
 
   useEffect(() => {
     if (navigateToMap) {
@@ -72,43 +89,53 @@ const SearchList = () => {
     };
   };
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <TextInput
-          mode="outlined"
-          style={styles.textInput}
-          placeholder="Enter location"
-          value={searchQuery}
-          onChangeText={setSearchQuery}
-          left={<TextInput.Icon icon="map-search" />}
-        />
+  if (markers.length > 0) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <TextInput
+            mode="outlined"
+            style={styles.textInput}
+            placeholder="Enter location"
+            value={searchQuery}
+            onChangeText={setSearchQuery}
+            left={<TextInput.Icon icon="map-search" />}
+          />
+        </View>
+  
+        <ScrollView style={styles.scrollView}>
+          {/* List of markers */}
+          <List.Section>
+            <TouchableRipple onPress={handleCurrentLocation}>
+              <List.Item
+                title="Current Location"
+                left={() => <List.Icon icon="crosshairs-gps" />}
+              />
+            </TouchableRipple>
+            {filteredLocations.map((location, index) => (
+              <View key={index}>
+                <TouchableRipple onPress={handleLocationPress(location)}>
+                  <List.Item
+                    title={location.marker_title}
+                    left={() => <List.Icon icon="map-marker" />}
+                  />
+                </TouchableRipple>
+                <Divider />
+              </View>
+            ))}
+          </List.Section>
+        </ScrollView>
       </View>
+    );
 
-      <ScrollView style={styles.scrollView}>
-        {/* List of locations */}
-        <List.Section>
-          <TouchableRipple onPress={handleCurrentLocation}>
-            <List.Item
-              title="Current Location"
-              left={() => <List.Icon icon="crosshairs-gps" />}
-            />
-          </TouchableRipple>
-          {filteredLocations.map((location, index) => (
-            <View key={index}>
-              <TouchableRipple onPress={handleLocationPress(location)}>
-                <List.Item
-                  title={location.marker_title}
-                  left={() => <List.Icon icon="map-marker" />}
-                />
-              </TouchableRipple>
-              <Divider />
-            </View>
-          ))}
-        </List.Section>
-      </ScrollView>
-    </View>
-  );
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+  
 };
 
 const styles = StyleSheet.create({

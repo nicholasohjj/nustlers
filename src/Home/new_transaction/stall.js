@@ -1,12 +1,29 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useEffect, useState} from 'react';
 import { View, Image, StyleSheet } from 'react-native'; // Corrected import
 import { Card, Text } from 'react-native-paper'; // Example if you want to use other components from react-native-paper
 import Setup from '../queuer/setup';
 import OpenTransactionsList from '../buyer/openTransactionsList';
+import { getStalls } from '../../services/stalls';
 const Stall = ({ route }) => {
+  const [stalls, setStalls] = useState([]);
   const { id, coordinate, isQueuing } = route.params;
-  const stalls = require("../../db/stalls.json");
+
+  useEffect(() => {
+    fetchStalls();
+  }, []);
+
   
+  const fetchStalls = async () => {
+    try {
+      const data = await getStalls();
+      setStalls(data);
+    } catch (error) {
+      console.error("Error fetching stalls:", error);
+      Alert.alert("Error", "Unable to fetch stalls.");
+    }
+  };
+
+
   const currentStall = useMemo(() => {
     console.log("Stalls", stalls);
     return stalls.filter((stall) => stall.stall_id.includes(id))[0] || {};

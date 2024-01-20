@@ -6,7 +6,6 @@ import NearbyModal from "./nearbyModal";
 import { supabase } from "../../supabase/supabase";
 import { useNavigation } from "@react-navigation/native";
 import { addTransaction } from "../../services/transactions";
-import { Ionicons } from '@expo/vector-icons'; // Example of adding an icon library
 
 const Setup = ({ stall, coordinate }) => {
   const [loading, setLoading] = useState(false);
@@ -95,7 +94,6 @@ const Setup = ({ stall, coordinate }) => {
         queuer_mobile: user.user_metadata.phone,
         buyer_name: null,
         buyer_mobile: null,
-        buyer_id: null,
         stall: stallWithCoordinate,
         destination: {
           title: getTitle(destination),
@@ -103,9 +101,9 @@ const Setup = ({ stall, coordinate }) => {
         },
         feePerItem,
         max_items: maxItems,
-        buyer_id: "",
+        buyer_id: null,
         buyer_mobile: null,
-        items: [],
+        items_ids: [],
         total_cost: 0,
         status: defaultStatus,
       };

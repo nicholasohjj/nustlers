@@ -26,7 +26,7 @@ export const addTransaction = async (formData) => {
 
 export const updateTransaction = async (transactionId) => {
     try {
-        const response = await axios.put(`${baseURL}/transactions/${transactionId}`);
+        const response = await axios.put(`${baseURL}/transactions/`);
         return response.data;
       } catch (error) {
         console.error("Error updating transaction:", error);

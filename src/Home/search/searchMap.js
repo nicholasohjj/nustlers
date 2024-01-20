@@ -12,7 +12,6 @@ import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 import { getMarkers } from "../../services/markers";
 import MapView from "react-native-map-clustering";
-import { animated, useSpring } from '@react-spring/native';
 
 
 const { PROVIDER_GOOGLE } = require("react-native-maps");
@@ -45,6 +44,7 @@ const Map = ({ route }) => {
   const fetchMarkers = async () => {
     try {
       const data = await getMarkers();
+      console.log("Markers fetched", data);
       setMarkers(data);
     } catch (error) {
       console.error("Error fetching markers:", error);
@@ -71,8 +71,6 @@ const Map = ({ route }) => {
     }
   }, [currentMarker]);
 
-
-
   const subscribeLocationUpdates = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
     if (status !== "granted") {
@@ -86,7 +84,7 @@ const Map = ({ route }) => {
     ).catch((error) => {
       Alert.alert("Location Error", "Error fetching location.");
       console.error("Location subscription error:", error);
-    });
+    });6
   };
 
   const updateLocation = (location) => {
