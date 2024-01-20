@@ -99,7 +99,7 @@ const Setup = ({ stall, coordinate }) => {
           title: getTitle(destination),
           coordinate,
         },
-        feePerItem,
+        feePerItem: parseFloat(feePerItem),
         max_items: maxItems,
         buyer_id: null,
         buyer_mobile: null,

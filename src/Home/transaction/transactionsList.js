@@ -4,12 +4,30 @@ import { SegmentedButtons } from "react-native-paper";
 import { supabase } from "../../supabase/supabase";
 import TransactionCard from "./transactionCard";
 import { useNavigation } from "@react-navigation/native";
+import { getTransactions } from "../../services/transactions";
 const transactions = require("../../db/transactions.json"); // For testing
 
 const TransactionsList = () => {
+  const [transactions, setTransactions] = useState([]);
   const [user, setUser] = useState(null);
   const [value, setValue] = useState("ongoing");
   const navigation = useNavigation();
+
+  const fetchTransactions = async () => {
+    try {
+      const data = await getTransactions();
+      setTransactions(data);
+    } catch (error) {
+      console.error("Error fetching transactions:", error);
+      Alert.alert("Error", "Unable to fetch transactions.");
+    }
+  }
+
+
+  useEffect(() => {
+    fetchTransactions();
+  }, []);
+
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -29,12 +47,7 @@ const TransactionsList = () => {
     if (!user) return [];
 
     return transactions.filter((transaction) =>
-      value === "ongoing"
-        ? !transaction.status.completed &&
-          (transaction.buyer_id === user.id ||
-            transaction.queuer_id === user.id)
-        : // Implement different logic for past transactions here
-          transaction.status.completed &&
+        !transaction.status.completed &&
           (transaction.buyer_id === user.id ||
             transaction.queuer_id === user.id)
     );

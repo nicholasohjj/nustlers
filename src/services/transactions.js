@@ -4,7 +4,7 @@ const baseURL = "https://hacknroll-backend.vercel.app/transactions";
 
 export const getTransactions = async () => {
     try {
-    const response = await axios.get(`${baseURL}/transactions`);
+    const response = await axios.get(`${baseURL}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching transactions:", error);

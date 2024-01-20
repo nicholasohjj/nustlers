@@ -6,8 +6,8 @@
     "coordinate": { "latitude": 1.292415, "longitude": 103.77405 },
     "title": "BIZ1 Seminar Room 3-1"
   },
-  "feePerItem": 0.5,
-  "items": [],
+  "feePerItem": "0.2",
+  "items_ids": [],
   "max_items": 2,
   "queuer_id": "d5737cdf-48ba-47fa-b324-936f16d83169",
   "queuer_mobile": 87654321,
