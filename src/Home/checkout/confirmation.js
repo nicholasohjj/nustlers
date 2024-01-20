@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { View, Image, StyleSheet } from "react-native";
 import {
   Text,
@@ -11,11 +11,26 @@ import {
   Divider,
 } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import { supabase } from "../../supabase/supabase";
 
 const Confirmation = ({ route }) => {
   const { transaction, cartItems, subTotal } = route.params;
-  const [status, setStatus] = useState("checked");
+  const [user, setUser] = useState(null);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const { data, error } = await supabase.auth.getUser();
+        if (error) throw error;
+        setUser(data.user);
+      } catch (error) {
+        console.error("Error fetching user data:", error.message);
+      }
+    };
+
+    fetchUser();
+  }, []);
 
   const itemQuantities = useMemo(() => {
     const counts = {};
@@ -31,13 +46,21 @@ const Confirmation = ({ route }) => {
       return { ...item, quantity: itemQuantities[itemId] };
     });
   }, [itemQuantities, cartItems]);
-  
-    const handlePlaceOrder = () => {
-        navigation.navigate("Payment", {
-            transaction: transaction,
-            cartItems: cartItems,
-        })
-    }
+
+  const handlePlaceOrder = () => {
+    const updatedTransaction = {
+      ...transaction,
+      total_cost: subTotal + transaction.feePerItem * cartItems.length,
+      item_ids: cartItems.map((item) => item.item_id),
+      buyer_id: user.id,
+      buyer_mobile: user.user_metadata.phone,
+      buyer_name: user.user_metadata.displayName,
+    };
+    console.log("Updated transaction", updatedTransaction);
+    navigation.navigate("Payment", {
+      updatedTransaction: updatedTransaction
+    });
+  };
 
   return (
     <View style={styles.container}>

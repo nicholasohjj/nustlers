@@ -11,7 +11,6 @@ import { Asset } from "expo-asset";
 import { getMarkers } from "../../services/markers";
 import * as MediaLibrary from "expo-media-library";
 import * as FileSystem from "expo-file-system";
-import * as Permissions from "expo-permissions";
 
 const Information = () => {
   const [markers, setMarkers] = useState([]);
@@ -132,24 +131,6 @@ const Information = () => {
       ) : (
         <Text>Loading QR Code...</Text>
       )}
-
-      <FlatList
-        data={markers}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <Card style={styles.card}>
-            <Card.Title title={item.title} />
-            <Card.Content>
-              {item.image ? (
-                <Image source={{ uri: item.image }} style={styles.image} />
-              ) : (
-                <Text>Loading image...</Text>
-              )}
-              <Paragraph>{item.description}</Paragraph>
-            </Card.Content>
-          </Card>
-        )}
-      />
     </View>
   );
 };
