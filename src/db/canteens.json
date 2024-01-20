@@ -1,0 +1,14 @@
+[
+  {
+    "canteen_id": "d0a2b327-c2b2-4f51-822e-5d1736769c99",
+    "canteen_name": "Flavours@UTown",
+    "canteen_stalls_ids": ["stall_1", "stall_2", "stall_3"],
+    "canteen_image": "https://uci.nus.edu.sg/oca/wp-content/uploads/sites/9/2018/05/Fine-Food-1-1024x684.jpg"
+  },
+  {
+    "canteen_id": "1f59d5f7-620d-43d0-89e3-8ce0817b3ab6",
+    "canteen_name": "Flavours@UTown",
+    "canteen_stalls_ids": ["stall_1", "stall_2", "stall_3"],
+    "canteen_image": "https://www.nus.edu.sg/uhc/images/uhc/uhc-canteen.jpg"
+  }
+]
