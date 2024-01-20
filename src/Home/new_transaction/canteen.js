@@ -3,9 +3,9 @@ import { View, Image, StyleSheet, ScrollView } from "react-native";
 import { Card, Text } from "react-native-paper";
 import PropTypes from "prop-types";
 import { useNavigation } from "@react-navigation/native";
-import { getCanteens } from '../../services/canteens';
-import { getStalls } from '../../services/stalls';
 
+const canteens = require("../../db/canteens.json");
+const stalls = require("../../db/stalls.json");
 const StallCard = ({ stall, handleStallPress, marker }) => (
   <Card
     key={stall.stall_id}
@@ -31,51 +31,25 @@ StallCard.propTypes = {
 };
 
 const Canteen = ({ route }) => {
-  const [canteens, setCanteens] = useState([]);
-  const [stalls, setStalls] = useState([]);
+  const [canteen, setCanteen] = useState([]);
+  const [canteenStalls, setCanteenStalls] = useState([]);
   const navigation = useNavigation();
   const { marker, isQueuing } = route.params;
 
-  const fetchStallsById = async (ids) => {
-    try {
-      console.log("ids", ids);
-      const data = await getStallsById(ids);
-      if (Array.isArray(data)) {
-        setStalls(data);
-      } else {
-        setStalls([]); // Default to an empty array if response is not an array
-      }
-    } catch (error) {
-      console.error("Error fetching stalls:", error);
-      Alert.alert("Error", "Unable to fetch stalls.");
-      setStalls([]); // Set to empty array in case of error
-    }
-  };
 
   useEffect(() => {
-    const fetchCanteens = async () => {
-      try {
-        const data = await getCanteens();
-        setCanteens(data);
-      } catch (error) {
-        console.error("Error fetching canteens:", error);
-        Alert.alert("Error", "Unable to fetch canteens.");
-      }
-    };
+    setCanteen(canteens.filter((canteen) => canteen.canteen_id.includes(marker.marker_id))[0] || {});
 
-    const fetchStalls = async () => {
-      try {
-        const data = await getStalls();
-        setStalls(data);
-      } catch (error) {
-        console.error("Error fetching stalls:", error);
-        Alert.alert("Error", "Unable to fetch stalls.");
-      }
-    };
+  }, [marker, canteens]);
 
-    fetchCanteens();
-    fetchStalls();
-  }, []);
+  useEffect(() => {
+    if (canteen && Array.isArray(canteen.canteen_stalls_ids)) {
+      setCanteenStalls(stalls.filter((stall) => canteen.canteen_stalls_ids.includes(stall.stall_id)));
+    } else {
+      setCanteenStalls([]);
+    }
+  }, [canteen, stalls]);
+  
 
     
   const handleStallPress = (stall,marker) => {
@@ -89,25 +63,25 @@ const Canteen = ({ route }) => {
       <Card style={styles.header}>
 
       <Card.Content style={styles.headerContent}>
-        {currentCanteen.canteen_image && (
+        {canteen.canteen_image && (
           <Image
-            source={{ uri: currentCanteen.canteen_image }}
+            source={{ uri: canteen.canteen_image }}
             style={styles.image}
             onError={() => console.log('Error loading canteen image')}
           />
         )}
-        <Text style={styles.title}>{currentCanteen.canteen_name}</Text>
+        <Text style={styles.title}>{canteen.canteen_name}</Text>
       </Card.Content>
         </Card>
 
       <ScrollView style={styles.scrollView}>
-        {currentCanteenStalls.length > 0 ? (
-          currentCanteenStalls.map((stall) => <StallCard  stall={stall} marker={marker} handleStallPress={handleStallPress} />)
+        {canteenStalls.length > 0 ? (
+          canteenStalls.map((stall) => <StallCard  stall={stall} marker={marker} handleStallPress={handleStallPress} />)
         ) : (
           <View>
           <Text>No stalls available</Text>
           <Text>{JSON.stringify(canteens)}</Text>
-          <Text>{JSON.stringify(currentCanteen)}</Text>
+          <Text>{JSON.stringify(canteen)}</Text>
           <Text>{JSON.stringify(marker.marker_id)}</Text>
 
           </View>
