@@ -3,9 +3,10 @@ import { View, StyleSheet, Image, ScrollView } from "react-native";
 import { Text, Card, Button } from "react-native-paper";
 import StatusIndicator from "./StatusIndicator"; // Import the custom component
 import { getTimeAgo } from "./getTimeAgo";
-import { updateTransaction } from "../../services/transactions";
-
+import { addTransaction, deleteTransaction, updateTransaction } from "../../services/transactions";
+import { useNavigation } from "@react-navigation/native";
 const TransactionDetails = ({ route }) => {
+  const navigation = useNavigation();
   const { transaction } = route.params;
 
 
@@ -36,8 +37,11 @@ const TransactionDetails = ({ route }) => {
     };
 
     try {
-      await updateTransaction(updatedTransaction);
+      await deleteTransaction(transaction.transaction_id);
+      await addTransaction(updatedTransaction);
       console.log("Transaction updated successfully");
+      navigation.navigate("TransactionsList");
+
     }
 
     catch (error) {
@@ -58,8 +62,11 @@ const TransactionDetails = ({ route }) => {
     };
 
     try {
-      await updateTransaction(updatedTransaction);
+      await deleteTransaction(transaction.transaction_id);
+      await addTransaction(updatedTransaction);
       console.log("Transaction updated successfully");
+      navigation.navigate("TransactionsList");
+
     } catch (error) {
       console.error("Error updating transaction:", error);
     }
@@ -78,8 +85,11 @@ const TransactionDetails = ({ route }) => {
     };
 
     try {
-      await updateTransaction(updatedTransaction);
+      await deleteTransaction(transaction.transaction_id);
+      await addTransaction(updatedTransaction);
       console.log("Transaction updated successfully");
+      navigation.navigate("TransactionsList");
+
     } catch (error) {
       console.error("Error updating transaction:", error);
     }
@@ -165,7 +175,7 @@ const TransactionDetails = ({ route }) => {
 
 )}
 
-{transaction.status.paid && !transaction.status.collected (
+{transaction.status.paid && !transaction.status.collected && (
             <Button
               mode="contained"
               onPress={confirmTransactionCollected}
@@ -175,7 +185,7 @@ const TransactionDetails = ({ route }) => {
             </Button>
 )}
 
-{transaction.status.paid && transaction.status.collected && !transaction.status.delivered (
+{transaction.status.paid && transaction.status.collected && !transaction.status.delivered && (
             <Button
               mode="contained"
               onPress={confirmTransactionDelivered}

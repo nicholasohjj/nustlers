@@ -1,28 +1,53 @@
 import axios from "axios";
 
 const baseURL = "https://hacknroll-backend.vercel.app/transactions";
+const cache = {};
+
+const isCacheValid = (key, ttl) => {
+  const entry = cache[key];
+  if (!entry) {
+    return false;
+  }
+  const now = new Date();
+  return now.getTime() - entry.timestamp < ttl;
+};
 
 export const getTransactions = async () => {
-    try {
+  const cacheKey = 'transactions';
+  const ttl = 5 * 60 * 1000; // cache time to live in milliseconds, e.g., 5 minutes
+
+  if (isCacheValid(cacheKey, ttl)) {
+    return cache[cacheKey].data; // Return cached data
+  }
+
+  try {
     const response = await axios.get(`${baseURL}`);
+    cache[cacheKey] = { data: response.data, timestamp: new Date().getTime() };
     return response.data;
   } catch (error) {
     console.error("Error fetching transactions:", error);
-    // Handle the error appropriately
-    return null; // or however you wish to handle this
+    return null;
   }
 };
 
 export const getTransactionsById = async (userId) => {
+  const cacheKey = `transactions-${userId}`;
+  const ttl = 5 * 60 * 1000; // cache time to live in milliseconds
+
+  if (isCacheValid(cacheKey, ttl)) {
+    return cache[cacheKey].data;
+  }
+
   try {
     const response = await axios.get(`${baseURL}/${userId}`);
+    cache[cacheKey] = { data: response.data, timestamp: new Date().getTime() };
     return response.data;
   } catch (error) {
     console.error("Error fetching transactions by user id:", error);
-    // Handle the error appropriately
-    return null; // or however you wish to handle this
+    return null;
   }
-}
+};
+
 
 export const addTransaction = async (formData) => {
   try {

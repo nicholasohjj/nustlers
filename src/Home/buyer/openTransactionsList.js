@@ -4,8 +4,7 @@ import { SegmentedButtons } from "react-native-paper";
 import { supabase } from "../../supabase/supabase";
 import OpenTransactionCard from "./openTransactionCard";
 import { useNavigation } from "@react-navigation/native";
-const transactions = require("../../db/transactions.json"); // For testing
-
+const transactions = require("../../db/transactions.json"); // For testing}
 const OpenTransactionsList = ({stall}) => {
   const [user, setUser] = useState(null);
   const navigation = useNavigation();

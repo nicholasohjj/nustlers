@@ -1,13 +1,18 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { ScrollView, View, StyleSheet } from "react-native";
-import { SegmentedButtons, Text} from "react-native-paper";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
+import { ScrollView, View, StyleSheet, RefreshControl } from "react-native";
+import { SegmentedButtons, Text } from "react-native-paper";
 import { supabase } from "../../supabase/supabase";
 import TransactionCard from "./transactionCard";
-import { useNavigation } from "@react-navigation/native";
-import { getTransactions, getTransactionsById } from "../../services/transactions";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
+import {
+  getTransactions,
+  getTransactionsById,
+} from "../../services/transactions";
 
 const TransactionsList = () => {
   const [transactions, setTransactions] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+
   const [user, setUser] = useState(null);
   const [value, setValue] = useState("ongoing");
   const [isLoading, setIsLoading] = useState(true); // For testing
@@ -22,7 +27,7 @@ const TransactionsList = () => {
       console.error("Error fetching transactions:", error);
       Alert.alert("Error", "Unable to fetch transactions.");
     }
-  }
+  };
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -44,11 +49,27 @@ const TransactionsList = () => {
     }
   }, [user, fetchTransactionsById]);
 
+  useFocusEffect(
+    useCallback(() => {
+      if (user) {
+        fetchTransactionsById(user.id);
+      }
+    }, [user])
+  );
+
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    if (user) {
+      await fetchTransactionsById(user.id);
+    }
+    setRefreshing(false);
+  }, [user]);
+
   const filteredTransactions = React.useMemo(() => {
     if (!user) return [];
 
     return transactions.filter((transaction) =>
-      value === "ongoing"
+      value == "ongoing"
         ? !transaction.status.completed &&
           (transaction.buyer_id === user.id ||
             transaction.queuer_id === user.id)
@@ -81,24 +102,29 @@ const TransactionsList = () => {
         <Text>Loading...</Text>
       </View>
     );
-    } else {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Transactions</Text>
-      <SegmentedButtons
-        value={value}
-        onValueChange={setValue}
-        buttons={[
-          { value: "ongoing", label: "Ongoing" },
-          { value: "past", label: "Past" },
-        ]}
-        style={styles.segmentedButtons}
-      />
-      <ScrollView>{renderTransactions()}</ScrollView>
-
-    </View>
-  );
-}
+  } else {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Transactions</Text>
+        <SegmentedButtons
+          value={value}
+          onValueChange={setValue}
+          buttons={[
+            { value: "ongoing", label: "Ongoing" },
+            { value: "past", label: "Past" },
+          ]}
+          style={styles.segmentedButtons}
+        />
+        <ScrollView
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          }
+        >
+          {renderTransactions()}
+        </ScrollView>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
