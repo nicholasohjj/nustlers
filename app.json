@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "scheme": "nustlers",
+    "name": "nustlers",
+    "slug": "nustlers",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ], 
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nustlers",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to...",
+        "NSMicrophoneUsageDescription": "This app uses the microphone to..."
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyCAgKDiOgl7mHRufajffwQWFvOklrwLz5Q"
+      }
+    },
+    "android": {
+      "package": "com.nustlers",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "CAMERA_ROLL"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCH7ss9tHIa3TfLUOmiglQSMu88G6KJyPw"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "description": "Description of your app",
+    "privacy": "public",
+    "githubUrl": "https://github.com/yourusername/your-repo",
+    "notification": {
+      "icon": "./assets/icon.png",
+      "color": "#000000",
+      "iosDisplayInForeground": true,
+      "androidMode": "default"
+    },
+    "owner": "nustlers",
+    "extra": {
+      "eas": {
+        "projectId": "42a90492-30bf-4b0a-8ba8-1c281968c2c0"
+      }
+    }
+  }
+}
