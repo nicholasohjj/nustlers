@@ -1,69 +1,75 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { ScrollView, View, StyleSheet, RefreshControl } from "react-native";
+import React, { useState, useEffect, useCallback } from "react";
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  RefreshControl,
+  Alert,
+} from "react-native";
 import { SegmentedButtons, Text } from "react-native-paper";
 import { supabase } from "../../supabase/supabase";
 import TransactionCard from "./transactionCard";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
-import {
-  getTransactions,
-  getTransactionsById,
-} from "../../services/transactions";
+import { getTransactionsById } from "../../services/transactions";
 
 const TransactionsList = () => {
   const [transactions, setTransactions] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
-
   const [user, setUser] = useState(null);
   const [value, setValue] = useState("ongoing");
-  const [isLoading, setIsLoading] = useState(true); // For testing
   const navigation = useNavigation();
 
-  const fetchTransactionsById = async (userId) => {
+  const fetchUser = async () => {
     try {
-      const data = await getTransactionsById(userId);
-      setTransactions(data);
-      setIsLoading(false);
+      const { data, error } = await supabase.auth.getUser();
+      if (error) throw error;
+      setUser(data.user);
     } catch (error) {
-      console.error("Error fetching transactions:", error);
-      Alert.alert("Error", "Unable to fetch transactions.");
+      console.error("Error fetching user data:", error.message);
     }
   };
 
-  useEffect(() => {
-    const fetchUser = async () => {
+  const fetchTransactions = useCallback(async () => {
+    if (user) {
       try {
-        const { data, error } = await supabase.auth.getUser();
-        if (error) throw error;
-        setUser(data.user);
+        const data = await getTransactionsById(user.id);
+        setTransactions(data);
       } catch (error) {
-        console.error("Error fetching user data:", error.message);
+        console.error("Error fetching transactions:", error);
+        Alert.alert("Error", "Unable to fetch transactions.");
       }
-    };
+    }
+  }, [user]);
 
+  useEffect(() => {
     fetchUser();
   }, []);
 
   useEffect(() => {
-    if (user) {
-      fetchTransactionsById(user.id);
-    }
-  }, [user, fetchTransactionsById]);
+    const init = async () => {
+      await fetchUser();
+      await fetchTransactions();
+    };
+  
+    init();
+  }, [fetchTransactions]);
+  
 
   useFocusEffect(
     useCallback(() => {
-      if (user) {
-        fetchTransactionsById(user.id);
-      }
-    }, [user])
+      const init = async () => {
+        await fetchTransactions();
+      };
+  
+      init();
+    }, [fetchTransactions])
   );
-
+  
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
-    if (user) {
-      await fetchTransactionsById(user.id);
-    }
+    await fetchTransactions();
     setRefreshing(false);
-  }, [user]);
+  }, [fetchTransactions]);
 
   const filteredTransactions = React.useMemo(() => {
     if (!user) return [];
@@ -96,35 +102,27 @@ const TransactionsList = () => {
     );
   };
 
-  if (isLoading) {
-    return (
-      <View style={styles.container}>
-        <Text>Loading...</Text>
-      </View>
-    );
-  } else {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>Transactions</Text>
-        <SegmentedButtons
-          value={value}
-          onValueChange={setValue}
-          buttons={[
-            { value: "ongoing", label: "Ongoing" },
-            { value: "past", label: "Past" },
-          ]}
-          style={styles.segmentedButtons}
-        />
-        <ScrollView
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-          }
-        >
-          {renderTransactions()}
-        </ScrollView>
-      </View>
-    );
-  }
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Transactions</Text>
+      <SegmentedButtons
+        value={value}
+        onValueChange={setValue}
+        buttons={[
+          { value: "ongoing", label: "Ongoing" },
+          { value: "past", label: "Past" },
+        ]}
+        style={styles.segmentedButtons}
+      />
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
+        {renderTransactions()}
+      </ScrollView>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

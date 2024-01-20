@@ -13,6 +13,7 @@ import {
 } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { supabase } from "../../supabase/supabase";
+import { parse } from "expo-linking";
 
 const Confirmation = ({ route }) => {
   const { transaction, cartItems, subTotal } = route.params;
@@ -49,13 +50,26 @@ const Confirmation = ({ route }) => {
   }, [itemQuantities, cartItems]);
 
   const handlePlaceOrder = () => {
+
+    const {queuer_mobile, destination, feePerItem, max_items, queuer_id, queuer_name, stall, status, tm_created, tm_updated, transaction_id} = transaction;
     const updatedTransaction = {
-      ...transaction,
+      transaction_id,
+      stall,
+      items_ids: cartItems.map((item) => item.item_id),
+      max_items,
+      queuer_id,
+      queuer_mobile: parseInt(queuer_mobile),
+      queuer_name,
+      status,
+      tm_created,
+      tm_updated,
+      feePerItem,
+      destination,
       total_cost: subTotal + transaction.feePerItem * cartItems.length,
-      item_ids: cartItems.map((item) => item.item_id),
       buyer_id: user.id,
       buyer_mobile: user.user_metadata.phone,
-      buyer_name: user.user_metadata.displayName,
+      buyer_name: user.user_metadata.displayName
+
     };
     console.log("Updated transaction", updatedTransaction);
     navigation.navigate("Payment", {

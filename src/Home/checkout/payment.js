@@ -10,40 +10,46 @@ import {
   Button,
   Modal,
   Portal,
-  Icon
+  Icon,
 } from "react-native-paper";
 import { Asset } from "expo-asset";
 import * as MediaLibrary from "expo-media-library";
 import * as FileSystem from "expo-file-system";
 import { useNavigation } from "@react-navigation/native";
-
+import { deleteTransaction, addTransaction } from "../../services/transactions";
 const Payment = ({ route }) => {
   const { updatedTransaction } = route.params;
   const [qrCodeUrl, setQrCodeUrl] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visible, setVisible] = useState(false);
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const showModal = () => {
     setVisible(true);
 
     setTimeout(() => {
-        setVisible(false);
-        handleSuccess();
-        }, 2000);
-  }
+      setVisible(false);
+      handleSuccess();
+    }, 2000);
+  };
   const hideModal = () => setVisible(false);
 
-  const handleSuccess = () => {
+  const handleSuccess = async () => {
     updatedTransaction.status.paid = true;
 
-    
+    try {
+      await deleteTransaction(updatedTransaction.transaction_id);
+      await addTransaction(updatedTransaction);
+      console.log("Transaction updated successfully");
+      navigation.navigate("Content", {
+        screen: "Transactions",
+      });
+    } catch (error) {
+      console.error("Error updating transaction:", error);
+    }
     // update database with paid transaction.
-    navigation.navigate("Content", {
-        screen: "Transactions"
-    });
-    };
+  };
 
   useEffect(() => {
     const reference = updatedTransaction.transaction_id;
@@ -82,26 +88,26 @@ const Payment = ({ route }) => {
         alert("Permission to access media library is required!");
         return;
       }
-  
+
       const fileUri = FileSystem.documentDirectory + "qrCode.png";
       const response = await FileSystem.downloadAsync(qrCodeUrl, fileUri);
-  
+
       // Create an asset from the downloaded file
       const asset = await MediaLibrary.createAssetAsync(response.uri);
-  
+
       // Check if the 'Downloads' album exists
-      const existingAlbum = await MediaLibrary.getAlbumAsync('Downloads');
+      const existingAlbum = await MediaLibrary.getAlbumAsync("Downloads");
       if (existingAlbum) {
         // If it exists, add the asset to it
         await MediaLibrary.addAssetsToAlbumAsync([asset], existingAlbum, false);
       } else {
         // If it doesn't exist, create it and add the asset
-        await MediaLibrary.createAlbumAsync('Downloads', asset, false);
+        await MediaLibrary.createAlbumAsync("Downloads", asset, false);
       }
-  
+
       // Optionally, you might want to delete the original file to avoid duplication
       await FileSystem.deleteAsync(fileUri);
-  
+
       console.log("QR Code downloaded successfully!");
 
       showModal();
@@ -109,8 +115,6 @@ const Payment = ({ route }) => {
       console.log(error);
     }
   };
-  
-  
 
   const cacheImages = async (imageUris) => {
     const cacheImages = imageUris.map((uri) => {
@@ -155,16 +159,20 @@ const Payment = ({ route }) => {
         <Text>No QR Code Available</Text>
       )}
       <Portal>
-        <Modal contentContainerStyle={styles.modal} visible={visible} onDismiss={hideModal}>
-        <Icon source="check-circle" size={50} />
+        <Modal
+          contentContainerStyle={styles.modal}
+          visible={visible}
+          onDismiss={hideModal}
+        >
+          <Icon source="check-circle" size={50} />
 
-            <View style={styles.successMessage}>
-
+          <View style={styles.successMessage}>
             <Text variant="titleMedium">QR Code Saved</Text>
-            <Text>Launch your banking app and upload the QR code to complete your transaction. Your QR code will expire in 5 minutes</Text>
-
-            </View>
-
+            <Text>
+              Launch your banking app and upload the QR code to complete your
+              transaction. Your QR code will expire in 5 minutes
+            </Text>
+          </View>
         </Modal>
       </Portal>
     </View>
@@ -209,10 +217,10 @@ const styles = StyleSheet.create({
     padding: 20,
     flexDirection: "row",
   },
-    successMessage: {
-        marginLeft: 20,
-        flex: 1,
-    },
+  successMessage: {
+    marginLeft: 20,
+    flex: 1,
+  },
 });
 
 export default Payment;
