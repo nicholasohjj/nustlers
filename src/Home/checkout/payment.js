@@ -32,15 +32,17 @@ const Payment = ({ route }) => {
         setVisible(false);
         handleSuccess();
         }, 2000);
-
-
   }
   const hideModal = () => setVisible(false);
 
   const handleSuccess = () => {
     updatedTransaction.status.paid = true;
+
+    
     // update database with paid transaction.
-    navigation.navigate("Content");
+    navigation.navigate("Content", {
+        screen: "Transactions"
+    });
     };
 
   useEffect(() => {

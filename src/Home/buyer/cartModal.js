@@ -8,7 +8,39 @@ import {
   IconButton,
   Button
 } from "react-native-paper";
-import {useNavigation} from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
+
+const CartItem = React.memo(({ item, onAdd, onRemove, isMaxItemsReached }) => (
+  <View style={styles.item}>
+    <Image
+      source={{ uri: item.item_image }}
+      style={styles.itemImage}
+      onError={() => console.log("Error loading image")}
+    />
+    <View style={styles.itemDetails}>
+      <Text style={styles.itemName}>{item.item_name}</Text>
+      <Text style={styles.itemPrice}>${item.item_price.toFixed(2)}</Text>
+    </View>
+
+    <ToggleButton.Group style={styles.addDelete}>
+      <ToggleButton
+        icon="minus"
+        style={styles.toggleButton}
+        onPress={() => onRemove(item)}
+        status="unchecked"
+      />
+      <Text>{item.quantity}</Text>
+      {!isMaxItemsReached && (
+        <ToggleButton
+          icon="plus"
+          style={styles.toggleButton}
+          onPress={() => onAdd(item)}
+          status="unchecked"
+        />
+      )}
+    </ToggleButton.Group>
+  </View>
+));
 
 const CartModal = ({
   visible,
@@ -18,8 +50,8 @@ const CartModal = ({
   addItem,
   removeItem,
 }) => {
-  const [status, setStatus] = useState('checked');
   const navigation = useNavigation();
+  const isMaxItemsReached = cartItems.length >= transaction.max_items;
 
   useEffect(() => {
     if (cartItems.length === 0) {
@@ -46,12 +78,12 @@ const CartModal = ({
     return cartItems.reduce((acc, item) => acc + item.item_price, 0);
   }, [cartItems]);
 
-  const onButtonToggle = value => {
-    setStatus(status === 'checked' ? 'unchecked' : 'checked');
-  };
-
   const handleCheckoutPress = () => {
     hideModal();
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'SearchMap' }],
+    });
     navigation.navigate("Checkout", {
       screen: "Confirmation",
       params: {
@@ -60,7 +92,7 @@ const CartModal = ({
         subTotal: subTotal,
       },
     });
-};
+  };
 
   return (
     <View>
@@ -71,68 +103,38 @@ const CartModal = ({
           contentContainerStyle={styles.containerStyle}
         >
           <IconButton icon="keyboard-backspace" size={20} onPress={hideModal} />
-          <Text variant="titleMedium">Cart</Text>
-          {uniqueCartItems.map((cartItem) => (
-            <View style={styles.item}>
-              <Image
-                source={{ uri: cartItem.item_image }}
-                style={styles.itemImage}
-                onError={() => console.log("Error loading image")}
+          {uniqueCartItems.length > 0 ? (
+            uniqueCartItems.map((cartItem) => (
+              <CartItem
+                key={cartItem.item_id}
+                item={cartItem}
+                onAdd={addItem}
+                onRemove={removeItem}
+                isMaxItemsReached={isMaxItemsReached}
               />
-              <View style={styles.itemDetails}>
-                <Text style={styles.itemName}>{cartItem.item_name}</Text>
-                <Text style={styles.itemPrice}>
-                  ${cartItem.item_price.toFixed(2)}
-                </Text>
-              </View>
-
-              <ToggleButton.Group style={styles.addDelete}>
-                <ToggleButton
-                  icon="minus"
-                  style={styles.toggleButton}
-                  onPress={() => {
-                    onButtonToggle();
-                    removeItem(cartItem)
-                  }
-                  }              
-                  status={status}
-                />
-                <Text>{cartItem.quantity}</Text>
-                {cartItems.length < transaction.max_items && (
-                  <ToggleButton
-                    icon="plus"
-                    style={styles.toggleButton}
-                    onPress={() => {
-                      onButtonToggle();
-                      addItem(cartItem)
-                    }
-                    }
-                    status={status}
-                    />
-                )}
-              </ToggleButton.Group>
-            </View>
-          ))}
+            ))
+          ) : (
+            <Text>Your cart is empty.</Text>
+          )}
           <Text style={styles.totalAmount}>
             Subtotal: ${subTotal.toFixed(2)}
           </Text>
           <Text style={styles.totalAmount}>
-            Service fee: ${transaction.feePerItem.toFixed(2) * cartItems.length}
+            Delivery: ${transaction.feePerItem.toFixed(2) * cartItems.length}
           </Text>
           <Text style={styles.totalAmount}>
             Total: $
             {(subTotal + transaction.feePerItem * cartItems.length).toFixed(2)}
           </Text>
 
-          <Button 
-  mode="contained" 
-  onPress={handleCheckoutPress} 
-  style={styles.checkoutButton}
->
-  Proceed to Checkout
-</Button>
-
-
+          <Button
+            mode="contained"
+            onPress={handleCheckoutPress}
+            style={styles.checkoutButton}
+            disabled={cartItems.length === 0}
+          >
+            Proceed to Checkout
+          </Button>
         </Modal>
       </Portal>
     </View>
@@ -146,11 +148,19 @@ const styles = StyleSheet.create({
     margin: 20,
     borderRadius: 10,
     flex: 1,
-    justifyContent: 'flex-start', // Align content to the start
+    justifyContent: 'flex-start',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   itemImage: {
-    width: 60, // Reduced for better fit
-    height: 60, // Reduced for better fit
+    width: 60,
+    height: 60,
     borderRadius: 10,
     marginRight: 15,
   },
@@ -160,8 +170,16 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginBottom: 15,
     padding: 10,
-    backgroundColor: "#f5f5f5", // Light grey background for each item
+    backgroundColor: "#f5f5f5",
     borderRadius: 8,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
   itemDetails: {
     flex: 1,
@@ -173,7 +191,7 @@ const styles = StyleSheet.create({
   },
   itemPrice: {
     fontSize: 14,
-    color: "#666", // Darker color for price
+    color: "#666",
   },
   addDelete: {
     flexDirection: "row",
@@ -181,6 +199,9 @@ const styles = StyleSheet.create({
   },
   toggleButton: {
     marginHorizontal: 5,
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 4,
   },
   totalAmount: {
     fontSize: 18,
@@ -192,12 +213,22 @@ const styles = StyleSheet.create({
   checkoutButton: {
     marginTop: 20,
     paddingVertical: 12,
-    backgroundColor: "#6200ee", // Primary color for checkout button
+    backgroundColor: "#6200ee",
+    borderRadius: 8,
+    shadowColor: "#6200ee",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   backButton: {
     alignSelf: "flex-start",
     marginBottom: 10,
   },
 });
+
 
 export default CartModal;

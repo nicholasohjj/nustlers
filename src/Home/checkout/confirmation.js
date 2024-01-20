@@ -9,6 +9,7 @@ import {
   Button,
   Card,
   Divider,
+  Icon,
 } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { supabase } from "../../supabase/supabase";
@@ -98,10 +99,12 @@ const Confirmation = ({ route }) => {
               />
               <View style={styles.itemDetails}>
                 <Text style={styles.itemName}>{cartItem.item_name}</Text>
-                <Text style={styles.itemPrice}>
-                  ${cartItem.item_price.toFixed(2)}
+                <Text>
+                    {cartItem.quantity} x ${cartItem.item_price.toFixed(2)}
                 </Text>
               </View>
+
+
             </Card.Content>
             <Divider />
           </View>
@@ -218,6 +221,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 10,
   },
+    arrowButtons: {
+        margin: 0,
+    }
 });
 
 export default Confirmation;
