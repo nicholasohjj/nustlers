@@ -31,6 +31,7 @@ const Welcome = () => {
     <View style={styles.container}>
       <View style={styles.contentMobile}>
         <Text style={styles.title}>NUSTLERS</Text>
+        <Text variant="titleLarge">Why queue, just nustle!</Text>
       </View>
       <Image
         source={require("../assets/cover-image.jpg")}
@@ -77,12 +78,10 @@ const styles = StyleSheet.create({
     zIndex: 1, // Ensure text appears above the image
   },
   title: {
-    fontSize: 28, // Slightly larger for better visibility
+    fontSize: 30,
     fontWeight: "bold",
-    color: "#FFFFFF", // White color for better contrast on the image
-    textShadowColor: 'rgba(0, 0, 0, 0.75)', // Text shadow for readability
-    textShadowOffset: { width: -1, height: 1 },
-    textShadowRadius: 10,
+    color: "#333", // A color that contrasts well with your background
+    marginBottom: 10, // Add some space below the title
   },
   mobileButtonContainer: {
     flexDirection: "row",
@@ -117,13 +116,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   loginButton: {
-    backgroundColor: "#6200ee", // A distinct background color
+    backgroundColor: "#6200ee", // Or use your app's primary color
     borderWidth: 1,
-    borderColor: "#6200ee", // Border color
-    elevation: 2, // Adding elevation for a subtle shadow (optional)
+    borderColor: "#6200ee",
   },
   loginButtonText: {
-    color: "#FFFFFF", // White text color for the button label
+    color: "#FFFFFF",
   },
 });
 
