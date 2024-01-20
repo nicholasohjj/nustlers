@@ -6,7 +6,10 @@ import NearbyModal from "./nearbyModal";
 import { supabase } from "../../supabase/supabase";
 import { useNavigation } from "@react-navigation/native";
 import { addTransaction } from "../../services/transactions";
+import { Ionicons } from '@expo/vector-icons'; // Example of adding an icon library
+
 const Setup = ({ stall, coordinate }) => {
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
   const [destination, setDestination] = useState();
   const [nearby, setNearby] = useState([]);
@@ -35,6 +38,8 @@ const Setup = ({ stall, coordinate }) => {
 
     return isRoomNameIncludesCode ? roomName : `${roomCode} ${roomName}`;
   };
+
+
 
   const validateForm = () => {
     if (feePerItem < 0) {
@@ -109,11 +114,17 @@ const Setup = ({ stall, coordinate }) => {
 
       try {
         await addTransaction(formData);
+        Alert.alert("Success", "Transaction added successfully!", [{ text: "OK" }]);
+        navigation.reset({
+          index: 0,
+          routes: [{ name: "SearchMap" }],
+        });
         navigation.navigate("Transactions");
-        // Further submit logic here...
+        setLoading(false); // Hide loading indicator
       } catch (error) {
         console.error("Error submitting form: ", error);
-        // Handle the error (e.g., show an alert)
+        Alert.alert("Error", "Failed to submit the form. Please try again.", [{ text: "OK" }]);
+        setLoading(false); // Hide loading indicator
       }
     }
   };
@@ -161,7 +172,7 @@ const Setup = ({ stall, coordinate }) => {
 
         {/* Convenience Fee */}
         <View style={styles.inline}>
-          <Text style={styles.text}>Convenience fee per item: $</Text>
+          <Text style={styles.text}>Delivery fee per item: $</Text>
           <TextInput
   style={styles.feeInput}
   keyboardType="decimal-pad"
@@ -207,17 +218,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#F4F7FA", // Light background for a clean look
+    backgroundColor: "#F0F4F7", // Updated color
   },
   cardContent: {
-    padding: 15,
-    borderRadius: 12,
-    backgroundColor: "#FFFFFF", // White card background
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3, // subtle shadow for depth
+    padding: 20,
+    borderRadius: 15,
+    backgroundColor: "#FFFFFF",
+    elevation: 5, // Increased shadow for depth
+    // ... other properties
   },
   inline: {
     flexDirection: "row",
@@ -227,33 +235,30 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: "#333333", // Darker text for better readability
+    color: "#333",
   },
   input: {
-    borderWidth: 0,
-    backgroundColor: "#E8E8E8", // Light gray background for input
-    borderRadius: 8,
-    padding: 10,
+    backgroundColor: "#E8E8E8",
+    borderRadius: 10,
+    padding: 12,
     minWidth: 50,
     textAlign: "center",
-    marginHorizontal: 5,
+    marginHorizontal: 10,
+    elevation: 2, // Slight elevation
+    // ... other properties
   },
   feeInput: {
-    ...this.input, // Inherits styles from input
     minWidth: 60,
+    // Inherits styles from input
   },
   button: {
     marginTop: 20,
     paddingVertical: 12,
-    borderRadius: 8,
-    width: "80%",
-    maxWidth: 400,
-    alignSelf: "center",
+    borderRadius: 10,
     shadowColor: "#4A90E2",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 2,
+    shadowRadius: 6,
+    elevation: 3,
+    // ... other properties
   },
   // Add any additional styles you need below
 });

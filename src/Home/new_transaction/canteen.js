@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useNavigation } from "@react-navigation/native";
 
 
-const StallCard = ({ stall, handleStallPress }) => (
+const StallCard = ({ stall, handleStallPress, marker }) => (
   <Card key={stall.stall_id} style={styles.card} onPress={() => handleStallPress(stall, marker)}>
     <Card.Content style={styles.cardContent}>
       <Image
@@ -65,7 +65,7 @@ const Canteen = ({ route }) => {
 
       <ScrollView style={styles.scrollView}>
         {currentCanteenStalls.length > 0 ? (
-          currentCanteenStalls.map((stall) => <StallCard key={stall.stall_id} stall={stall} marker={marker} handleStallPress={handleStallPress} />)
+          currentCanteenStalls.map((stall) => <StallCard  stall={stall} marker={marker} handleStallPress={handleStallPress} />)
         ) : (
           <Text>No stalls available</Text>
         )}

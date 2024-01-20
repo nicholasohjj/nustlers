@@ -3,7 +3,6 @@ import { useNavigation } from "@react-navigation/native";
 import SearchStackScreen from "./search/searchStackScreen";
 import TransactionsStackScreen from "./transaction/transactionsStackScreen";
 import AccountStackScreen from "./account/accountStackScreen";
-import Information from "./information/information";
 import { supabase } from "../supabase/supabase";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';

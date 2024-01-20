@@ -8,6 +8,7 @@ import {
 import { supabase } from "../supabase/supabase";
 import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
+import { animated, useSpring } from '@react-spring/native';
 
 const LoginForm = () => {
 
@@ -16,6 +17,12 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordVisibility, setPasswordVisibility] = useState(true);
+
+  const fade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 1000 }, // Adjust duration as needed
+  });
   
   const handleLogin = async () => {
     if (!email || !password) {
@@ -54,7 +61,7 @@ const LoginForm = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <animated.View style={[styles.container, fade]}>
       <Text style={styles.title}>Welcome back</Text>
       <Text> Enter the email associated with your account</Text>
 
@@ -103,7 +110,7 @@ const LoginForm = () => {
       <Button onPress={navigateToSignUp} style={styles.signUpPrompt}>
         <Text style={styles.signUpText}>Don't have an account? Sign up</Text>
       </Button>
-    </View>
+      </animated.View>
   );
 };
 

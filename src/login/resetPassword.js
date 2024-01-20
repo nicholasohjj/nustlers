@@ -3,6 +3,7 @@ import { View, StyleSheet, Alert } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { Text, TextInput, Button, ActivityIndicator } from 'react-native-paper';  
 import { supabase } from "../supabase/supabase";
+import { animated, useSpring } from '@react-spring/native';
 
 const isValidEmail = email => {
   // Simple regex for email validation
@@ -22,6 +23,12 @@ const ResetPassword = () => {
       }
     })
   }, [])
+
+  const fade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 1000 },
+  });
 
   const handleResetPassword = async () => {
     if (!isValidEmail(email)) {
@@ -49,7 +56,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <animated.View style={[styles.container, fade]}>
       <Text style={styles.title}>Reset Your Password</Text>
       <Text>Enter your email address to receive password reset instructions</Text>
 
@@ -77,7 +84,7 @@ const ResetPassword = () => {
           Reset Password
         </Button>
       )}
-    </View>
+    </animated.View>
   );
 };
 

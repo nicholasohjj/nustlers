@@ -12,11 +12,14 @@ import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
 import { getMarkers } from "../../services/markers";
 import MapView from "react-native-map-clustering";
+import { animated, useSpring } from '@react-spring/native';
+
 
 const { PROVIDER_GOOGLE } = require("react-native-maps");
 const Circle = require("react-native-maps").Circle;
 const Marker = require("react-native-maps").Marker;
 const mapStyle = require("../../mapStyle.json");
+
 
 const Map = ({ route }) => {
   const navigation = useNavigation();
