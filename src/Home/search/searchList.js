@@ -9,32 +9,15 @@ import {
 } from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
-import { getMarkers } from "../../services/markers";
 const SearchList = () => {
   const navigation = useNavigation();
-
-  const [markers, setMarkers] = useState([]);
+  const markers = require("../../db/markers.json");
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredLocations, setFilteredLocations] = useState(markers); // Initialize with all markers
   const [navigateToMap, setNavigateToMap] = useState(false); // New state to trigger navigation
   const [selectedLocation, setSelectedLocation] = useState(null); // State to keep track of selected location
 
   const [currentLocation, setCurrentLocation] = useState(null);
-
-  useEffect(() => {
-    fetchMarkers();
-  }, []);
-
-  const fetchMarkers = async () => {
-    try {
-      const data = await getMarkers();
-      console.log("Markers fetched", data);
-      setMarkers(data);
-    } catch (error) {
-      console.error("Error fetching markers:", error);
-      Alert.alert("Error", "Unable to fetch markers.");
-    }
-  };
 
   useEffect(() => {
     (async () => {

@@ -13,6 +13,17 @@ export const getTransactions = async () => {
   }
 };
 
+export const getTransactionsById = async (userId) => {
+  try {
+    const response = await axios.get(`${baseURL}/${userId}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching transactions by user id:", error);
+    // Handle the error appropriately
+    return null; // or however you wish to handle this
+  }
+}
+
 export const addTransaction = async (formData) => {
   try {
       const response = await axios.post(`${baseURL}`, formData);

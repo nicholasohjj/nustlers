@@ -10,7 +10,6 @@ import {
 } from "react-native-paper";
 import * as Location from "expo-location";
 import { useNavigation } from "@react-navigation/native";
-import { getMarkers } from "../../services/markers";
 import MapView from "react-native-map-clustering";
 
 
@@ -18,18 +17,13 @@ const { PROVIDER_GOOGLE } = require("react-native-maps");
 const Circle = require("react-native-maps").Circle;
 const Marker = require("react-native-maps").Marker;
 const mapStyle = require("../../mapStyle.json");
-
+const markers = require("../../db/markers.json");
 
 const Map = ({ route }) => {
   const navigation = useNavigation();
   const [currentMarker, setCurrentMarker] = useState(
     route.params?.selectedLocation
   );
-  const [markers, setMarkers] = useState([]);
-
-  useEffect(() => {
-    fetchMarkers();
-  }, []);
 
   const [userLocation, setUserLocation] = useState(null);
   const [region, setRegion] = useState({
@@ -40,17 +34,6 @@ const Map = ({ route }) => {
   });
 
   const mapRef = useRef(null);
-
-  const fetchMarkers = async () => {
-    try {
-      const data = await getMarkers();
-      console.log("Markers fetched", data);
-      setMarkers(data);
-    } catch (error) {
-      console.error("Error fetching markers:", error);
-      Alert.alert("Error", "Unable to fetch markers.");
-    }
-  };
 
   useEffect(() => {
     fetchLocation();
