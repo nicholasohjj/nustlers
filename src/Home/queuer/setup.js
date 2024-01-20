@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Alert } from "react-native";
+import { View, StyleSheet, Alert, Keyboard, TouchableWithoutFeedback  } from "react-native";
 import { Button, Text, TextInput, Card } from "react-native-paper";
 import DestinationModal from "./destinationModal";
 import NearbyModal from "./nearbyModal";
@@ -128,6 +128,7 @@ const Setup = ({ stall, coordinate }) => {
   };
 
   const showDestinationModal = () => {
+  Keyboard.dismiss(); // This will dismiss the keyboard
     setDestinationModal(true);
   };
 
@@ -136,6 +137,7 @@ const Setup = ({ stall, coordinate }) => {
   };
 
   return (
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
     <View style={styles.container}>
       <Card style={styles.cardContent}>
         {/* Introductory text */}
@@ -209,6 +211,7 @@ const Setup = ({ stall, coordinate }) => {
         />
       ) : null}
     </View>
+    </TouchableWithoutFeedback>
   );
 };
 
@@ -216,7 +219,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#F0F4F7", // Updated color
+    backgroundColor: "#F0F4F7",
+    paddingBottom: "12%" // Updated color
   },
   cardContent: {
     padding: 20,

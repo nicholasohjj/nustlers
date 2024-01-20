@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, StyleSheet, Image, ScrollView } from "react-native";
 import { Text, Card, Button } from "react-native-paper";
-import StatusIndicator from './StatusIndicator'; // Import the custom component
+import StatusIndicator from "./StatusIndicator"; // Import the custom component
 import { getTimeAgo } from "./getTimeAgo";
+import { updateTransaction } from "../../services/transactions";
+
 const TransactionDetails = ({ route }) => {
   const { transaction } = route.params;
+
 
   const handleContactBuyer = () => {
     // Logic to contact the buyer
@@ -20,10 +23,72 @@ const TransactionDetails = ({ route }) => {
     // Logic to cancel the transaction
     console.log("Cancelling the transaction...");
   };
-  
+
+  const confirmTransactionPaid = async () => {
+    // Logic to confirm the transaction as paid
+
+    const updatedTransaction = {
+      ...transaction,
+      status: {
+        ...transaction.status,
+        paid: true,
+      },
+    };
+
+    try {
+      await updateTransaction(updatedTransaction);
+      console.log("Transaction updated successfully");
+    }
+
+    catch (error) {
+      console.error("Error updating transaction:", error);
+    }
+  };
+
+  const confirmTransactionCollected = async () => {
+    // Logic to confirm the transaction as collected
+    console.log("Confirming the transaction as collected...");
+
+    const updatedTransaction = {
+      ...transaction,
+      status: {
+        ...transaction.status,
+        collected: true,
+      },
+    };
+
+    try {
+      await updateTransaction(updatedTransaction);
+      console.log("Transaction updated successfully");
+    } catch (error) {
+      console.error("Error updating transaction:", error);
+    }
+  };
+
+  const confirmTransactionDelivered = async () => {
+    // Logic to confirm the transaction as delivered
+    console.log("Confirming the transaction as delivered...");
+
+    const updatedTransaction = {
+      ...transaction,
+      status: {
+        ...transaction.status,
+        delivered: true,
+      },
+    };
+
+    try {
+      await updateTransaction(updatedTransaction);
+      console.log("Transaction updated successfully");
+    } catch (error) {
+      console.error("Error updating transaction:", error);
+    }
+  }
+
+
   const statusDisplay = () => {
     const status = transaction.status;
-  
+
     if (status.cancelled) {
       return "Cancelled";
     } else if (status.collected) {
@@ -40,8 +105,6 @@ const TransactionDetails = ({ route }) => {
       return "Open";
     }
   };
-  
-
 
   return (
     <ScrollView style={styles.container}>
@@ -49,16 +112,12 @@ const TransactionDetails = ({ route }) => {
         <Card.Content>
           <View style={styles.contentDetails}>
             <View style={styles.header}>
-              <Text style={styles.title}>
-              {transaction.stall.stall_name}
-              </Text>
+              <Text style={styles.title}>{transaction.stall.stall_name}</Text>
               <View style={styles.statusContainer}>
-              <Text style={styles.status}>
-                {statusDisplay()}
-              </Text>
-              <StatusIndicator status={transaction.status} />
-            </View>
+                <Text style={styles.status}>{statusDisplay()}</Text>
+                <StatusIndicator status={transaction.status} />
               </View>
+            </View>
 
             <Image
               source={{ uri: transaction.stall.stall_image }}
@@ -68,29 +127,63 @@ const TransactionDetails = ({ route }) => {
 
             <Text style={styles.detail}>Buyer: {transaction.buyer_name}</Text>
             <Text style={styles.detail}>Queuer: {transaction.queuer_name}</Text>
-            <Text style={styles.detail}>Collection Point: {transaction.destination.title}</Text>
+            <Text style={styles.detail}>
+              Collection Point: {transaction.destination.title}
+            </Text>
 
-            <Text style={styles.detail}>Last updated: {getTimeAgo(transaction.tm_updated)}</Text>
+            <Text style={styles.detail}>
+              Last updated: {getTimeAgo(transaction.tm_updated)}
+            </Text>
 
             {transaction.buyer_name ? (
-                          <Button
-                          mode="contained"
-                          onPress={handleContactBuyer}
-                          style={styles.button}
-                        >
-                          Contact Buyer
-                        </Button>
+              <Button
+                mode="contained"
+                onPress={handleContactBuyer}
+                style={styles.button}
+              >
+                Contact Buyer
+              </Button>
             ) : (
               <Button
+                mode="contained"
+                onPress={handleCancelTransaction}
+                style={styles.button}
+              >
+                Cancel transaction
+              </Button>
+            )}
+
+{!transaction.status.paid && (
+
+            <Button
               mode="contained"
-              onPress={handleCancelTransaction}
+              onPress={confirmTransactionPaid}
               style={styles.button}
             >
-              Cancel transaction
+              Confirm transaction as paid
             </Button>
-            )
-              }
 
+)}
+
+{transaction.status.paid && !transaction.status.collected (
+            <Button
+              mode="contained"
+              onPress={confirmTransactionCollected}
+              style={styles.button} 
+            >
+              Confirm transaction as collected
+            </Button>
+)}
+
+{transaction.status.paid && transaction.status.collected && !transaction.status.delivered (
+            <Button
+              mode="contained"
+              onPress={confirmTransactionDelivered}
+              style={styles.button} 
+            >
+              Confirm transaction as delivered
+            </Button>
+)}
 
             <Button
               mode="outlined"
@@ -114,7 +207,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 20,
   },
   card: {
@@ -128,8 +221,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   statusContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   status: {
     fontSize: 16,
@@ -147,6 +240,12 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 10,
+  },
+  modal: {
+    backgroundColor: "white",
+    padding: 20,
+    margin: 20,
+    borderRadius: 10,
   },
 });
 

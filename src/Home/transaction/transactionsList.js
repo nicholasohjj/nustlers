@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { ScrollView, View, StyleSheet, Text } from "react-native";
-import { SegmentedButtons } from "react-native-paper";
+import { ScrollView, View, StyleSheet } from "react-native";
+import { SegmentedButtons, Text} from "react-native-paper";
 import { supabase } from "../../supabase/supabase";
 import TransactionCard from "./transactionCard";
 import { useNavigation } from "@react-navigation/native";
@@ -11,12 +11,14 @@ const TransactionsList = () => {
   const [transactions, setTransactions] = useState([]);
   const [user, setUser] = useState(null);
   const [value, setValue] = useState("ongoing");
+  const [isLoading, setIsLoading] = useState(true); // For testing
   const navigation = useNavigation();
 
   const fetchTransactions = async () => {
     try {
       const data = await getTransactions();
       setTransactions(data);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching transactions:", error);
       Alert.alert("Error", "Unable to fetch transactions.");
@@ -47,7 +49,12 @@ const TransactionsList = () => {
     if (!user) return [];
 
     return transactions.filter((transaction) =>
-        !transaction.status.completed &&
+      value === "ongoing"
+        ? !transaction.status.completed &&
+          (transaction.buyer_id === user.id ||
+            transaction.queuer_id === user.id)
+        : // Implement different logic for past transactions here
+          transaction.status.completed &&
           (transaction.buyer_id === user.id ||
             transaction.queuer_id === user.id)
     );
@@ -68,6 +75,14 @@ const TransactionsList = () => {
       <Text style={styles.noTransactionsText}>No transactions available.</Text>
     );
   };
+
+  if (isLoading) {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+    } else {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Transactions</Text>
@@ -81,8 +96,10 @@ const TransactionsList = () => {
         style={styles.segmentedButtons}
       />
       <ScrollView>{renderTransactions()}</ScrollView>
+
     </View>
   );
+}
 };
 
 const styles = StyleSheet.create({

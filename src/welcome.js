@@ -30,7 +30,7 @@ const Welcome = () => {
   return (
     <View style={styles.container}>
       <View style={styles.contentMobile}>
-        <Text style={styles.title}>Nustlers</Text>
+        <Text style={styles.title}>NUSTLERS</Text>
       </View>
       <Image
         source={require("../assets/cover-image.jpg")}

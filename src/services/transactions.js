@@ -14,19 +14,30 @@ export const getTransactions = async () => {
 };
 
 export const addTransaction = async (formData) => {
-    try {
-        const response = await axios.post(`${baseURL}/transactions`, formData);
-        return response.data;
-      } catch (error) {
-        console.error("Error adding transaction:", error);
-        // Handle the error appropriately
-        return null; // or however you wish to handle this
-      }
-    };
+  try {
+      const response = await axios.post(`${baseURL}`, formData);
+      return response.data;
+  } catch (error) {
+      console.error("Error adding transaction:", error);
 
-export const updateTransaction = async (transactionId) => {
+      // Check if the error response is from your server and has a specific message
+      if (error.response && error.response.data && error.response.data.error) {
+          // Return the specific error message from your server
+          return { error: error.response.data.error };
+      } else {
+          // Handle other kinds of errors (e.g., network issues)
+          return { error: "An unexpected error occurred. Please try again." };
+      }
+  }
+};
+
+
+export const updateTransaction = async (updatedTransaction) => {
     try {
-        const response = await axios.put(`${baseURL}/transactions/`);
+        console.log("IM TRYING SO HARD")
+        console.log(updatedTransaction)
+        console.log(baseURL)
+        const response = await axios.put(`${baseURL}/`);
         return response.data;
       } catch (error) {
         console.error("Error updating transaction:", error);
@@ -37,7 +48,7 @@ export const updateTransaction = async (transactionId) => {
 
 export const deleteTransaction = async (transactionId) => {
     try {
-        const response = await axios.delete(`${baseURL}/transactions/${transactionId}`);
+        const response = await axios.delete(`${baseURL}/${transactionId}`);
         return response.data;
       } catch (error) {
         console.error("Error deleting transaction:", error);
