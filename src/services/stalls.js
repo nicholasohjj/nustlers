@@ -13,3 +13,14 @@ export const getStalls = async () => {
   }
 };
 
+export const getStallsById = async (ids) => {
+  try {
+    const response = await axios.get(`${baseURL}/canteen`, ids );
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching stalls by stall id:", error);
+    // Handle the error appropriately
+    return null; // or however you wish to handle this
+  }
+}
+

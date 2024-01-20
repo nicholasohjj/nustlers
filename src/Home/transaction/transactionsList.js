@@ -4,8 +4,7 @@ import { SegmentedButtons, Text} from "react-native-paper";
 import { supabase } from "../../supabase/supabase";
 import TransactionCard from "./transactionCard";
 import { useNavigation } from "@react-navigation/native";
-import { getTransactions } from "../../services/transactions";
-const transactions = require("../../db/transactions.json"); // For testing
+import { getTransactions, getTransactionsById } from "../../services/transactions";
 
 const TransactionsList = () => {
   const [transactions, setTransactions] = useState([]);
@@ -14,9 +13,9 @@ const TransactionsList = () => {
   const [isLoading, setIsLoading] = useState(true); // For testing
   const navigation = useNavigation();
 
-  const fetchTransactions = async () => {
+  const fetchTransactionsById = async (userId) => {
     try {
-      const data = await getTransactions();
+      const data = await getTransactionsById(userId);
       setTransactions(data);
       setIsLoading(false);
     } catch (error) {
@@ -24,12 +23,6 @@ const TransactionsList = () => {
       Alert.alert("Error", "Unable to fetch transactions.");
     }
   }
-
-
-  useEffect(() => {
-    fetchTransactions();
-  }, []);
-
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -44,6 +37,12 @@ const TransactionsList = () => {
 
     fetchUser();
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      fetchTransactionsById(user.id);
+    }
+  }, [user, fetchTransactionsById]);
 
   const filteredTransactions = React.useMemo(() => {
     if (!user) return [];
