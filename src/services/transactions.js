@@ -48,6 +48,24 @@ export const getTransactionsById = async (userId) => {
   }
 };
 
+export const getTransactionsByStallId = async (stallId) => {
+  const cacheKey = `transactions-${stallId}`;
+  const ttl = 5 * 60 * 1000; // cache time to live in milliseconds
+
+  if (isCacheValid(cacheKey, ttl)) {
+    return cache[cacheKey].data;
+  }
+
+  try {
+    const response = await axios.get(`${baseURL}/stall/${stallId}`);
+    cache[cacheKey] = { data: response.data, timestamp: new Date().getTime() };
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching transactions by stall id:", error);
+    return null;
+  }
+}
+
 
 export const addTransaction = async (formData) => {
   try {

@@ -4,10 +4,30 @@ import { SegmentedButtons } from "react-native-paper";
 import { supabase } from "../../supabase/supabase";
 import OpenTransactionCard from "./openTransactionCard";
 import { useNavigation } from "@react-navigation/native";
-const transactions = require("../../db/transactions.json"); // For testing}
+import { getTransactionsByStallId } from "../../services/transactions";
 const OpenTransactionsList = ({stall}) => {
   const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true); // For testing
+  const [transactions, setTransactions] = useState([]); // For testing
   const navigation = useNavigation();
+
+  const fetchTransactionsByStallId = async (stallId) => {
+    try {
+      console.log("stallId", stallId);
+      const data = await getTransactionsByStallId(stallId);
+      setTransactions(data || []); // Set to an empty array if data is null
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Error fetching transactions:", error);
+      Alert.alert("Error", "Unable to fetch transactions.");
+      setTransactions([]); // Set to an empty array in case of error
+    }
+  };
+  
+
+  useEffect(() => {
+    fetchTransactionsByStallId(stall.stall_id);
+  }, [stall]);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -44,8 +64,10 @@ const OpenTransactionsList = ({stall}) => {
         </View>
       ))
     ) : (
-        
-      <Text style={styles.noTransactionsText}>There's no one queueing! {JSON.stringify(stall)}</Text>
+      <View>
+      <Text style={styles.noTransactionsText}>There's no one queueing!</Text>
+      <Text>{JSON.stringify(transactions)}</Text>
+      </View>  
     );
   };
   return (
