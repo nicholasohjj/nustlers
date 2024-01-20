@@ -22,7 +22,6 @@ const ResetPassword = () => {
       }
     })
   }, [])
-Platform
 
   const handleResetPassword = async () => {
     if (!isValidEmail(email)) {

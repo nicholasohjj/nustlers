@@ -69,7 +69,6 @@ const Content = () => {
       <Tab.Screen name="Search" component={SearchStackScreen} />
       <Tab.Screen name="Transactions" component={TransactionsStackScreen} />
       <Tab.Screen name="Account" component={AccountStackScreen} />
-      <Tab.Screen name="Information" component={Information} />
     </Tab.Navigator>
   );
 };

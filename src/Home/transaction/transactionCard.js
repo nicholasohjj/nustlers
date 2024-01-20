@@ -22,7 +22,7 @@ const TransactionCard = ({ navigation, transaction, user }) => {
         <Card.Content style={styles.cardContent}>
           <View style={styles.contentDetails}>
           <View style={styles.header}>
-            <Text  variant="titleLarge">{transaction.stall.stall_name}</Text>
+            <Text  variant="titleMedium">{transaction.stall.stall_name}</Text>
               <StatusIndicator status={transaction.status} />
             </View>
 

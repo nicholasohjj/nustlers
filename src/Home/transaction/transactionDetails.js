@@ -16,6 +16,33 @@ const TransactionDetails = ({ route }) => {
     console.log("Reporting the transaction...");
   };
 
+  const handleCancelTransaction = () => {
+    // Logic to cancel the transaction
+    console.log("Cancelling the transaction...");
+  };
+  
+  const statusDisplay = () => {
+    const status = transaction.status;
+  
+    if (status.cancelled) {
+      return "Cancelled";
+    } else if (status.collected) {
+      return "Collected";
+    } else if (status.completed) {
+      return "Completed";
+    } else if (status.delivered) {
+      return "Delivered";
+    } else if (status.paid) {
+      return "Paid";
+    } else if (status.refunded) {
+      return "Refunded";
+    } else {
+      return "Open";
+    }
+  };
+  
+
+
   return (
     <ScrollView style={styles.container}>
       <Card style={styles.card}>
@@ -27,7 +54,7 @@ const TransactionDetails = ({ route }) => {
               </Text>
               <View style={styles.statusContainer}>
               <Text style={styles.status}>
-                {transaction.status.charAt(0).toUpperCase() + transaction.status.slice(1)}
+                {statusDisplay()}
               </Text>
               <StatusIndicator status={transaction.status} />
             </View>
@@ -45,13 +72,25 @@ const TransactionDetails = ({ route }) => {
 
             <Text style={styles.detail}>Last updated: {getTimeAgo(transaction.tm_updated)}</Text>
 
-            <Button
+            {transaction.buyer_name ? (
+                          <Button
+                          mode="contained"
+                          onPress={handleContactBuyer}
+                          style={styles.button}
+                        >
+                          Contact Buyer
+                        </Button>
+            ) : (
+              <Button
               mode="contained"
-              onPress={handleContactBuyer}
+              onPress={handleCancelTransaction}
               style={styles.button}
             >
-              Contact Buyer
+              Cancel transaction
             </Button>
+            )
+              }
+
 
             <Button
               mode="outlined"

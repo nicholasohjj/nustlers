@@ -23,7 +23,17 @@ const StatusIndicator = ({ status }) => {
     ).start();
   }, [pulseAnim]);
 
-  const color = status.completed ? 'red' : 'green';
+  const determineColor = () => {
+    if (status.cancelled) return 'red';
+    if (status.collected) return 'blue';
+    if (status.completed) return 'green';
+    if (status.delivered) return 'orange';
+    if (status.paid) return 'purple';
+    if (status.refunded) return 'yellow';
+    return 'grey'; // Default color for unknown or no status
+  };
+
+  const color = determineColor();
 
   return (
     <Animated.View

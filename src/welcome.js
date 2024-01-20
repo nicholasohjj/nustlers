@@ -1,9 +1,8 @@
 import React, { useEffect, useCallback} from "react";
-import { View, StyleSheet, Imag } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { supabase } from "./supabase/supabase";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
-
 const Welcome = () => {
   const navigation = useNavigation();
 
@@ -31,8 +30,14 @@ const Welcome = () => {
   return (
     <View style={styles.container}>
       <View style={styles.contentMobile}>
-        <Text style={styles.title}>Welcome to Our App!</Text>
+        <Text style={styles.title}>Nustlers</Text>
       </View>
+      <Image
+        source={require("../assets/cover-image.jpg")}
+        style={styles.image}
+        resizeMode="cover"
+        onError={() => console.log("Error loading image")}
+      />
         <View style={styles.mobileButtonContainer}>
           <Button
             mode="contained"
@@ -44,8 +49,10 @@ const Welcome = () => {
           <Button
             mode="outlined"
             onPress={handleSignIn}
-            style={styles.mobileButton}
-          >
+            style={[styles.mobileButton, styles.loginButton]}
+            labelStyle={styles.loginButtonText}
+
+            >
             Log in
           </Button>
         </View>
@@ -58,36 +65,67 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center", // Center content vertically
     padding: 20,
+    width: '100%',
+    height: '100%',
   },
   contentMobile: {
     justifyContent: "center",
     alignItems: "center",
-    flexGrow: 1, // This will allow the content to grow while leaving space for buttons
+    flexGrow: 1,
+    zIndex: 1, // Ensure text appears above the image
   },
   title: {
-    fontSize: 24,
+    fontSize: 28, // Slightly larger for better visibility
     fontWeight: "bold",
-    marginBottom: 0,
-    textAlign: "center",
-    color: "#000000",
-  },
-  button: {
-    marginTop: 10,
-    width: "50%",
-    maxWidth: 400,
-    alignSelf: "center",
+    color: "#FFFFFF", // White color for better contrast on the image
+    textShadowColor: 'rgba(0, 0, 0, 0.75)', // Text shadow for readability
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
   },
   mobileButtonContainer: {
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-around",
     marginBottom: 20,
+    zIndex: 1, // Ensure buttons appear above the image
   },
   mobileButton: {
     flex: 1,
     marginHorizontal: 5,
+    minWidth: 100, // Minimum width for better touch area
+    paddingHorizontal: 10, // Padding for text inside button
+  },
+  image: {
+    ...StyleSheet.absoluteFillObject,
+    width: undefined,
+    height: undefined,
+    borderRadius: 0,
+  },
+  mobileButtonContainer: {
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-around",
+    marginBottom: 20,
+    zIndex: 1,
+  },
+  mobileButton: {
+    flex: 1,
+    marginHorizontal: 5,
+    minWidth: 100,
+    paddingHorizontal: 10,
+  },
+  loginButton: {
+    backgroundColor: "#6200ee", // A distinct background color
+    borderWidth: 1,
+    borderColor: "#6200ee", // Border color
+    elevation: 2, // Adding elevation for a subtle shadow (optional)
+  },
+  loginButtonText: {
+    color: "#FFFFFF", // White text color for the button label
   },
 });
+
 
 export default Welcome;

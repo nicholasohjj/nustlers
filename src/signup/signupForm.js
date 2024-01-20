@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, ActivityIndicator } from "react-native";
+import { View, StyleSheet, ActivityIndicator, Alert } from "react-native";
 import { supabase } from "../supabase/supabase";
 import { useNavigation } from "@react-navigation/native";
 import { Text, Button, TextInput } from "react-native-paper";
@@ -34,6 +34,21 @@ const SignupForm = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [passwordVisibility, setPasswordVisibility] = useState(true);
+
+  const [inputFocus, setInputFocus] = useState({
+    displayName: false,
+    email: false,
+    phone: false,
+    password: false,
+  });
+
+  const handleInputFocus = (inputName) => {
+    setInputFocus({ ...inputFocus, [inputName]: true });
+  };
+
+  const handleInputBlur = (inputName) => {
+    setInputFocus({ ...inputFocus, [inputName]: false });
+  };
 
   const url = Linking.useURL();
   if (url) createSessionFromUrl(url);
@@ -105,6 +120,8 @@ const SignupForm = () => {
         value={displayName}
         placeholder="John Doe"
         style={styles.input}
+        onFocus={() => handleInputFocus('displayName')}
+        onBlur={() => handleInputBlur('displayName')}
         left={<TextInput.Icon icon="account" />}
       />
       <TextInput
@@ -116,6 +133,8 @@ const SignupForm = () => {
         autoCapitalize="none"
         keyboardType="email-address"
         style={styles.input}
+        onFocus={() => handleInputFocus('email')}
+        onBlur={() => handleInputBlur('email')}
         left={<TextInput.Icon icon="email" />}
       />
       <TextInput
@@ -126,6 +145,8 @@ const SignupForm = () => {
         placeholder="87654321"
         autoCapitalize="none"
         keyboardType="numeric"
+        onFocus={() => handleInputFocus('phone')}
+        onBlur={() => handleInputBlur('phone')}
         style={styles.input}
         left={<TextInput.Icon icon="phone" />}
       />
@@ -138,6 +159,8 @@ const SignupForm = () => {
         placeholder="Password"
         autoCapitalize="none"
         style={styles.input}
+        onFocus={() => handleInputFocus('password')}
+        onBlur={() => handleInputBlur('password')}
         left={<TextInput.Icon icon="lock" />}
         right={
           <TextInput.Icon
@@ -146,16 +169,19 @@ const SignupForm = () => {
           />
         }
       />
-      {loading ? (
-        <ActivityIndicator size="large" color="#0000ff" />
+ {loading ? (
+        <ActivityIndicator size="large" color="#6200ee" />
       ) : (
-        <Button mode="contained" onPress={handleSignUp} style={styles.button}>
+        <Button
+          mode="contained"
+          onPress={handleSignUp}
+          style={styles.button}
+          labelStyle={styles.buttonLabel}
+          uppercase={false} // Avoid uppercase to maintain text clarity
+        >
           Sign up
         </Button>
       )}
-      <Button mode="contained" onPress={test} style={styles.button}>
-        Sign up test
-      </Button>
     </View>
   );
 };
@@ -185,6 +211,13 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     width: "100%", // Half width on web, full on mobile
     maxWidth: 400, // Ensure buttons are not too wide on larger screens
+  },
+  inputFocus: {
+    borderColor: "#6200ee", // Highlight color when input is focused
+  },
+  buttonLabel: {
+    color: "#FFFFFF", // Ensure button label is white for readability
+    fontWeight: "500", // Slightly bolder text
   },
 });
 
