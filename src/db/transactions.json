@@ -76,7 +76,7 @@
       "title": "UTown Green"
     },
     "feePerItem": 0.75,
-    "items_ids": ["item_9", "item_10", "item_11"],
+    "items_ids": [],
     "max_items": 5,
     "queuer_id": "b9876543",
     "queuer_mobile": 82345678,

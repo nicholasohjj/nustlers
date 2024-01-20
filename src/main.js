@@ -8,7 +8,7 @@ import LoginStackScreen from "./login/loginStackScreen";
 import Signup from "./signup/signup";
 import { ActivityIndicator, View } from "react-native"; // Import ActivityIndicator and View
 import { StatusBar } from 'expo-status-bar';
-
+import CheckOutStackScreen from "./Home/checkout/checkoutStackScreen";
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
@@ -55,6 +55,7 @@ const Main = () => {
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Content" component={Content} />
         <Stack.Screen name="Login" component={LoginStackScreen} />
+        <Stack.Screen name="Checkout" component={CheckOutStackScreen} />
         <Stack.Screen name="Signup" component={Signup} />
       </Stack.Navigator>
     </View>

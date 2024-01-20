@@ -8,6 +8,7 @@ import {
   IconButton,
   Button
 } from "react-native-paper";
+import {useNavigation} from "@react-navigation/native";
 
 const CartModal = ({
   visible,
@@ -18,6 +19,7 @@ const CartModal = ({
   removeItem,
 }) => {
   const [status, setStatus] = useState('checked');
+  const navigation = useNavigation();
 
   useEffect(() => {
     if (cartItems.length === 0) {
@@ -47,6 +49,18 @@ const CartModal = ({
   const onButtonToggle = value => {
     setStatus(status === 'checked' ? 'unchecked' : 'checked');
   };
+
+  const handleCheckoutPress = () => {
+    hideModal();
+    navigation.navigate("Checkout", {
+      screen: "Confirmation",
+      params: {
+        transaction: transaction,
+        cartItems: cartItems,
+        subTotal: subTotal,
+      },
+    });
+};
 
   return (
     <View>
@@ -112,7 +126,7 @@ const CartModal = ({
 
           <Button 
   mode="contained" 
-  onPress={() => {/* handle checkout logic */}} 
+  onPress={handleCheckoutPress} 
   style={styles.checkoutButton}
 >
   Proceed to Checkout
