@@ -26,8 +26,11 @@ const Map = ({ route }) => {
   const [currentMarker, setCurrentMarker] = useState(
     route.params?.selectedLocation
   );
-  const markers = require("../../db/markers.json"); // For testing
-  //const [markers, setMarkers] = useState([]); For fetching markers from backend
+  const [markers, setMarkers] = useState([]);
+
+  useEffect(() => {
+    fetchMarkers();
+  }, []);
 
   const [userLocation, setUserLocation] = useState(null);
   const [region, setRegion] = useState({
@@ -38,6 +41,16 @@ const Map = ({ route }) => {
   });
 
   const mapRef = useRef(null);
+
+  const fetchMarkers = async () => {
+    try {
+      const data = await getMarkers();
+      setMarkers(data);
+    } catch (error) {
+      console.error("Error fetching markers:", error);
+      Alert.alert("Error", "Unable to fetch markers.");
+    }
+  };
 
   useEffect(() => {
     fetchLocation();
@@ -58,15 +71,7 @@ const Map = ({ route }) => {
     }
   }, [currentMarker]);
 
-  const fetchMarkers = async () => {
-    try {
-      const data = await getMarkers();
-      setMarkers(data);
-    } catch (error) {
-      console.error("Error fetching markers:", error);
-      Alert.alert("Error", "Unable to fetch markers.");
-    }
-  };
+
 
   const subscribeLocationUpdates = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();

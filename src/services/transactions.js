@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://nustlers-backend-abc7tcqox-nicholasohjj.vercel.app";
+const baseURL = "https://hacknroll-backend.vercel.app/transactions";
 
 export const getTransactions = async () => {
     try {
