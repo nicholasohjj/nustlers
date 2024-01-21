@@ -129,7 +129,7 @@ const Payment = ({ route }) => {
       <View style={styles.subtitle}>
         <Text style={styles.title}>Payment</Text>
         <Text>
-          Scan or upload this QR code to your banking app to complete your
+          Scan or upload this QR code to your banking app to complete you
           transaction.
         </Text>
       </View>

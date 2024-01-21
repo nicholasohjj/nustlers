@@ -44,6 +44,7 @@ const OpenTransactionsList = ({stall}) => {
 
     fetchUser();
   }, []);
+  
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
@@ -56,15 +57,20 @@ const OpenTransactionsList = ({stall}) => {
   const filteredTransactions = React.useMemo(() => {
     if (!user) return [];
 
+    return transactions;
+
     return transactions.filter((transaction) =>
       !transaction.status.completed &&
             transaction.queuer_id !== user.id && !transaction.buyer_id
     );
   }, [user]);
   const renderTransactions = () => {
-    return filteredTransactions.length > 0 ? (
+    if (isLoading) {
+      return <Text>Loading...</Text>; // Or any loading indicator you prefer
+    }
+        return filteredTransactions.length > 0 ? (
       filteredTransactions.map((transaction) => (
-        <View key={transaction.id}>
+        <View key={transaction.transaction_id}>
             
           <OpenTransactionCard
             navigation={navigation}
