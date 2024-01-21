@@ -20,9 +20,10 @@ const TransactionDetails = ({ route }) => {
     console.log("Reporting the transaction...");
   };
 
-  const handleCancelTransaction = () => {
-    // Logic to cancel the transaction
-    console.log("Cancelling the transaction...");
+  const handleCancelTransaction = async () => {
+    await deleteTransaction(transaction.transaction_id);
+    navigation.navigate("TransactionsList");
+    
   };
 
   const confirmTransactionPaid = async () => {

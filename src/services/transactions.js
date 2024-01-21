@@ -39,7 +39,10 @@ export const getTransactionsById = async (userId) => {
   }
 
   try {
-    const response = await axios.get(`${baseURL}/${userId}`);
+    console.log("userId", userId);
+    const url = `${baseURL}/${userId}`;
+    console.log("url", url)
+    const response = await axios.get(url);
     cache[cacheKey] = { data: response.data, timestamp: new Date().getTime() };
     return response.data;
   } catch (error) {
