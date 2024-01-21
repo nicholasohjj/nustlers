@@ -34,6 +34,7 @@
         try {
           const data = await getTransactionsById(userId);
           setTransactions(data);
+          console.log("Transactions fetched successfully", data)
         } catch (error) {
           console.error("Error fetching transactions:", error);
           Alert.alert("Error", "Unable to fetch transactions.");
@@ -46,11 +47,9 @@
         const fetchedUser = await fetchUser();
         if (fetchedUser) {
           setUser(fetchedUser);
-          console.log("Refreshing transactions", fetchedUser.id);
           await fetchTransactions(fetchedUser.id);
         }
       };
-    
       init();
     }, []);
   
@@ -63,41 +62,30 @@
             await fetchTransactions(fetchedUser.id);
           }
         };
-    
         init();
       }, [fetchTransactions])
     );
-  
 
     const onRefresh = useCallback(async () => {
       setRefreshing(true);
-      const fetchedUser = await fetchUser();
-      if (fetchedUser) {
-        console.log("Refreshing transactions", fetchedUser.id);
-        await fetchTransactions(fetchedUser.id);
-      }
+      await fetchTransactions(user?.id);
       setRefreshing(false);
-    }, [fetchTransactions]);
+    }, [user, fetchTransactions]);
 
     const filteredTransactions = React.useMemo(() => {
-      if (!user) return [];
-
       return transactions.filter((transaction) =>
-        value == "ongoing"
+        value === "ongoing"
           ? !transaction.status.completed &&
-            (transaction.buyer_id === user.id ||
-              transaction.queuer_id === user.id)
-          : // Implement different logic for past transactions here
-            transaction.status.completed &&
-            (transaction.buyer_id === user.id ||
-              transaction.queuer_id === user.id)
+            (transaction.buyer_id === user?.id || transaction.queuer_id === user?.id)
+          : transaction.status.completed &&
+            (transaction.buyer_id === user?.id || transaction.queuer_id === user?.id)
       );
-    }, [user, value]);
-
+    }, [transactions, user, value]);
+  
     const renderTransactions = () => {
       return filteredTransactions.length > 0 ? (
         filteredTransactions.map((transaction) => (
-          <View key={transaction.id}>
+          <View key={transaction.transaction_id}>
             <TransactionCard
               navigation={navigation}
               transaction={transaction}
