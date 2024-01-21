@@ -76,7 +76,6 @@ const OpenTransactionsList = ({stall}) => {
     ) : (
       <View>
       <Text style={styles.noTransactionsText}>There's no one queueing!</Text>
-      <Text>{JSON.stringify(transactions)}</Text>
       </View>  
     );
   };
