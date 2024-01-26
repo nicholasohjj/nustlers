@@ -57,7 +57,7 @@ const OpenTransactionsList = ({stall}) => {
   const filteredTransactions = React.useMemo(() => {
     if (!user) return [];
 
-    return transactions;
+    return transactions
 
     return transactions.filter((transaction) =>
       !transaction.status.completed &&
