@@ -1,7 +1,7 @@
 ﻿
 <h1 align="center">
   <br>
-  <a href="https://offcharge.netlify.app/"><img src=assets/icon.png alt="Nustlers" width="200"></a>
+  <a href="https://expo.dev/artifacts/eas/x5NutML7fsBitXcpoC3pMg.apk"><img src=assets/icon.png alt="Nustlers" width="200"></a>
   <br>
     Nustlers
   <br>
