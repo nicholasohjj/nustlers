@@ -14,6 +14,8 @@
   <a href="#features">Features</a> •
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
+    <a href="#frameworks_used">Frameworks Used</a> •
+
   <a href="#team">Team</a> •
   <a href="#license">License</a>
 </p>
@@ -83,8 +85,16 @@ To use Nustlers on mobile:
 ```npx expo start```
 4. Scan the QR code with EXPO GO to start using **Nustlers**.
 
-## Team
+## Frameworks Used
+* [Expo](https://expo.dev/)
+* [React Native](https://reactnative.dev/)
+* [React Native Paper](https://reactnativepaper.com/)
+* [Supabase](https://supabase.com)
+* [ExpressJS](https://expressjs.com/)
+* [Vercel](https://vercel.com)
+* [Paynow QR Code Generator](https://fullstacksys.com/paynow-qr-code-generator)
 
+## Team
 * **Project Lead**: Nicholas Oh
 * **Contributors**: Nicholas Tok, Bryan Chew
 
