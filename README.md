@@ -35,10 +35,12 @@ Our next steps include integrating an in-app e-wallet and refining the UI for an
 
 ## Screenshots
 
+<p float="left">
 <img src=images/ss1.png alt="location" width="200">
 <img src=images/ss4.png alt="destination" width="200">
 <img src=images/ss3.png alt="checkout" width="200">
 <img src=images/ss2.png alt="payment" width="200">
+</p>
 
 ## Installation
 
