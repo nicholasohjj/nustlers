@@ -33,6 +33,13 @@ Our next steps include integrating an in-app e-wallet and refining the UI for an
 * **Accurate Mapping**: Locate every canteen with ease.
 * **Cross-Platform**: Available on both iOS and Android.
 
+## Screenshots
+
+<img src=images/ss1.png alt="location" width="200">
+<img src=images/ss4.png alt="destination" width="200">
+<img src=images/ss3.png alt="checkout" width="200">
+<img src=images/ss2.png alt="payment" width="200">
+
 ## Installation
 
 ### Frontend
